@@ -1,4 +1,4 @@
-package arquivos;
+package model;
 
 public class NoPaciente {
 	Paciente objeto;
