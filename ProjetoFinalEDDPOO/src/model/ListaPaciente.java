@@ -21,7 +21,7 @@ public class ListaPaciente {
 		} else {
 			int comparacao = this.primeiro.getObjeto().getNome().compareTo(novo.getObjeto().getNome());
 			if (comparacao >= 0) { 	/* A condicao esta ">= 0", pois o retorno do metodo é em relacao ao primeiro
-									termo!! */
+									elemento!! */
 				novo.setProximo(this.primeiro);
 				this.primeiro = novo;
 			} else {
