@@ -26,6 +26,11 @@ public class PacienteControl implements ActionListener {
 		lista = new ListaPaciente();
 	}
 	
+	public ListaPaciente getLista() {
+		return lista;
+	}
+
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

@@ -17,6 +17,7 @@ public class JanelaPrincipal extends JFrame {
 	private JMenuItem mntmCadastrar;
 	private JMenuItem mntmConsultar;
 	private TelaCadastro tcad;
+	private TelaConsulta tcon;
 	
 	public JMenuItem getMntmCadastrar() {
 		return mntmCadastrar;
@@ -41,6 +42,15 @@ public class JanelaPrincipal extends JFrame {
 	public void setTcad(TelaCadastro tcad) {
 		this.tcad = tcad;
 	}
+
+	public TelaConsulta getTcon() {
+		return tcon;
+	}
+
+	public void setTcon(TelaConsulta tcon) {
+		this.tcon = tcon;
+	}
+	
 
 	/**
 	 * Create the frame.
@@ -68,7 +78,7 @@ public class JanelaPrincipal extends JFrame {
 		contentPane.setLayout(new MigLayout("", "[]", "[]"));
 		
 		tcad = new TelaCadastro();
+		tcon = new TelaConsulta();
 	}
 
 }
-
