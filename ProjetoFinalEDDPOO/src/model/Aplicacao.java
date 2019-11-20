@@ -1,6 +1,9 @@
 package model;
 
 public class Aplicacao {
+	
+	public int gerarSenha(long cpf); 
+	
 	public static void main(String[] args) {
 		Paciente p1 = new Paciente("Maico", 03020305207, "19-04-01");
 		
@@ -23,5 +26,9 @@ public class Aplicacao {
 		l1.imprimirPrimeiro();
 
 
+	}
+	
+	public Atendimento gerarSenha(ListaPaciente l) {
+		int senha = 1 + (int) (Math.random() * 1000);
 	}
 }
