@@ -4,12 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import dao.PacienteDAO;
+import model.ListaPaciente;
 import model.Paciente;
 import view.JanelaPrincipal;
 
 public class PacienteControl implements ActionListener {
 	private JanelaPrincipal j;
 	private Paciente p;
+	private ListaPaciente lista;
 	private PacienteDAO pdao;
 	
 	public PacienteControl(JanelaPrincipal j, Paciente p) {
@@ -21,6 +23,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getTcad().getBtnCadastrar().addActionListener(this);
 		this.j.getTcad().getBtnLimpar().addActionListener(this);
 		pdao = new PacienteDAO();
+		lista = new ListaPaciente();
 	}
 	
 	@Override
@@ -38,6 +41,7 @@ public class PacienteControl implements ActionListener {
 			boolean aux = pdao.cadPaciente(p);
 			if(aux == true) {
 				this.j.getTcad().getLblMsg().setVisible(true);
+				lista.adiciona(p);
 			}
 		}
 		if(e.getActionCommand().equals("Limpar")){

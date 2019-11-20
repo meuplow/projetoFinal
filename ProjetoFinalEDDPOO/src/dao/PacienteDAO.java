@@ -15,9 +15,7 @@ public class PacienteDAO {
 		File arq = new File("ListaDePacientes.txt");
 		FileWriter fw = null;
 		BufferedWriter bw = null;
-		ListaPaciente lista = new ListaPaciente();
 		try {
-			lista.adiciona(p);
 			fw = new FileWriter(arq, true);
 			bw = new BufferedWriter(fw);
 			bw.write(p.getNome()+"#"+p.getCpf()+"#"+p.getData());

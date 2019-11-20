@@ -4,34 +4,33 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Atendimento {
-	private String senha;
-	private long paciente;
+	private int senha;
+	private String paciente;
 	private Date data;
 	private Date hora;
 	
-	public Atendimento(String senha, long paciente) {
+	public Atendimento(String cpf, int senha) {
 		Date dataAtual = new Date();
 		this.senha = senha;
-		this.paciente = paciente;
+		this.paciente = cpf;
 		this.data = dataAtual;
 		this.hora = dataAtual;
-		//SimpleDateFormat dataFormatada = new SimpleDateFormat("dd-MM-YYYY");
-		//SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm");	
 	}
-
-	public String getSenha() {
+	
+	
+	public int getSenha() {
 		return senha;
 	}
 
-	public void setSenha(String senha) {
+	public void setSenha(int senha) {
 		this.senha = senha;
 	}
 
-	public long getPaciente() {
+	public String getPaciente() {
 		return paciente;
 	}
 
-	public void setPaciente(long paciente) {
+	public void setPaciente(String paciente) {
 		this.paciente = paciente;
 	}
 
