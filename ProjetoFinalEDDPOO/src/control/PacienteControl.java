@@ -19,6 +19,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getMntmCadastrar().addActionListener(this);
 		this.j.getMntmConsultar().addActionListener(this);
 		this.j.getTcad().getBtnCadastrar().addActionListener(this);
+		this.j.getTcad().getBtnLimpar().addActionListener(this);
 		pdao = new PacienteDAO();
 	}
 	
@@ -34,7 +35,13 @@ public class PacienteControl implements ActionListener {
 			this.p.setNome(this.j.getTcad().getFieldNome().getText());
 			this.p.setCpf(this.j.getTcad().getFieldCpf().getText());
 			this.p.setData(this.j.getTcad().getFieldData().getText());
-			pdao.cadPaciente(p);
+			boolean aux = pdao.cadPaciente(p);
+			if(aux == true) {
+				this.j.getTcad().getLblMsg().setVisible(true);
+			}
+		}
+		if(e.getActionCommand().equals("Limpar")){
+			this.j.getTcad().limparTela();
 		}
 	}
 

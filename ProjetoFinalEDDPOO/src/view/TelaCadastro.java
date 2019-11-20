@@ -18,8 +18,9 @@ public class TelaCadastro extends JPanel {
 	private JTextField fieldData;
 	private JButton btnCadastrar;
 	private JButton btnLimpar;
+	private JLabel lblMsg;
 	
-
+	
 	public JTextField getFieldCpf() {
 		return fieldCpf;
 	}
@@ -68,18 +69,30 @@ public class TelaCadastro extends JPanel {
 	public void setBtnLimpar(JButton btnLimpar) {
 		this.btnLimpar = btnLimpar;
 	}
+	
 
-	public void limpaTela(){
+	public JLabel getLblMsg() {
+		return lblMsg;
+	}
+
+
+	public void setLblMsg(JLabel lblMsg) {
+		this.lblMsg = lblMsg;
+	}
+
+
+	public void limparTela(){
 		fieldNome.setText("");
 		fieldCpf.setText("");
 		fieldData.setText("");
+		lblMsg.setVisible(false);
 	}
 
 	/**
 	 * Create the panel.
 	 */
 	public TelaCadastro() {
-		setLayout(new MigLayout("", "[]", "[][][][][][][][][][]"));
+		setLayout(new MigLayout("", "[]", "[][][][][][][][][][][]"));
 		
 		lblCadPacientes = new JLabel("Cadastro de Pacientes");
 		lblCadPacientes.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -114,6 +127,10 @@ public class TelaCadastro extends JPanel {
 		
 		btnLimpar = new JButton("Limpar");
 		add(btnLimpar, "cell 0 9,alignx center,growy");
+		
+		lblMsg = new JLabel("Paciente cadastrado com sucesso!");
+		add(lblMsg, "cell 0 10,alignx center,aligny center");
+		lblMsg.setVisible(false);
 
 	}
 
