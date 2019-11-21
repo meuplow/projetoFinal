@@ -49,6 +49,9 @@ public class PacienteControl implements ActionListener {
 				lista.adiciona(p);
 			}
 		}
+		if(e.getActionCommand().equals("Buscar")){
+			//Paciente pacienteBusca = this.lista.buscar(this.j.getTcon().getFieldCpf().getText());
+		}
 		if(e.getActionCommand().equals("Limpar")){
 			this.j.getTcad().limparTela();
 		}
