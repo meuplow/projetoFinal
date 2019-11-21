@@ -11,6 +11,7 @@ public class TelaConsulta extends JPanel {
 	private JTextField fieldCpf;
 	private JButton btnBuscar; 
 	private JButton btnLimpar; 
+	private JLabel lblMsg;
 
 	public JTextField getFieldCpf() {
 		return fieldCpf;
@@ -41,12 +42,22 @@ public class TelaConsulta extends JPanel {
 		fieldCpf.setText("");
 	}
 
+	
+	public JLabel getLblMsg() {
+		return lblMsg;
+	}
+
+
+	public void setLblMsg(JLabel lblMsg) {
+		this.lblMsg = lblMsg;
+	}
+
 
 	/**
 	 * Create the panel.
 	 */
 	public TelaConsulta() {
-		setLayout(new MigLayout("", "[]", "[][][][][][]"));
+		setLayout(new MigLayout("", "[]", "[][][][][][][][]"));
 		
 		JLabel lblTituloBusca = new JLabel("Busca de Paciente");
 		lblTituloBusca.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -65,7 +76,10 @@ public class TelaConsulta extends JPanel {
 		
 		btnLimpar = new JButton("Limpar");
 		add(btnLimpar, "cell 0 5,alignx center,aligny center");
-
+		
+		lblMsg = new JLabel("Paciente encaminhado para fila de atendimento");
+		add(lblMsg, "cell 0 7");
+		lblMsg.setVisible(false);
 	}
 
 }

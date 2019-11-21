@@ -16,8 +16,10 @@ public class JanelaPrincipal extends JFrame {
 	private JPanel contentPane;
 	private JMenuItem mntmCadastrar;
 	private JMenuItem mntmConsultar;
+	private JMenuItem mntmAtendimento;
 	private TelaCadastro tcad;
 	private TelaConsulta tcon;
+	private TelaAtendimento tatd;
 	
 	public JMenuItem getMntmCadastrar() {
 		return mntmCadastrar;
@@ -34,6 +36,14 @@ public class JanelaPrincipal extends JFrame {
 	public void setMntmConsultar(JMenuItem mntmConsultar) {
 		this.mntmConsultar = mntmConsultar;
 	}
+	
+	public JMenuItem getMntmAtendimento() {
+		return mntmAtendimento;
+	}
+
+	public void setMntmAtendimento(JMenuItem mntmAtendimento) {
+		this.mntmAtendimento = mntmAtendimento;
+	}
 
 	public TelaCadastro getTcad() {
 		return tcad;
@@ -49,6 +59,14 @@ public class JanelaPrincipal extends JFrame {
 
 	public void setTcon(TelaConsulta tcon) {
 		this.tcon = tcon;
+	}
+	
+	public TelaAtendimento getTatd() {
+		return tatd;
+	}
+
+	public void setTatd(TelaAtendimento tatd) {
+		this.tatd = tatd;
 	}
 	
 
@@ -72,6 +90,11 @@ public class JanelaPrincipal extends JFrame {
 		mntmConsultar = new JMenuItem("Consultar");
 		mntmConsultar.setActionCommand("menuCon");
 		mnArquivo.add(mntmConsultar);
+		
+		mntmAtendimento = new JMenuItem("Atendimento");
+		mntmAtendimento.setActionCommand("menuAtd");
+		mnArquivo.add(mntmAtendimento);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -79,6 +102,7 @@ public class JanelaPrincipal extends JFrame {
 		
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();
+		tatd = new TelaAtendimento();
 	}
 
 }
