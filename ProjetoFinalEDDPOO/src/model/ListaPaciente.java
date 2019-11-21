@@ -44,12 +44,12 @@ public class ListaPaciente {
 	}
 	
 	public Paciente buscarPaciente(String cpf) {
-		NoPaciente auxP = this.primeiro;
-		while(auxP.getProximo() != null) {
-			if(auxP.getObjeto().getCpf().equals(cpf)) {
-				return auxP.getObjeto();
+		NoPaciente aux = this.primeiro;
+		while(aux.getProximo() != null) {
+			if(aux.getObjeto().getCpf().equals(cpf)) {
+				return aux.getObjeto();
 			}else {
-				auxP = auxP.getProximo();
+				aux = aux.getProximo();
 			}
 		}
 		return null;
