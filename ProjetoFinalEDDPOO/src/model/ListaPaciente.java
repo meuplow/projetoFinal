@@ -20,8 +20,10 @@ public class ListaPaciente {
 			this.primeiro = novo;
 		} else {
 			int comparacao = this.primeiro.getObjeto().getNome().compareTo(novo.getObjeto().getNome());
-			if (comparacao >= 0) { 	/* A condicao esta ">= 0", pois o retorno do metodo é em relacao ao primeiro
-									elemento!! */
+			if (comparacao >= 0) { /*
+									 * A condicao esta ">= 0", pois o retorno do metodo é em relacao ao primeiro
+									 * elemento!!
+									 */
 				novo.setProximo(this.primeiro);
 				this.primeiro = novo;
 			} else {
@@ -42,14 +44,18 @@ public class ListaPaciente {
 			}
 		}
 	}
-	
+
 	public Paciente buscarPaciente(String cpf) {
-		NoPaciente auxP = this.primeiro;
-		while(auxP.getProximo() != null) {
-			if(auxP.getObjeto().getCpf().equals(cpf)) {
-				return auxP.getObjeto();
-			}else {
-				auxP = auxP.getProximo();
+		if (this.primeiro.getObjeto().getCpf().equals(cpf)) {
+			return this.primeiro.getObjeto();
+		} else {
+			NoPaciente auxP = this.primeiro;
+			while (auxP.getProximo() != null) {
+				if (auxP.getObjeto().getCpf().equals(cpf)) {
+					return auxP.getObjeto();
+				} else {
+					auxP = auxP.getProximo();
+				}
 			}
 		}
 		return null;
