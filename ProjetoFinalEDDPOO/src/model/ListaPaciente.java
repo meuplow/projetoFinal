@@ -42,6 +42,18 @@ public class ListaPaciente {
 			}
 		}
 	}
+	
+	public Paciente buscarPaciente(String cpf) {
+		NoPaciente auxP = this.primeiro;
+		while(auxP.getProximo() != null) {
+			if(auxP.getObjeto().getCpf().equals(cpf)) {
+				return auxP.getObjeto();
+			}else {
+				auxP = auxP.getProximo();
+			}
+		}
+		return null;
+	}
 
 	public void imprimirListaNome() {
 		NoPaciente aux = this.primeiro;
