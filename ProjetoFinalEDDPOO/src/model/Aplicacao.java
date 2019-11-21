@@ -1,7 +1,7 @@
 package model;
 
 public class Aplicacao {
-	
+	/*
 	public int gerarSenha(long cpf); 
 	
 	public static void main(String[] args) {
@@ -37,4 +37,5 @@ public class Aplicacao {
 	public Atendimento gerarSenha(ListaPaciente l) {
 		int senha = 1 + (int) (Math.random() * 1000);
 	}
+	*/
 }
