@@ -56,10 +56,9 @@ public class PacienteControl implements ActionListener {
 				this.lista.adiciona(p);
 			}
 		}
-		if(e.getActionCommand().equals("Buscar")){
-			
+		if(e.getActionCommand().equals("Buscar")){		
 			if(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText())!=null) {
-				this.j.setContentPane(this.j.getContentPane());
+				
 			}else {
 				this.j.setContentPane(this.j.getTcad());
 				this.j.revalidate();
