@@ -1,9 +1,9 @@
 package model;
 
-public class FilaAtendimentos {
+public class FilaPrioridadeDois {
 	private NoAtendimentos topo;
 	
-	public FilaAtendimentos(){
+	public FilaPrioridadeDois() {
 		this.topo = null;
 	}
 	
@@ -62,7 +62,7 @@ public class FilaAtendimentos {
 		this.topo = null;
 	}
 	
-	public void imprimirFilaAtendimento() {
+	public void imprimirFilaPrioridadeDois() {
 		NoAtendimentos aux = this.topo;
 		while (aux != null) {
 			System.out.println(aux.getObjeto().getSenha()+" - "+aux.getObjeto().getPaciente());

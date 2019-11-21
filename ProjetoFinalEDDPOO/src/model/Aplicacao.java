@@ -21,7 +21,13 @@ public class Aplicacao {
 		
 		l1.imprimirListaNome();
 		l1.imprimirPrimeiro();
-
+		
+		Atendimento a1 = new Atendimento(p3.getNome(), p3.getCpf());
+		
+		FilaAtendimentos fa1 = new FilaAtendimentos();
+		fa1.enqueue(a1);
+		
+		fa1.imprimirFilaAtendimento();
 
 	}
 }

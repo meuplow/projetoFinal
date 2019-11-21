@@ -1,12 +1,12 @@
 package model;
 
-public class FilaAtendimentos {
+public class FilaPrioridadeTres {
 	private NoAtendimentos topo;
 	
-	public FilaAtendimentos(){
+	public FilaPrioridadeTres() {
 		this.topo = null;
 	}
-	
+
 	public boolean isEmpty(){
 		if(this.topo == null){
 			return true;
@@ -62,11 +62,12 @@ public class FilaAtendimentos {
 		this.topo = null;
 	}
 	
-	public void imprimirFilaAtendimento() {
+	public void imprimirFilaPrioridadeTres() {
 		NoAtendimentos aux = this.topo;
 		while (aux != null) {
 			System.out.println(aux.getObjeto().getSenha()+" - "+aux.getObjeto().getPaciente());
 			aux = aux.getProximo();
 		}
 	}
-}
+}	
+
