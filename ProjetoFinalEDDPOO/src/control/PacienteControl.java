@@ -21,6 +21,8 @@ public class PacienteControl implements ActionListener {
 		this.j.getMntmCadastrar().addActionListener(this);
 		this.j.getMntmConsultar().addActionListener(this);
 		this.j.getTcad().getBtnCadastrar().addActionListener(this);
+		this.j.getTcon().getBtnBuscar().addActionListener(this);
+		this.j.getTcon().getBtnLimpar().addActionListener(this);
 		this.j.getTcad().getBtnLimpar().addActionListener(this);
 		pdao = new PacienteDAO();
 		lista = new ListaPaciente();
@@ -38,6 +40,11 @@ public class PacienteControl implements ActionListener {
 			this.j.setContentPane(this.j.getTcad());
 			this.j.revalidate();
 			this.j.repaint();
+		}	
+		if(e.getActionCommand().equals("menuCon")){
+			this.j.setContentPane(this.j.getTcon());
+			this.j.revalidate();
+			this.j.repaint();
 		}
 		if(e.getActionCommand().equals("Cadastrar")){
 			this.p.setNome(this.j.getTcad().getFieldNome().getText());
@@ -50,10 +57,18 @@ public class PacienteControl implements ActionListener {
 			}
 		}
 		if(e.getActionCommand().equals("Buscar")){
-			//Paciente pacienteBusca = this.lista.buscar(this.j.getTcon().getFieldCpf().getText());
+			Paciente pacienteBusca = this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText());
+			if(pacienteBusca!=null) {
+				
+			}else {
+				this.j.setContentPane(this.j.getTcad());
+				this.j.revalidate();
+				this.j.repaint();
+			}
 		}
 		if(e.getActionCommand().equals("Limpar")){
 			this.j.getTcad().limparTela();
+			this.j.getTcon().limparTela();
 		}
 	}
 

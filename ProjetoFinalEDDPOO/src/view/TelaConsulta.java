@@ -37,7 +37,7 @@ public class TelaConsulta extends JPanel {
 		this.btnLimpar = btnLimpar;
 	}
 	
-	public void limpaTela(){
+	public void limparTela(){
 		fieldCpf.setText("");
 	}
 
