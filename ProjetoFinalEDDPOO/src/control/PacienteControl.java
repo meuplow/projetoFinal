@@ -53,13 +53,13 @@ public class PacienteControl implements ActionListener {
 			boolean aux = pdao.cadPaciente(p);
 			if(aux == true) {
 				this.j.getTcad().getLblMsg().setVisible(true);
-				lista.adiciona(p);
+				this.lista.adiciona(p);
 			}
 		}
 		if(e.getActionCommand().equals("Buscar")){
-			Paciente pacienteBusca = this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText());
-			if(pacienteBusca!=null) {
-				
+			
+			if(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText())!=null) {
+				this.j.setContentPane(this.j.getContentPane());
 			}else {
 				this.j.setContentPane(this.j.getTcad());
 				this.j.revalidate();
