@@ -7,6 +7,7 @@ import java.awt.Font;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 public class TelaTriagem extends JPanel {
 	private JTextField fieldFrequenciaCardiaca;
@@ -14,34 +15,34 @@ public class TelaTriagem extends JPanel {
 	private JTextField fieldTemperatura;
 	private JTextField fieldOximetria;
 	private JTextField fieldIndice;
-	private JRadioButton checkEntubado;
-	private JRadioButton checkApneia;
-	private JRadioButton checkPulso;
-	private JRadioButton checkSitRis;
-	private JRadioButton checkConfuso;
-	private JRadioButton checkDesorientado;
-	private JRadioButton checkLetargico;
-	private JRadioButton checkDor;
-	private JRadioButton checkMultiplosProcedimentos;
-	private JRadioButton checkEstavel;
 	private JButton btnDirecionar;
 	private JLabel lblMsg;
 	private JPanel painelNorte;
 	private JLabel lblTriagem;
 	private JLabel lblNome;
-	private JRadioButton checkUmProcedimento;
+	private JCheckBox chckbxEntubado;
+	private JCheckBox chckbxApneia;
+	private JCheckBox chckbxPulso;
+	private JCheckBox chckbxSituacaoDeRisco;
+	private JCheckBox chckbxConfuso;
+	private JCheckBox chckbxDesorientado;
+	private JCheckBox chckbxLetargico;
+	private JCheckBox chckbxDor;
+	private JCheckBox chckbxMaisProcedimentos;
+	private JCheckBox chckbxUmProcedimento;
+	private JCheckBox chckbxEstavel;
 
 	public TelaTriagem() {
 		setBounds(100, 100, 600, 500);
 		setLayout(new MigLayout("", "[grow]", "[]10[]10[][][]20[][][][]15[]15[]20[][]"));
-		
+
 		painelNorte = new JPanel();
 		add(painelNorte, "cell 0 0,grow");
-		
+
 		lblTriagem = new JLabel("Triagem");
 		lblTriagem.setFont(new Font("Tahoma", Font.BOLD, 20));
 		painelNorte.add(lblTriagem);
-		
+
 		lblNome = new JLabel("Nome");
 		lblNome.setFont(new Font("Tahoma", Font.BOLD, 13));
 		add(lblNome, "cell 0 1");
@@ -50,44 +51,9 @@ public class TelaTriagem extends JPanel {
 		JLabel lblPri1 = new JLabel("O paciente se encontra:");
 		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		add(lblPri1, "flowx,cell 0 2");
-		
-		checkEntubado = new JRadioButton("entubado");
-		checkEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkEntubado, "flowx,cell 0 3,growx");
 
-		checkApneia = new JRadioButton("com apneia");
-		checkApneia.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkApneia, "cell 0 3,growx");
-
-		checkPulso = new JRadioButton("sem pulso ou sem rea\u00E7\u00E3o");
-		checkPulso.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkPulso, "cell 0 3,growx");
-
-		checkSitRis = new JRadioButton("situa\u00E7\u00E3o de risco");
-		checkSitRis.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkSitRis, "flowx,cell 0 4,growx");
-
-		checkConfuso = new JRadioButton("confuso");
-		checkConfuso.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkConfuso, "cell 0 4,growx");
-
-		checkDesorientado = new JRadioButton("desorientado");
-		checkDesorientado.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkDesorientado, "cell 0 4,growx");
-
-		checkLetargico = new JRadioButton("let\u00E1rgico");
-		checkLetargico.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkLetargico, "cell 0 4,growx");
-
-		checkDor = new JRadioButton("com dor ou sofrimento agudo");
-		checkDor.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkDor, "cell 0 4,growx");
-
-		checkMultiplosProcedimentos = new JRadioButton("O paciente precisa realizar m\u00FAltiplos procedimentos");
-		checkMultiplosProcedimentos.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkMultiplosProcedimentos, "cell 0 5");
-
-		JLabel lblInformeOsSeguintes = new JLabel("Informe os seguintes dados, caso o paciente necessita realizar m\u00FAltiplos procedimentos:");
+		JLabel lblInformeOsSeguintes = new JLabel(
+				"Informe os seguintes dados, caso o paciente necessita realizar m\u00FAltiplos procedimentos:");
 		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 13));
 		add(lblInformeOsSeguintes, "cell 0 6");
 
@@ -135,14 +101,6 @@ public class TelaTriagem extends JPanel {
 		fieldIndice.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(fieldIndice, "cell 0 8,growx");
 		fieldIndice.setColumns(10);
-		
-		checkUmProcedimento = new JRadioButton("O paciente precisa realizar APENAS um outro procedimento");
-		checkUmProcedimento.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkUmProcedimento, "cell 0 9");
-
-		checkEstavel = new JRadioButton("O paciente se encontra est\u00E1vel");
-		checkEstavel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkEstavel, "cell 0 10");
 
 		btnDirecionar = new JButton("Direcionar atendimento");
 		btnDirecionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -151,9 +109,77 @@ public class TelaTriagem extends JPanel {
 		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada");
 		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		add(lblMsg, "cell 0 12,alignx center");
+
+		chckbxEntubado = new JCheckBox("entubado");
+		chckbxEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxEntubado, "flowx,cell 0 3,growx");
+
+		chckbxApneia = new JCheckBox("com apneia");
+		chckbxApneia.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxApneia, "cell 0 3,growx");
+
+		chckbxPulso = new JCheckBox("sem pulso ou sem rea\u00E7\u00E3o");
+		chckbxPulso.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxPulso, "cell 0 3,growx");
+
+		chckbxSituacaoDeRisco = new JCheckBox("situa\u00E7\u00E3o de risco");
+		chckbxSituacaoDeRisco.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxSituacaoDeRisco, "flowx,cell 0 4,growx");
+
+		chckbxConfuso = new JCheckBox("confuso");
+		chckbxConfuso.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxConfuso, "cell 0 4,growx");
+
+		chckbxDesorientado = new JCheckBox("desorientado");
+		chckbxDesorientado.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxDesorientado, "cell 0 4,growx");
+
+		chckbxLetargico = new JCheckBox("let\u00E1rgico");
+		chckbxLetargico.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxLetargico, "cell 0 4,growx");
+
+		chckbxDor = new JCheckBox("com dor ou sofrimento agudo");
+		chckbxDor.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxDor, "cell 0 4,growx");
+
+		chckbxMaisProcedimentos = new JCheckBox("O paciente precisa realizar m\u00FAltiplos procedimentos");
+		chckbxMaisProcedimentos.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxMaisProcedimentos, "cell 0 5,growx");
+
+		chckbxUmProcedimento = new JCheckBox("O paciente precisa realizar APENAS um outro procedimento");
+		chckbxUmProcedimento.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxUmProcedimento, "cell 0 9");
+
+		chckbxEstavel = new JCheckBox("O paciente se econtra est\u00E1vel");
+		chckbxEstavel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(chckbxEstavel, "cell 0 10,growx");
 		lblMsg.setVisible(true);
 	}
-	
+
+	public JCheckBox getChckbxMaisProcedimentos() {
+		return chckbxMaisProcedimentos;
+	}
+
+	public void setChckbxMaisProcedimentos(JCheckBox chckbxMaisProcedimentos) {
+		this.chckbxMaisProcedimentos = chckbxMaisProcedimentos;
+	}
+
+	public JCheckBox getChckbxUmProcedimento() {
+		return chckbxUmProcedimento;
+	}
+
+	public void setChckbxUmProcedimento(JCheckBox chckbxUmProcedimento) {
+		this.chckbxUmProcedimento = chckbxUmProcedimento;
+	}
+
+	public JCheckBox getChckbxEstavel() {
+		return chckbxEstavel;
+	}
+
+	public void setChckbxEstavel(JCheckBox chckbxEstavel) {
+		this.chckbxEstavel = chckbxEstavel;
+	}
+
 	public JLabel getLblNome() {
 		return lblNome;
 	}
@@ -202,86 +228,6 @@ public class TelaTriagem extends JPanel {
 		this.fieldIndice = fieldIndice;
 	}
 
-	public JRadioButton getCheckEntubado() {
-		return checkEntubado;
-	}
-
-	public void setCheckEntubado(JRadioButton checkEntubado) {
-		this.checkEntubado = checkEntubado;
-	}
-
-	public JRadioButton getCheckApneia() {
-		return checkApneia;
-	}
-
-	public void setCheckApneia(JRadioButton checkApneia) {
-		this.checkApneia = checkApneia;
-	}
-
-	public JRadioButton getCheckPulso() {
-		return checkPulso;
-	}
-
-	public void setCheckPulso(JRadioButton checkPulso) {
-		this.checkPulso = checkPulso;
-	}
-
-	public JRadioButton getCheckSitRis() {
-		return checkSitRis;
-	}
-
-	public void setCheckSitRis(JRadioButton checkSitRis) {
-		this.checkSitRis = checkSitRis;
-	}
-
-	public JRadioButton getCheckConfuso() {
-		return checkConfuso;
-	}
-
-	public void setCheckConfuso(JRadioButton checkConfuso) {
-		this.checkConfuso = checkConfuso;
-	}
-
-	public JRadioButton getCheckDesorientado() {
-		return checkDesorientado;
-	}
-
-	public void setCheckDesorientado(JRadioButton checkDesorientado) {
-		this.checkDesorientado = checkDesorientado;
-	}
-
-	public JRadioButton getCheckLetargico() {
-		return checkLetargico;
-	}
-
-	public void setCheckLetargico(JRadioButton checkLetargico) {
-		this.checkLetargico = checkLetargico;
-	}
-
-	public JRadioButton getCheckDor() {
-		return checkDor;
-	}
-
-	public void setCheckDor(JRadioButton checkDor) {
-		this.checkDor = checkDor;
-	}
-
-	public JRadioButton getCheckOutrosProcedimentos() {
-		return checkMultiplosProcedimentos;
-	}
-
-	public void setCheckOutrosProcedimentos(JRadioButton checkOutrosProcedimentos) {
-		this.checkMultiplosProcedimentos = checkOutrosProcedimentos;
-	}
-
-	public JRadioButton getCheckEstavel() {
-		return checkEstavel;
-	}
-
-	public void setCheckEstavel(JRadioButton checkEstavel) {
-		this.checkEstavel = checkEstavel;
-	}
-
 	public JButton getBtnDirecionar() {
 		return btnDirecionar;
 	}
@@ -296,5 +242,69 @@ public class TelaTriagem extends JPanel {
 
 	public void setLblMsg(JLabel lblMsg) {
 		this.lblMsg = lblMsg;
+	}
+
+	public JCheckBox getChckbxEntubado() {
+		return chckbxEntubado;
+	}
+
+	public void setChckbxEntubado(JCheckBox chckbxEntubado) {
+		this.chckbxEntubado = chckbxEntubado;
+	}
+
+	public JCheckBox getChckbxApneia() {
+		return chckbxApneia;
+	}
+
+	public void setChckbxApneia(JCheckBox chckbxApneia) {
+		this.chckbxApneia = chckbxApneia;
+	}
+
+	public JCheckBox getChckbxPulso() {
+		return chckbxPulso;
+	}
+
+	public void setChckbxPulso(JCheckBox chckbxPulso) {
+		this.chckbxPulso = chckbxPulso;
+	}
+
+	public JCheckBox getChckbxSituacaoDeRisco() {
+		return chckbxSituacaoDeRisco;
+	}
+
+	public void setChckbxSituacaoDeRisco(JCheckBox chckbxSituacaoDeRisco) {
+		this.chckbxSituacaoDeRisco = chckbxSituacaoDeRisco;
+	}
+
+	public JCheckBox getChckbxConfuso() {
+		return chckbxConfuso;
+	}
+
+	public void setChckbxConfuso(JCheckBox chckbxConfuso) {
+		this.chckbxConfuso = chckbxConfuso;
+	}
+
+	public JCheckBox getChckbxDesorientado() {
+		return chckbxDesorientado;
+	}
+
+	public void setChckbxDesorientado(JCheckBox chckbxDesorientado) {
+		this.chckbxDesorientado = chckbxDesorientado;
+	}
+
+	public JCheckBox getChckbxLetargico() {
+		return chckbxLetargico;
+	}
+
+	public void setChckbxLetargico(JCheckBox chckbxLetargico) {
+		this.chckbxLetargico = chckbxLetargico;
+	}
+
+	public JCheckBox getChckbxDor() {
+		return chckbxDor;
+	}
+
+	public void setChckbxDor(JCheckBox chckbxDor) {
+		this.chckbxDor = chckbxDor;
 	}
 }
