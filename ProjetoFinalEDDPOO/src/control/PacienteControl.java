@@ -28,6 +28,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getMntmConsultar().addActionListener(this);
 		this.j.getMntmSenhas().addActionListener(this);
 		this.j.getMntmTriagem().addActionListener(this);
+		this.j.getMntmInicio().addActionListener(this);
 		this.j.getBtnEncerrar().addActionListener(this);
 		this.j.getTcad().getBtnCadastrar().addActionListener(this);
 		this.j.getTcon().getBtnBuscar().addActionListener(this);
@@ -45,6 +46,12 @@ public class PacienteControl implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand().equals("inicio")){
+			//this.j.remove(this.j.getTcad());
+			//this.j.remove(this.j.getTcon());
+			//this.j.remove(this.j.getTsenhas());
+			//this.j.remove(this.j.getTtriagem());
+		}	
 		if(e.getActionCommand().equals("menuCad")){
 			this.j.setContentPane(this.j.getTcad());
 			this.j.setBounds(100, 100, 450, 320);

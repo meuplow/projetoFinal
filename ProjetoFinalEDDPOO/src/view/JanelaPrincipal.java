@@ -27,7 +27,7 @@ public class JanelaPrincipal extends JFrame {
 	private TelaTriagem ttriagem;
 	private JPanel painelCentro;
 	private JLabel lblBemVindo;
-	private JMenuItem mntmIncio;
+	private JMenuItem mntmInicio;
 	private JLabel lblAviso;
 	private JLabel lblAviso2;
 	private JButton btnEncerrar;
@@ -104,6 +104,14 @@ public class JanelaPrincipal extends JFrame {
 		this.btnEncerrar = btnEncerrar;
 	}
 
+	public JMenuItem getMntmInicio() {
+		return mntmInicio;
+	}
+
+	public void setMntmInicio(JMenuItem mntmInicio) {
+		this.mntmInicio = mntmInicio;
+	}
+
 	public JanelaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 320);
@@ -114,8 +122,9 @@ public class JanelaPrincipal extends JFrame {
 		JMenu mnArquivo = new JMenu("Opera\u00E7\u00F5es");
 		menuBar.add(mnArquivo);
 		
-		mntmIncio = new JMenuItem("In\u00EDcio");
-		mnArquivo.add(mntmIncio);
+		mntmInicio = new JMenuItem("In\u00EDcio");
+		mntmInicio.setActionCommand("inicio");
+		mnArquivo.add(mntmInicio);
 		
 		mntmCadastrar = new JMenuItem("Cadastrar");
 		mntmCadastrar.setActionCommand("menuCad");
