@@ -94,7 +94,7 @@ import java.awt.Color;
 		 * Create the panel.
 		 */
 		public TelaCadastro() {
-			setLayout(new MigLayout("", "[grow]", "[][]20[]20[]20[][]30[]"));
+			setLayout(new MigLayout("", "[grow]", "[][]20[]20[]20[][]30[]30[]"));
 			
 			painelNorte = new JPanel();
 			add(painelNorte, "cell 0 0,growx");
@@ -131,13 +131,13 @@ import java.awt.Color;
 			btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			add(btnCadastrar, "flowx,cell 0 5,alignx center,growy");
 			
-			lblMsg = new JLabel("Paciente cadastrado com sucesso!");
-			lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 13));
-			add(lblMsg, "cell 0 6,alignx center,aligny center");
-			
 			btnLimpar = new JButton("Limpar");
 			btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			add(btnLimpar, "cell 0 5,alignx center,growy");
+			
+			lblMsg = new JLabel("Paciente cadastrado com sucesso!");
+			lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 13));
+			add(lblMsg, "cell 0 6,alignx center,aligny center");
 			lblMsg.setVisible(false);
 
 		}

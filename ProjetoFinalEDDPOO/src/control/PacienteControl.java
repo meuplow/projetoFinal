@@ -83,7 +83,11 @@ public class PacienteControl implements ActionListener {
 			this.j.getTcon().getLblMsg().setVisible(true);
 		}
 		if(e.getActionCommand().equals("ChamarProx")) {
-			this.j.getTsenhas().getFieldSenha().setText(Integer.toString(filaAtd.head().getObjeto().getSenha()));		
+			if(filaAtd.isEmpty()) {
+				this.j.getTsenhas().getFieldSenha().setText("Não há nenhum paciente");
+			}else {
+				this.j.getTsenhas().getFieldSenha().setText(Integer.toString(filaAtd.head().getObjeto().getSenha()));
+			}
 		}
 		if(e.getActionCommand().equals("Limpar")){
 			this.j.getTcad().limparTela();

@@ -32,7 +32,7 @@ public class TelaConsulta extends JPanel {
 
 		JPanel painelCentro = new JPanel();
 		add(painelCentro, BorderLayout.CENTER);
-		painelCentro.setLayout(new MigLayout("", "[grow]", "15[]50[]15[]30[]15[]"));
+		painelCentro.setLayout(new MigLayout("", "[grow]", "15[]30[]15[]30[]15[]"));
 
 		JLabel lblCpf = new JLabel("CPF");
 		lblCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));

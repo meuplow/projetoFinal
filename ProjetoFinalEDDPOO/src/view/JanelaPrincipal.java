@@ -75,7 +75,7 @@ public class JanelaPrincipal extends JFrame {
 	 */
 	public JanelaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 320);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
