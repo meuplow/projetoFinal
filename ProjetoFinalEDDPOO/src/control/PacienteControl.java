@@ -19,6 +19,7 @@ public class PacienteControl implements ActionListener {
 	private FilaAtendimentos filaAtd;
 	private Atendimento atd;
 	private PacienteDAO pdao;
+	private Paciente aux;
 	
 	public PacienteControl(JanelaPrincipal j, Paciente p) {
 		super();
@@ -70,9 +71,7 @@ public class PacienteControl implements ActionListener {
 			this.j.repaint();
 		}
 		if(e.getActionCommand().equals("Cadastrar")){
-			this.p.setNome(this.j.getTcad().getFieldNome().getText());
-			this.p.setCpf(this.j.getTcad().getFieldCpf().getText());
-			this.p.setData(this.j.getTcad().getFieldData().getText());
+			p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(), this.j.getTcad().getFieldData().getText());
 			pdao.cadPaciente(p);
 			this.j.getTcad().getLblMsg().setVisible(true);
 			this.lista.adiciona(p);
@@ -81,7 +80,12 @@ public class PacienteControl implements ActionListener {
 			if(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText())!=null) {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
+				aux = this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText());
+				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()));
+				lista.imprimirListaNome();
 			}else {
+				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()));
+				lista.imprimirListaNome();
 				this.j.setContentPane(this.j.getTcad());
 				this.j.revalidate();
 				this.j.repaint();
@@ -89,7 +93,7 @@ public class PacienteControl implements ActionListener {
 		}
 		if(e.getActionCommand().equals("Confirmar")) {
 			Random rand = new Random();
-			atd = new Atendimento(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()), rand.nextInt(100000));
+			atd = new Atendimento(aux, rand.nextInt(100000));
 			filaAtd.enqueue(atd);
 			this.j.getTcon().getLblMsg().setVisible(true);
 		}
@@ -98,7 +102,7 @@ public class PacienteControl implements ActionListener {
 				this.j.getTsenhas().getFieldSenha().setText("Não há nenhum paciente");
 			}else {
 				this.j.getTsenhas().getFieldSenha().setText(Integer.toString(filaAtd.head().getObjeto().getSenha()));
-				this.j.getTtriagem().getLblNome().setText("Nome do paciente: "+filaAtd.head().getObjeto().getPaciente().getNome());
+				this.j.getTtriagem().getLblNome().setText("Nome do paciente: "+filaAtd.head().getObjeto().getPaciente().getCpf());
 				this.j.getTtriagem().getLblNome().setVisible(true);
 			}
 		}

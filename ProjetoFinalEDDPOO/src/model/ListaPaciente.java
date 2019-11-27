@@ -44,8 +44,8 @@ public class ListaPaciente {
 			}
 		}
 	}
-
-	/*public Paciente buscarPaciente(String cpf) {
+	/*
+	public Paciente buscarPaciente(String cpf) {
 		if(!estaVazia()){
 			NoPaciente aux = this.primeiro;
 			while(aux.getProximo()!=null) {
@@ -65,18 +65,18 @@ public class ListaPaciente {
 					}
 				}
 			}*/
-	/*	}	
+		/*}	
 		return null;
 	}*/
 	
 	public Paciente buscarPaciente(String cpf) {
-        for(NoPaciente aux = this.primeiro; aux != null; aux = aux.getProximo()){
+        for(NoPaciente aux = primeiro; aux != null; aux = aux.getProximo()){
             if (aux.getObjeto().getCpf() == cpf)
                 return aux.getObjeto();
         }
         return null;
     }
-
+	
 	public void imprimirListaNome() {
 		NoPaciente aux = this.primeiro;
 		while (aux != null) {
