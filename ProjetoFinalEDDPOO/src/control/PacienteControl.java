@@ -80,12 +80,8 @@ public class PacienteControl implements ActionListener {
 			if(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText())!=null) {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
-				aux = this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText());
-				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()));
-				lista.imprimirListaNome();
+				aux = this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText());			
 			}else {
-				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()));
-				lista.imprimirListaNome();
 				this.j.setContentPane(this.j.getTcad());
 				this.j.revalidate();
 				this.j.repaint();
