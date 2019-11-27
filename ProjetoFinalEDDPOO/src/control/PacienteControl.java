@@ -72,7 +72,7 @@ public class PacienteControl implements ActionListener {
 		}
 		if(e.getActionCommand().equals("menuTriagem")){
 			this.j.setContentPane(this.j.getTtriagem());
-			this.j.setBounds(100, 100, 600, 450);
+			this.j.setBounds(100, 100, 600, 500);
 			this.j.revalidate();
 			this.j.repaint();
 		}

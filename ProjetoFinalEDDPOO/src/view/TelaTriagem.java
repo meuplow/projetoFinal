@@ -32,7 +32,7 @@ public class TelaTriagem extends JPanel {
 	private JRadioButton checkUmProcedimento;
 
 	public TelaTriagem() {
-		setBounds(100, 100, 600, 450);
+		setBounds(100, 100, 600, 500);
 		setLayout(new MigLayout("", "[grow]", "[]10[]10[][][]20[][][][]15[]15[]20[][]"));
 		
 		painelNorte = new JPanel();
