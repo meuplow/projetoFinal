@@ -135,7 +135,7 @@ import java.awt.Color;
 			btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			add(btnLimpar, "cell 0 5,alignx center,growy");
 			
-			lblMsg = new JLabel("Paciente cadastrado com sucesso!");
+			lblMsg = new JLabel("Paciente cadastrado com sucesso");
 			lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 13));
 			add(lblMsg, "cell 0 6,alignx center,aligny center");
 			lblMsg.setVisible(false);
