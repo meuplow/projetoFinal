@@ -29,9 +29,6 @@ public class TelaTriagem extends JPanel {
 	private JPanel painelNorte;
 	private JLabel lblTriagem;
 
-	/**
-	 * Create the panel.
-	 */
 	public TelaTriagem() {
 		setBounds(100, 100, 600, 400);
 		setLayout(new MigLayout("", "[grow]", "[]10[][][]20[][][][]15[]20[][]"));
@@ -144,7 +141,6 @@ public class TelaTriagem extends JPanel {
 		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		add(lblMsg, "cell 0 10,alignx center");
 		lblMsg.setVisible(false);
-
 	}
 
 	public JTextField getFieldFrequenciaCardiaca() {

@@ -119,13 +119,13 @@ public class JanelaPrincipal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[]", "[]"));
+		contentPane.setLayout(new BorderLayout(0, 0));
 		setTitle("Hospital Santa Casa dos Informatas");
 		
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();
 		tsenhas = new TelaDeSenhas();
-		ttriagem = new TelaTriagem();
+		//ttriagem = new TelaTriagem();
 	}
 
 }
