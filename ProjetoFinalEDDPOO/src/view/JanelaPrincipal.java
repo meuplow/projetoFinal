@@ -10,6 +10,9 @@ import javax.swing.JMenuBar;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
 
 public class JanelaPrincipal extends JFrame {
 
@@ -22,6 +25,12 @@ public class JanelaPrincipal extends JFrame {
 	private TelaConsulta tcon;
 	private TelaDeSenhas tsenhas;
 	private TelaTriagem ttriagem;
+	private JPanel painelCentro;
+	private JLabel lblBemVindo;
+	private JMenuItem mntmIncio;
+	private JLabel lblAviso;
+	private JLabel lblAviso2;
+	private JButton btnEncerrar;
 	
 	public JMenuItem getMntmCadastrar() {
 		return mntmCadastrar;
@@ -87,9 +96,14 @@ public class JanelaPrincipal extends JFrame {
 		this.ttriagem = ttriagem;
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	public JButton getBtnEncerrar() {
+		return btnEncerrar;
+	}
+
+	public void setBtnEncerrar(JButton btnEncerrar) {
+		this.btnEncerrar = btnEncerrar;
+	}
+
 	public JanelaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 320);
@@ -97,8 +111,11 @@ public class JanelaPrincipal extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnArquivo = new JMenu("Arquivo");
+		JMenu mnArquivo = new JMenu("Opera\u00E7\u00F5es");
 		menuBar.add(mnArquivo);
+		
+		mntmIncio = new JMenuItem("In\u00EDcio");
+		mnArquivo.add(mntmIncio);
 		
 		mntmCadastrar = new JMenuItem("Cadastrar");
 		mntmCadastrar.setActionCommand("menuCad");
@@ -120,12 +137,32 @@ public class JanelaPrincipal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		painelCentro = new JPanel();
+		contentPane.add(painelCentro, BorderLayout.CENTER);
+		painelCentro.setLayout(new MigLayout("", "[grow]", "[][][][]50[][]"));
+		
+		lblBemVindo = new JLabel("Bem-vindo ao HSCI");
+		lblBemVindo.setFont(new Font("Tahoma", Font.BOLD, 25));
+		painelCentro.add(lblBemVindo, "cell 0 0,alignx center");
+		
+		lblAviso = new JLabel("Utilize o menu \"Opera\u00E7\u00F5es\", no canto superior esquerdo,");
+		lblAviso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		painelCentro.add(lblAviso, "cell 0 2,alignx center");
+		
+		lblAviso2 = new JLabel(" para realizar as tarefas do dia");
+		lblAviso2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		painelCentro.add(lblAviso2, "cell 0 3,alignx center");
+		
+		btnEncerrar = new JButton("Encerrar");
+		btnEncerrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		painelCentro.add(btnEncerrar, "cell 0 5,alignx right");
 		setTitle("Hospital Santa Casa dos Informatas");
 		
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();
 		tsenhas = new TelaDeSenhas();
-		//ttriagem = new TelaTriagem();
+		ttriagem = new TelaTriagem();
 	}
 
 }

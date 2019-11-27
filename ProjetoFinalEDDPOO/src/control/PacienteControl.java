@@ -103,6 +103,10 @@ public class PacienteControl implements ActionListener {
 			this.j.getTcad().limparTela();
 			this.j.getTcon().limparTela();
 		}
+	
+		if(e.getActionCommand().equals("Encerrar")) {
+			System.exit(0);
+		}
 	}
 
 }
