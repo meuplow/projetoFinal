@@ -11,7 +11,7 @@ public class Aplicacao {
 		
 		Paciente p2 = new Paciente("Andre", 03020505207, "20-04-01");
 		l1.adiciona(p1);
-		l1.adiciona(p2);
+		l1.adiciona(p2);aa
 		
 		Paciente p3 = new Paciente("Tobias", 02220505207, "20-06-01");
 		l1.adiciona(p3);
