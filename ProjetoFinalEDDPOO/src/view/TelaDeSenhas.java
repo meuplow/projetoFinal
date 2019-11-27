@@ -12,6 +12,22 @@ public class TelaDeSenhas extends JPanel {
 	private JTextField fieldSenha;
 	private JButton btnChamarProx;
 
+	public TelaDeSenhas() {
+		setBounds(100, 100, 450, 300);
+		setLayout(new MigLayout("", "[grow]", "100[]50[]"));
+
+		fieldSenha = new JTextField();
+		fieldSenha.setEditable(false);
+		fieldSenha.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		add(fieldSenha, "cell 0 0,growx");
+		fieldSenha.setColumns(10);
+
+		btnChamarProx = new JButton("Chamar pr\u00F3xima senha");
+		btnChamarProx.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		add(btnChamarProx, "cell 0 1,alignx center");
+		btnChamarProx.setActionCommand("ChamarProx");
+	}
+
 	public JTextField getFieldSenha() {
 		return fieldSenha;
 	}
@@ -26,23 +42,5 @@ public class TelaDeSenhas extends JPanel {
 
 	public void setBtnChamarProx(JButton btnChamarProx) {
 		this.btnChamarProx = btnChamarProx;
-	}
-
-
-	/**
-	 * Create the panel.
-	 */
-	public TelaDeSenhas() {
-		setLayout(new MigLayout("", "[grow]", "[][][][][][][]"));	
-		fieldSenha = new JTextField();
-		fieldSenha.setEditable(false);
-		fieldSenha.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		add(fieldSenha, "cell 0 2,growx");
-		fieldSenha.setColumns(10);
-		
-		btnChamarProx = new JButton("Chamar pr\u00F3xima senha");
-		add(btnChamarProx, "cell 0 6,alignx center");
-		btnChamarProx.setActionCommand("ChamarProx");
-		
 	}
 }
