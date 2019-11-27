@@ -19,7 +19,6 @@ public class PacienteControl implements ActionListener {
 	private FilaAtendimentos filaAtd;
 	private Atendimento atd;
 	private PacienteDAO pdao;
-	private Paciente aux;
 	
 	public PacienteControl(JanelaPrincipal j, Paciente p) {
 		super();
@@ -80,7 +79,8 @@ public class PacienteControl implements ActionListener {
 			if(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText())!=null) {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
-				aux = this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText());			
+				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
+				lista.imprimirListaNome();
 			}else {
 				this.j.setContentPane(this.j.getTcad());
 				this.j.revalidate();
@@ -89,7 +89,7 @@ public class PacienteControl implements ActionListener {
 		}
 		if(e.getActionCommand().equals("Confirmar")) {
 			Random rand = new Random();
-			atd = new Atendimento(aux, rand.nextInt(100000));
+			atd = new Atendimento(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()), rand.nextInt(100000));
 			filaAtd.enqueue(atd);
 			this.j.getTcon().getLblMsg().setVisible(true);
 		}

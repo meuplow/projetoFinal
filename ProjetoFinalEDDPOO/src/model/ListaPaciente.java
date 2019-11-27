@@ -46,12 +46,12 @@ public class ListaPaciente {
 	}
 	
 	public Paciente buscarPaciente(String cpf) {
-		if(this.primeiro.getObjeto().getCpf().equals(cpf)){
+		if(this.primeiro.getObjeto().getCpf().equalsIgnoreCase(cpf)){
 			return this.primeiro.getObjeto();
 		}else {
 			NoPaciente aux = this.primeiro;
-			while(aux.getProximo() != null) {
-				if(aux.getObjeto().getCpf().equals(cpf)) {
+			while(aux != null) {
+				if(aux.getObjeto().getCpf().equalsIgnoreCase(cpf)) {
 					return aux.getObjeto();
 				}
 				aux = aux.getProximo();
@@ -59,38 +59,6 @@ public class ListaPaciente {
 			return null;
 		}
 	}
-	/*
-	public Paciente buscarPaciente(String cpf) {
-		if(!estaVazia()){
-			NoPaciente aux = this.primeiro;
-			while(aux.getProximo()!=null) {
-				if(aux.getObjeto().getCpf().equalsIgnoreCase(cpf)){
-					return aux.getObjeto();
-				}aux = aux.getProximo();
-			}/*
-			if (this.primeiro.getObjeto().getCpf().equals(cpf)) {
-				return this.primeiro.getObjeto();
-			} else {
-				NoPaciente auxP = this.primeiro;
-				while (auxP.getProximo() != null) {
-					if (auxP.getObjeto().getCpf().equals(cpf)) {
-						return auxP.getObjeto();
-					} else {
-						auxP = auxP.getProximo();
-					}
-				}
-			}*/
-		/*}	
-		return null;
-	}*/
-	
-//	public Paciente buscarPaciente(String cpf) {
-//        for(NoPaciente aux = primeiro; aux != null; aux = aux.getProximo()){
-//            if (aux.getObjeto().getCpf() == cpf)
-//                return aux.getObjeto();
-//        }
-//        return null;
-//    }
 	
 	public void imprimirListaNome() {
 		NoPaciente aux = this.primeiro;
