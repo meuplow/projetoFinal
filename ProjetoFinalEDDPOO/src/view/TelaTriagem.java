@@ -26,33 +26,38 @@ public class TelaTriagem extends JPanel {
 	private JRadioButton checkEstavel;
 	private JButton btnDirecionar;
 	private JLabel lblMsg;
+	private JPanel painelNorte;
+	private JLabel lblTriagem;
 
 	/**
 	 * Create the panel.
 	 */
 	public TelaTriagem() {
 		setBounds(100, 100, 600, 400);
-		setLayout(new MigLayout("", "[grow]", "[][]15[][]15[][][][][]15[][]15[]10[]10[]"));
+		setLayout(new MigLayout("", "[grow]", "[]10[][][]20[][][][]15[]20[][]"));
+		
+		painelNorte = new JPanel();
+		add(painelNorte, "cell 0 0,grow");
+		
+		lblTriagem = new JLabel("Triagem");
+		lblTriagem.setFont(new Font("Tahoma", Font.BOLD, 20));
+		painelNorte.add(lblTriagem);
 
-		JLabel lblPri1 = new JLabel("Fila de Prioridade 1 - O paciente se encontra:");
+		JLabel lblPri1 = new JLabel("O paciente se encontra:");
 		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		add(lblPri1, "cell 0 0");
-
-		checkEntubado = new JRadioButton("entubado");
-		checkEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkEntubado, "flowx,cell 0 1,growx");
+		add(lblPri1, "cell 0 1");
+		
+				checkEntubado = new JRadioButton("entubado");
+				checkEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
+				add(checkEntubado, "flowx,cell 0 2,growx");
 
 		checkApneia = new JRadioButton("com apneia");
 		checkApneia.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkApneia, "cell 0 1,growx");
+		add(checkApneia, "cell 0 2,growx");
 
 		checkPulso = new JRadioButton("sem pulso ou sem rea\u00E7\u00E3o");
 		checkPulso.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkPulso, "cell 0 1,growx");
-
-		JLabel lblPri2 = new JLabel("Fila de Prioridade 2 - O paciente se encontra:");
-		lblPri2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		add(lblPri2, "cell 0 2");
+		add(checkPulso, "cell 0 2,growx");
 
 		checkSitRis = new JRadioButton("situa\u00E7\u00E3o de risco");
 		checkSitRis.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -74,78 +79,70 @@ public class TelaTriagem extends JPanel {
 		checkDor.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(checkDor, "cell 0 3,growx");
 
-		JLabel lblPri3e4 = new JLabel("Fila de Prioridade 3 e 4");
-		lblPri3e4.setFont(new Font("Tahoma", Font.BOLD, 14));
-		add(lblPri3e4, "cell 0 4");
-
 		checkOutrosProcedimentos = new JRadioButton("O paciente precisa realizar outros procedimentos");
 		checkOutrosProcedimentos.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkOutrosProcedimentos, "cell 0 5");
+		add(checkOutrosProcedimentos, "cell 0 4");
 
-		JLabel lblInformeOsSeguintes = new JLabel("Informe os seguintes itens:");
+		JLabel lblInformeOsSeguintes = new JLabel("Informe os seguintes dados:");
 		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 13));
-		add(lblInformeOsSeguintes, "cell 0 6");
+		add(lblInformeOsSeguintes, "cell 0 5");
 
 		JLabel lblFrequenciaCardiaca = new JLabel("Frequ\u00EAncia card\u00EDaca");
 		lblFrequenciaCardiaca.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(lblFrequenciaCardiaca, "flowx,cell 0 7,growx");
+		add(lblFrequenciaCardiaca, "flowx,cell 0 6,growx");
 
 		fieldFrequenciaCardiaca = new JTextField();
 		fieldFrequenciaCardiaca.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(fieldFrequenciaCardiaca, "cell 0 7,growx");
+		add(fieldFrequenciaCardiaca, "cell 0 6,growx");
 		fieldFrequenciaCardiaca.setColumns(10);
 
 		JLabel lblFrequenciaRespiratoria = new JLabel("Frequ\u00EAncia respirat\u00F3ria");
 		lblFrequenciaRespiratoria.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(lblFrequenciaRespiratoria, "cell 0 7,growx");
+		add(lblFrequenciaRespiratoria, "cell 0 6,growx");
 
 		fieldFrequenciaRespiratoria = new JTextField();
 		fieldFrequenciaRespiratoria.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(fieldFrequenciaRespiratoria, "cell 0 7,growx");
+		add(fieldFrequenciaRespiratoria, "cell 0 6,growx");
 		fieldFrequenciaRespiratoria.setColumns(10);
 
 		JLabel lblTemperaturaCorporal = new JLabel("Temperatura corporal");
 		lblTemperaturaCorporal.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(lblTemperaturaCorporal, "cell 0 7,growx");
+		add(lblTemperaturaCorporal, "cell 0 6,growx");
 
 		fieldTemperatura = new JTextField();
 		fieldTemperatura.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(fieldTemperatura, "cell 0 7,growx");
+		add(fieldTemperatura, "cell 0 6,growx");
 		fieldTemperatura.setColumns(10);
 
 		JLabel lblOximetriaDoPulso = new JLabel("Oximetria do pulso");
 		lblOximetriaDoPulso.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(lblOximetriaDoPulso, "flowx,cell 0 8,growx");
+		add(lblOximetriaDoPulso, "flowx,cell 0 7,growx");
 
 		fieldOximetria = new JTextField();
 		fieldOximetria.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(fieldOximetria, "cell 0 8,growx");
+		add(fieldOximetria, "cell 0 7,growx");
 		fieldOximetria.setColumns(10);
 
 		JLabel lblIndiceDePico = new JLabel("\u00CDndice de pico do fluxo respirat\u00F3rio");
 		lblIndiceDePico.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(lblIndiceDePico, "cell 0 8,growx");
+		add(lblIndiceDePico, "cell 0 7,growx");
 
 		fieldIndice = new JTextField();
 		fieldIndice.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(fieldIndice, "cell 0 8,growx");
+		add(fieldIndice, "cell 0 7,growx");
 		fieldIndice.setColumns(10);
-
-		JLabel lblPri5 = new JLabel("Fila de Prioridade 5");
-		lblPri5.setFont(new Font("Tahoma", Font.BOLD, 14));
-		add(lblPri5, "cell 0 9");
 
 		checkEstavel = new JRadioButton("O paciente se encontra est\u00E1vel");
 		checkEstavel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkEstavel, "cell 0 10");
+		add(checkEstavel, "cell 0 8");
 
 		btnDirecionar = new JButton("Direcionar atendimento");
 		btnDirecionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(btnDirecionar, "cell 0 11,alignx center");
+		add(btnDirecionar, "cell 0 9,alignx center");
 
-		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada!");
+		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada");
 		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		add(lblMsg, "cell 0 12,alignx center");
+		add(lblMsg, "cell 0 10,alignx center");
 		lblMsg.setVisible(false);
 
 	}
