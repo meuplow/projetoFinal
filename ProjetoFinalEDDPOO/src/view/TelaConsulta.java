@@ -12,6 +12,8 @@ public class TelaConsulta extends JPanel {
 	private JButton btnBuscar; 
 	private JButton btnLimpar; 
 	private JLabel lblMsg;
+	private JButton btnConfirmacao;
+	private JLabel lblResultadoBusca;
 
 	public JTextField getFieldCpf() {
 		return fieldCpf;
@@ -38,6 +40,14 @@ public class TelaConsulta extends JPanel {
 		this.btnLimpar = btnLimpar;
 	}
 	
+	public JButton getBtnConfirmacao() {
+		return btnConfirmacao;
+	}
+
+	public void setBtnConfirmacao(JButton btnConfirmacao) {
+		this.btnConfirmacao = btnConfirmacao;
+	}
+	
 	public void limparTela(){
 		fieldCpf.setText("");
 	}
@@ -51,13 +61,20 @@ public class TelaConsulta extends JPanel {
 	public void setLblMsg(JLabel lblMsg) {
 		this.lblMsg = lblMsg;
 	}
+	
+	public JLabel getLblResultadoBusca() {
+		return lblResultadoBusca;
+	}
 
+	public void setLblResultadoBusca(JLabel lblResultadoBusca) {
+		this.lblResultadoBusca = lblResultadoBusca;
+	}
 
 	/**
 	 * Create the panel.
 	 */
 	public TelaConsulta() {
-		setLayout(new MigLayout("", "[]", "[][][][][][][][]"));
+		setLayout(new MigLayout("", "[]", "[][][][][][][][][]"));
 		
 		JLabel lblTituloBusca = new JLabel("Busca de Paciente");
 		lblTituloBusca.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -77,8 +94,17 @@ public class TelaConsulta extends JPanel {
 		btnLimpar = new JButton("Limpar");
 		add(btnLimpar, "cell 0 5,alignx center,aligny center");
 		
+		btnConfirmacao = new JButton("Iniciar atendimento?");
+		btnConfirmacao.setVisible(false);
+		btnConfirmacao.setActionCommand("Confirmar");
+		add(btnConfirmacao, "cell 0 7,alignx center,aligny center");
+		
+		lblResultadoBusca = new JLabel("Paciente encontrado");
+		add(lblResultadoBusca, "cell 0 6,alignx center");
+		lblResultadoBusca.setVisible(false);
+		
 		lblMsg = new JLabel("Paciente encaminhado para fila de atendimento");
-		add(lblMsg, "cell 0 7");
+		add(lblMsg, "cell 0 8");
 		lblMsg.setVisible(false);
 	}
 

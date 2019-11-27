@@ -5,11 +5,11 @@ import java.util.Date;
 
 public class Atendimento {
 	private int senha;
-	private String paciente;
+	private Paciente paciente;
 	private Date data;
 	private Date hora;
 	
-	public Atendimento(String cpf, int senha) {
+	public Atendimento(Paciente cpf, int senha) {
 		Date dataAtual = new Date();
 		this.senha = senha;
 		this.paciente = cpf;
@@ -17,6 +17,8 @@ public class Atendimento {
 		this.hora = dataAtual;
 	}
 	
+	public Atendimento() {
+	}
 	
 	public int getSenha() {
 		return senha;
@@ -26,11 +28,11 @@ public class Atendimento {
 		this.senha = senha;
 	}
 
-	public String getPaciente() {
+	public Paciente getPaciente() {
 		return paciente;
 	}
 
-	public void setPaciente(String paciente) {
+	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
 

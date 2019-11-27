@@ -16,10 +16,10 @@ public class JanelaPrincipal extends JFrame {
 	private JPanel contentPane;
 	private JMenuItem mntmCadastrar;
 	private JMenuItem mntmConsultar;
-	private JMenuItem mntmAtendimento;
+	private JMenuItem mntmSenhas;
 	private TelaCadastro tcad;
 	private TelaConsulta tcon;
-	private TelaAtendimento tatd;
+	private TelaDeSenhas tsenhas;
 	
 	public JMenuItem getMntmCadastrar() {
 		return mntmCadastrar;
@@ -37,12 +37,12 @@ public class JanelaPrincipal extends JFrame {
 		this.mntmConsultar = mntmConsultar;
 	}
 	
-	public JMenuItem getMntmAtendimento() {
-		return mntmAtendimento;
+	public JMenuItem getMntmSenhas() {
+		return mntmSenhas;
 	}
 
-	public void setMntmAtendimento(JMenuItem mntmAtendimento) {
-		this.mntmAtendimento = mntmAtendimento;
+	public void setMntmSenhas(JMenuItem mntmSenhas) {
+		this.mntmSenhas = mntmSenhas;
 	}
 
 	public TelaCadastro getTcad() {
@@ -61,12 +61,12 @@ public class JanelaPrincipal extends JFrame {
 		this.tcon = tcon;
 	}
 	
-	public TelaAtendimento getTatd() {
-		return tatd;
+	public TelaDeSenhas getTsenhas() {
+		return tsenhas;
 	}
 
-	public void setTatd(TelaAtendimento tatd) {
-		this.tatd = tatd;
+	public void setTsenhas(TelaDeSenhas tsenhas) {
+		this.tsenhas = tsenhas;
 	}
 	
 
@@ -91,9 +91,9 @@ public class JanelaPrincipal extends JFrame {
 		mntmConsultar.setActionCommand("menuCon");
 		mnArquivo.add(mntmConsultar);
 		
-		mntmAtendimento = new JMenuItem("Atendimento");
-		mntmAtendimento.setActionCommand("menuAtd");
-		mnArquivo.add(mntmAtendimento);
+		mntmSenhas = new JMenuItem("Painel de senhas");
+		mntmSenhas.setActionCommand("menuSen");
+		mnArquivo.add(mntmSenhas);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -102,7 +102,7 @@ public class JanelaPrincipal extends JFrame {
 		
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();
-		tatd = new TelaAtendimento();
+		tsenhas = new TelaDeSenhas();
 	}
 
 }
