@@ -47,9 +47,9 @@ public class TelaTriagem extends JPanel {
 		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		add(lblPri1, "cell 0 1");
 		
-				checkEntubado = new JRadioButton("entubado");
-				checkEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
-				add(checkEntubado, "flowx,cell 0 2,growx");
+		checkEntubado = new JRadioButton("entubado");
+		checkEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(checkEntubado, "flowx,cell 0 2,growx");
 
 		checkApneia = new JRadioButton("com apneia");
 		checkApneia.setFont(new Font("Tahoma", Font.PLAIN, 13));

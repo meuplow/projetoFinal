@@ -17,9 +17,11 @@ public class JanelaPrincipal extends JFrame {
 	private JMenuItem mntmCadastrar;
 	private JMenuItem mntmConsultar;
 	private JMenuItem mntmSenhas;
+	private JMenuItem mntmTriagem;
 	private TelaCadastro tcad;
 	private TelaConsulta tcon;
 	private TelaDeSenhas tsenhas;
+	private TelaTriagem ttriagem;
 	
 	public JMenuItem getMntmCadastrar() {
 		return mntmCadastrar;
@@ -43,6 +45,14 @@ public class JanelaPrincipal extends JFrame {
 
 	public void setMntmSenhas(JMenuItem mntmSenhas) {
 		this.mntmSenhas = mntmSenhas;
+	}
+	
+	public JMenuItem getMntmTriagem() {
+		return mntmTriagem;
+	}
+
+	public void setMntmTriagem(JMenuItem mntmTriagem) {
+		this.mntmTriagem = mntmTriagem;
 	}
 
 	public TelaCadastro getTcad() {
@@ -69,6 +79,13 @@ public class JanelaPrincipal extends JFrame {
 		this.tsenhas = tsenhas;
 	}
 	
+	public TelaTriagem getTtriagem() {
+		return ttriagem;
+	}
+
+	public void setTtriagem(TelaTriagem ttriagem) {
+		this.ttriagem = ttriagem;
+	}
 
 	/**
 	 * Create the frame.
@@ -95,6 +112,10 @@ public class JanelaPrincipal extends JFrame {
 		mntmSenhas.setActionCommand("menuSen");
 		mnArquivo.add(mntmSenhas);
 		
+		mntmTriagem = new JMenuItem("Triagem");
+		mntmTriagem.setActionCommand("menuTriagem");
+		mnArquivo.add(mntmTriagem);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -103,6 +124,7 @@ public class JanelaPrincipal extends JFrame {
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();
 		tsenhas = new TelaDeSenhas();
+		ttriagem = new TelaTriagem();
 	}
 
 }
