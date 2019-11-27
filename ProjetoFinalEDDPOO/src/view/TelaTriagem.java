@@ -23,17 +23,18 @@ public class TelaTriagem extends JPanel {
 	private JRadioButton checkDesorientado;
 	private JRadioButton checkLetargico;
 	private JRadioButton checkDor;
-	private JRadioButton checkOutrosProcedimentos;
+	private JRadioButton checkMultiplosProcedimentos;
 	private JRadioButton checkEstavel;
 	private JButton btnDirecionar;
 	private JLabel lblMsg;
 	private JPanel painelNorte;
 	private JLabel lblTriagem;
 	private JLabel lblNome;
+	private JRadioButton checkUmProcedimento;
 
 	public TelaTriagem() {
 		setBounds(100, 100, 600, 450);
-		setLayout(new MigLayout("", "[grow]", "[]10[]10[][][]20[][][][]15[]20[][]"));
+		setLayout(new MigLayout("", "[grow]", "[]10[]10[][][]20[][][][]15[]15[]20[][]"));
 		
 		painelNorte = new JPanel();
 		add(painelNorte, "cell 0 0,grow");
@@ -83,11 +84,11 @@ public class TelaTriagem extends JPanel {
 		checkDor.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(checkDor, "cell 0 4,growx");
 
-		checkOutrosProcedimentos = new JRadioButton("O paciente precisa realizar outros procedimentos");
-		checkOutrosProcedimentos.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkOutrosProcedimentos, "cell 0 5");
+		checkMultiplosProcedimentos = new JRadioButton("O paciente precisa realizar m\u00FAltiplos procedimentos");
+		checkMultiplosProcedimentos.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(checkMultiplosProcedimentos, "cell 0 5");
 
-		JLabel lblInformeOsSeguintes = new JLabel("Informe os seguintes dados:");
+		JLabel lblInformeOsSeguintes = new JLabel("Informe os seguintes dados, caso o paciente necessita realizar m\u00FAltiplos procedimentos:");
 		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 13));
 		add(lblInformeOsSeguintes, "cell 0 6");
 
@@ -135,18 +136,22 @@ public class TelaTriagem extends JPanel {
 		fieldIndice.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(fieldIndice, "cell 0 8,growx");
 		fieldIndice.setColumns(10);
+		
+		checkUmProcedimento = new JRadioButton("O paciente precisa realizar APENAS um outro procedimento");
+		checkUmProcedimento.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		add(checkUmProcedimento, "cell 0 9");
 
 		checkEstavel = new JRadioButton("O paciente se encontra est\u00E1vel");
 		checkEstavel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(checkEstavel, "cell 0 9");
+		add(checkEstavel, "cell 0 10");
 
 		btnDirecionar = new JButton("Direcionar atendimento");
 		btnDirecionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		add(btnDirecionar, "cell 0 10,alignx center");
+		add(btnDirecionar, "cell 0 11,alignx center");
 
 		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada");
 		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		add(lblMsg, "cell 0 11,alignx center");
+		add(lblMsg, "cell 0 12,alignx center");
 		lblMsg.setVisible(true);
 	}
 	
@@ -263,11 +268,11 @@ public class TelaTriagem extends JPanel {
 	}
 
 	public JRadioButton getCheckOutrosProcedimentos() {
-		return checkOutrosProcedimentos;
+		return checkMultiplosProcedimentos;
 	}
 
 	public void setCheckOutrosProcedimentos(JRadioButton checkOutrosProcedimentos) {
-		this.checkOutrosProcedimentos = checkOutrosProcedimentos;
+		this.checkMultiplosProcedimentos = checkOutrosProcedimentos;
 	}
 
 	public JRadioButton getCheckEstavel() {
