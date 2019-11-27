@@ -28,6 +28,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getMntmConsultar().addActionListener(this);
 		this.j.getMntmSenhas().addActionListener(this);
 		this.j.getMntmTriagem().addActionListener(this);
+		this.j.getBtnEncerrar().addActionListener(this);
 		this.j.getTcad().getBtnCadastrar().addActionListener(this);
 		this.j.getTcon().getBtnBuscar().addActionListener(this);
 		this.j.getTcon().getBtnLimpar().addActionListener(this);
@@ -64,7 +65,7 @@ public class PacienteControl implements ActionListener {
 		}
 		if(e.getActionCommand().equals("menuTriagem")){
 			this.j.setContentPane(this.j.getTtriagem());
-			this.j.setBounds(100, 100, 600, 400);
+			this.j.setBounds(100, 100, 600, 450);
 			this.j.revalidate();
 			this.j.repaint();
 		}
@@ -97,13 +98,14 @@ public class PacienteControl implements ActionListener {
 				this.j.getTsenhas().getFieldSenha().setText("Não há nenhum paciente");
 			}else {
 				this.j.getTsenhas().getFieldSenha().setText(Integer.toString(filaAtd.head().getObjeto().getSenha()));
+				this.j.getTtriagem().getLblNome().setText("Nome do paciente: "+filaAtd.head().getObjeto().getPaciente().getNome());
+				this.j.getTtriagem().getLblNome().setVisible(true);
 			}
 		}
 		if(e.getActionCommand().equals("Limpar")){
 			this.j.getTcad().limparTela();
 			this.j.getTcon().limparTela();
 		}
-	
 		if(e.getActionCommand().equals("Encerrar")) {
 			System.exit(0);
 		}
