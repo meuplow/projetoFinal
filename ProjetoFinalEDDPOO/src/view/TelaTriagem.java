@@ -1,4 +1,3 @@
-//aaa
 package view;
 
 import javax.swing.JPanel;
