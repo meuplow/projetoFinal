@@ -36,6 +36,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getTcad().getBtnLimpar().addActionListener(this);
 		this.j.getTcon().getBtnConfirmacao().addActionListener(this);
 		this.j.getTsenhas().getBtnChamarProx().addActionListener(this);
+		this.j.getTtriagem().getBtnDirecionar().addActionListener(this);
 		pdao = new PacienteDAO();
 		lista = new ListaPaciente();
 		filaAtd = new FilaAtendimentos();
@@ -108,6 +109,9 @@ public class PacienteControl implements ActionListener {
 				this.j.getTtriagem().getLblNome().setText("Nome do paciente: "+filaAtd.head().getObjeto().getPaciente().getCpf());
 				this.j.getTtriagem().getLblNome().setVisible(true);
 			}
+		}
+		if(e.getActionCommand().equals("Direcionar")) {
+			//this.j.getTtriagem().getCheckEntubado().get
 		}
 		if(e.getActionCommand().equals("Limpar")){
 			this.j.getTcad().limparTela();
