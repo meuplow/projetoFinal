@@ -98,20 +98,26 @@ public class PacienteControl implements ActionListener {
 			this.j.repaint();
 		}
 		if (e.getActionCommand().equals("Cadastrar")) {
-			p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(),
-					this.j.getTcad().getFieldData().getText());
-			pdao.cadPaciente(p);
-			this.j.getTcad().getLblMsg().setVisible(true);
-			this.lista.adiciona(p);
-//			this.j.getTcad().limparFields();
+			if(this.j.getTcad().getFieldNome().getText().equals("")||this.j.getTcad().getFieldCpf().getText().equals("")||this.j.getTcad().getFieldData().getText().equals("")) {
+				this.j.getTcad().getLblMsg().setText("Campos em branco");
+				this.j.getTcad().getLblMsg().setVisible(true);
+			}else {
+				p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(),
+						this.j.getTcad().getFieldData().getText());
+				pdao.cadPaciente(p);
+				this.j.getTcad().getLblMsg().setText("Paciente cadastrado com sucesso");
+				this.j.getTcad().getLblMsg().setVisible(true);
+				this.lista.adiciona(p);
+				this.j.getTcad().limparFields();
+			}
 		}
 		if (e.getActionCommand().equals("Buscar")) {
 			if (this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()) != null) {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
-//				this.j.getTcad().limparFields();
-//				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
-//				lista.imprimirListaNome();
+				this.j.getTcad().limparFields();
+				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
+				lista.imprimirListaNome();
 
 			} else {
 				this.j.getTcon().limparFields();
@@ -127,7 +133,7 @@ public class PacienteControl implements ActionListener {
 			filaAtd.enqueue(atd);
 			this.j.getTcon().getLblMsg().setVisible(true);
 			this.j.getTcon().getBtnConfirmacao().setVisible(false);
-//			this.j.getTcon().limparFields();
+			this.j.getTcon().limparFields();
 		}
 		if (e.getActionCommand().equals("ChamarProx")) {
 			if (filaAtd.isEmpty()) {
@@ -190,12 +196,7 @@ public class PacienteControl implements ActionListener {
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
-				} //else {
-//					filaPri5.enqueue(filaAtd.head().getObjeto());
-//					filaAtd.dequeue();
-//					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));
-//					this.j.getTtriagem().getLblMsg().setVisible(true);
-//				}
+				}
 			} else {
 				this.j.setContentPane(this.j.getTcad());
 				this.j.setBounds(100, 100, 450, 320);
