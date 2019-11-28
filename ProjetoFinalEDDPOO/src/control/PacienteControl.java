@@ -238,6 +238,9 @@ public class PacienteControl implements ActionListener {
 					|| (filaPri5.size() > 0)) {
 				if (!filaPri1.isEmpty()) {
 					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());
+					System.out.println(filaPri1.head().getObjeto().getData());
+					System.out.println(filaPri1.head().getObjeto().retornaDateSaida());
+					filaPri1.head().getObjeto().imprimeComparacao();
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri1.dequeue();

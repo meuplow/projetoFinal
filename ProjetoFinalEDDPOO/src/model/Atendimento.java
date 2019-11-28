@@ -1,7 +1,9 @@
 package model;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Atendimento {
 	private int senha;
@@ -18,6 +20,25 @@ public class Atendimento {
 	}
 	
 	public Atendimento() {
+	}
+	
+	public Date retornaDateSaida() {
+		Date dateSaida = new Date();
+		return dateSaida;
+	}
+	
+	public long comparaDate() {
+		return retornaDateSaida().getTime()-this.data.getTime();
+	}
+	
+	public void imprimeComparacao() {
+		DecimalFormat df = new DecimalFormat("00");
+		long diffM = Math.abs(comparaDate());
+		long diffSegundos = TimeUnit.SECONDS.convert(diffM, TimeUnit.MILLISECONDS);
+		long hora = diffSegundos/3600;
+		long minuto = (diffSegundos - (hora*3600))/60;
+		long segundo = diffSegundos - (hora*3600) - (minuto*60);
+		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
 	public int getSenha() {
@@ -58,7 +79,7 @@ public class Atendimento {
 	}
 	
 	public void imprimeHoraFormatada() {
-		SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm");	
+		SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm:ss");	
 		System.out.println(horaFormatada.format(this.hora));
 	}
 }
