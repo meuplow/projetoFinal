@@ -28,16 +28,16 @@ public class Atendimento {
 	}
 	
 	public long comparaDate() {
-		return retornaDateSaida().getTime()-this.data.getTime();
+		long diferenca = Math.abs(retornaDateSaida().getTime()-this.data.getTime());
+		long diferencaSegundos = TimeUnit.SECONDS.convert(diferenca, TimeUnit.MILLISECONDS);
+		return diferencaSegundos;
 	}
 	
 	public void imprimeComparacao() {
 		DecimalFormat df = new DecimalFormat("00");
-		long diffM = Math.abs(comparaDate());
-		long diffSegundos = TimeUnit.SECONDS.convert(diffM, TimeUnit.MILLISECONDS);
-		long hora = diffSegundos/3600;
-		long minuto = (diffSegundos - (hora*3600))/60;
-		long segundo = diffSegundos - (hora*3600) - (minuto*60);
+		long hora = comparaDate()/3600;
+		long minuto = (comparaDate() - (hora*3600))/60;
+		long segundo = comparaDate() - (hora*3600) - (minuto*60);
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
