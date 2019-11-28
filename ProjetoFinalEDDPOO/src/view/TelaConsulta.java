@@ -82,6 +82,12 @@ public class TelaConsulta extends JPanel {
 		btnConfirmacao.setVisible(false);
 	}
 	
+	public void limparFields() {
+		fieldCpf.setText("");
+		lblResultadoBusca.setVisible(false);
+		btnConfirmacao.setVisible(false);
+	}
+	
 	public JTextField getFieldCpf() {
 		return fieldCpf;
 	}

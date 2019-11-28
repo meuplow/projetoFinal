@@ -193,8 +193,8 @@ public class JanelaPrincipal extends JFrame {
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();
 		tsenhas = new TelaDeSenhas();
-//		ttriagem = new TelaTriagem();
-//		tcha = new TelaChamadaAtd();
+		ttriagem = new TelaTriagem();
+		tcha = new TelaChamadaAtd();
 	}
 
 }

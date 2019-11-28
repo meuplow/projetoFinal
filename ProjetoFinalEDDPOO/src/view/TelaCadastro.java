@@ -89,6 +89,12 @@ import java.awt.Color;
 			fieldData.setText("");
 			lblMsg.setVisible(false);
 		}
+		
+		public void limparFields() {
+			fieldNome.setText("");
+			fieldCpf.setText("");
+			fieldData.setText("");
+		}
 
 		/**
 		 * Create the panel.

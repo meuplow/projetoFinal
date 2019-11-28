@@ -97,18 +97,20 @@ public class PacienteControl implements ActionListener {
 			this.j.repaint();
 		}
 		if (e.getActionCommand().equals("Cadastrar")) {
-			p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(),
-					this.j.getTcad().getFieldData().getText());
+			p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(), this.j.getTcad().getFieldData().getText());
 			pdao.cadPaciente(p);
 			this.j.getTcad().getLblMsg().setVisible(true);
 			this.lista.adiciona(p);
+			this.j.getTcad().limparFields();
 		}
 		if (e.getActionCommand().equals("Buscar")) {
 			if (this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()) != null) {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
+				this.j.getTcad().limparFields();
 				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
 				lista.imprimirListaNome();
+				
 			} else {
 				this.j.setContentPane(this.j.getTcad());
 				this.j.revalidate();
@@ -121,16 +123,16 @@ public class PacienteControl implements ActionListener {
 					rand.nextInt(100000));
 			filaAtd.enqueue(atd);
 			this.j.getTcon().getLblMsg().setVisible(true);
+			this.j.getTcon().limparFields();
 		}
 		if (e.getActionCommand().equals("ChamarProx")) {
 			if (filaAtd.isEmpty()) {
 				this.j.getTsenhas().getFieldSenha().setText("Não há nenhum paciente");
 			} else {
 				this.j.getTsenhas().getFieldSenha().setText(Integer.toString(filaAtd.head().getObjeto().getSenha()));
-				this.j.getTtriagem().getLblNome()
-						.setText("Nome do paciente: " + filaAtd.head().getObjeto().getPaciente().getCpf());
+				this.j.getTtriagem().getLblNome().setText("Nome do paciente: " + filaAtd.head().getObjeto().getPaciente().getCpf());
 				this.j.getTtriagem().getLblNome().setVisible(true);
-			}
+			}this.j.getTtriagem().limparTela();
 		}
 		if (e.getActionCommand().equals("Direcionar")) {
 			if (!filaAtd.isEmpty()) {
@@ -140,7 +142,7 @@ public class PacienteControl implements ActionListener {
 					filaPri1.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt1().setText(String.valueOf(filaPri1.size()));
-
+					this.j.getTtriagem().getLblMsg().setVisible(true);
 				} else if (this.j.getTtriagem().getChckbxSituacaoDeRisco().isSelected()
 						|| this.j.getTtriagem().getChckbxConfuso().isSelected()
 						|| this.j.getTtriagem().getChckbxDesorientado().isSelected()
@@ -149,7 +151,7 @@ public class PacienteControl implements ActionListener {
 					filaPri2.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
-
+					this.j.getTtriagem().getLblMsg().setVisible(true);
 				} else if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
 					float cardAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText());
 					float respAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText());
@@ -161,26 +163,31 @@ public class PacienteControl implements ActionListener {
 						filaPri2.enqueue(filaAtd.head().getObjeto());
 						filaAtd.dequeue();
 						this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
+						this.j.getTtriagem().getLblMsg().setVisible(true);
 					} else {
 						filaPri3.enqueue(filaAtd.head().getObjeto());
 						filaAtd.dequeue();
 						this.j.getTcha().getLblQnt3().setText(String.valueOf(filaPri3.size()));
+						this.j.getTtriagem().getLblMsg().setVisible(true);
 					}
 				} else if (this.j.getTtriagem().getChckbxUmProcedimento().isSelected()) {
 					filaPri4.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt4().setText(String.valueOf(filaPri4.size()));
+					this.j.getTtriagem().getLblMsg().setVisible(true);
 				} else if (this.j.getTtriagem().getChckbxEstavel().isSelected()) {
 					filaPri5.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));	
+					this.j.getTtriagem().getLblMsg().setVisible(true);
 				}
 			} else {
 				this.j.setContentPane(this.j.getTcad());
 				this.j.setBounds(100, 100, 450, 320);
 				this.j.revalidate();
 				this.j.repaint();
-			}
+			}this.j.getTtriagem().getLblNome().setVisible(false);
+			this.j.getTtriagem().limparCampos();
 		}
 		if (e.getActionCommand().equals("Limpar")) {
 			this.j.getTcad().limparTela();

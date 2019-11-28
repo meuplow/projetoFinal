@@ -31,6 +31,47 @@ public class TelaTriagem extends JPanel {
 	private JCheckBox chckbxMaisProcedimentos;
 	private JCheckBox chckbxUmProcedimento;
 	private JCheckBox chckbxEstavel;
+	
+	public void limparTela() {/*
+		chckbxEntubado.setSelected(false);
+		chckbxApneia.setSelected(false);
+		chckbxPulso.setSelected(false);
+		chckbxSituacaoDeRisco.setSelected(false);
+		chckbxConfuso.setSelected(false);
+		chckbxDesorientado.setSelected(false);
+		chckbxLetargico.setSelected(false);
+		chckbxDor.setSelected(false);
+		chckbxMaisProcedimentos.setSelected(false);
+		chckbxUmProcedimento.setSelected(false);
+		chckbxEstavel.setSelected(false);
+		fieldFrequenciaCardiaca.setText("");
+		fieldFrequenciaRespiratoria.setText("");
+		fieldTemperatura.setText("");
+		fieldOximetria.setText("");
+		fieldIndice.setText("");*/
+		lblMsg.setVisible(false);
+		btnDirecionar.setVisible(true);
+	}
+	
+	public void limparCampos() {
+		chckbxEntubado.setSelected(false);
+		chckbxApneia.setSelected(false);
+		chckbxPulso.setSelected(false);
+		chckbxSituacaoDeRisco.setSelected(false);
+		chckbxConfuso.setSelected(false);
+		chckbxDesorientado.setSelected(false);
+		chckbxLetargico.setSelected(false);
+		chckbxDor.setSelected(false);
+		chckbxMaisProcedimentos.setSelected(false);
+		chckbxUmProcedimento.setSelected(false);
+		chckbxEstavel.setSelected(false);
+		fieldFrequenciaCardiaca.setText("");
+		fieldFrequenciaRespiratoria.setText("");
+		fieldTemperatura.setText("");
+		fieldOximetria.setText("");
+		fieldIndice.setText("");
+		btnDirecionar.setVisible(false);
+	}
 
 	public TelaTriagem() {
 		setBounds(100, 100, 600, 500);
@@ -110,6 +151,7 @@ public class TelaTriagem extends JPanel {
 		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada");
 		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		add(lblMsg, "cell 0 12,alignx center");
+		lblMsg.setVisible(false);
 
 		chckbxEntubado = new JCheckBox("entubado");
 		chckbxEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -154,7 +196,6 @@ public class TelaTriagem extends JPanel {
 		chckbxEstavel = new JCheckBox("O paciente se econtra est\u00E1vel");
 		chckbxEstavel.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(chckbxEstavel, "cell 0 10,growx");
-		lblMsg.setVisible(true);
 	}
 
 	public JCheckBox getChckbxMaisProcedimentos() {
