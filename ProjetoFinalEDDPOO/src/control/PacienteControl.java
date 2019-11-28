@@ -65,10 +65,6 @@ public class PacienteControl implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("inicio")) {
-			// this.j.remove(this.j.getTcad());
-			// this.j.remove(this.j.getTcon());
-			// this.j.remove(this.j.getTsenhas());
-			// this.j.remove(this.j.getTtriagem());
 		}
 		if (e.getActionCommand().equals("menuCad")) {
 			this.j.setContentPane(this.j.getTcad());
