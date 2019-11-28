@@ -17,6 +17,7 @@ public class TelaChamadaAtd extends JPanel {
 	private JButton btnChamarPaciente;
 
 	public TelaChamadaAtd() {
+		setBounds(100, 100, 450, 400);
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel painelNorte = new JPanel();
@@ -76,6 +77,7 @@ public class TelaChamadaAtd extends JPanel {
 		painelCentro.add(lblChamada, "cell 0 5,alignx center");
 		
 		btnChamarPaciente = new JButton("Chamar paciente");
+		btnChamarPaciente.setActionCommand("ChamarPaciente");
 		btnChamarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		painelCentro.add(btnChamarPaciente, "cell 0 6,alignx center");
 		btnChamarPaciente.setVisible(true);
