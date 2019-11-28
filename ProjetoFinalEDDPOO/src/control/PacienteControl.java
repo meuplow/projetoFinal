@@ -47,6 +47,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getTsenhas().getBtnChamarProx().addActionListener(this);
 		this.j.getTtriagem().getBtnDirecionar().addActionListener(this);
 		this.j.getTcha().getBtnChamarPaciente().addActionListener(this);
+		this.j.getTtriagem().getChckbxMaisProcedimentos().addActionListener(this);
 		pdao = new PacienteDAO();
 		lista = new ListaPaciente();
 		filaAtd = new FilaAtendimentos();
@@ -93,7 +94,7 @@ public class PacienteControl implements ActionListener {
 			this.j.revalidate();
 			this.j.repaint();
 		}
-		if(e.getActionCommand().equals("menuAtd")) {
+		if (e.getActionCommand().equals("menuAtd")) {
 			this.j.getTcha().getLblChamada().setVisible(false);
 			this.j.setContentPane(this.j.getTcha());
 			this.j.setBounds(100, 100, 450, 400);
@@ -101,21 +102,23 @@ public class PacienteControl implements ActionListener {
 			this.j.repaint();
 		}
 		if (e.getActionCommand().equals("Cadastrar")) {
-			p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(), this.j.getTcad().getFieldData().getText());
+			p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(),
+					this.j.getTcad().getFieldData().getText());
 			pdao.cadPaciente(p);
 			this.j.getTcad().getLblMsg().setVisible(true);
 			this.lista.adiciona(p);
-			this.j.getTcad().limparFields();
+//			this.j.getTcad().limparFields();
 		}
 		if (e.getActionCommand().equals("Buscar")) {
 			if (this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()) != null) {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
-				this.j.getTcad().limparFields();
-				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
-				lista.imprimirListaNome();
-				
+//				this.j.getTcad().limparFields();
+//				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
+//				lista.imprimirListaNome();
+
 			} else {
+				this.j.getTcon().limparFields();
 				this.j.setContentPane(this.j.getTcad());
 				this.j.revalidate();
 				this.j.repaint();
@@ -127,16 +130,19 @@ public class PacienteControl implements ActionListener {
 					rand.nextInt(100000));
 			filaAtd.enqueue(atd);
 			this.j.getTcon().getLblMsg().setVisible(true);
-			this.j.getTcon().limparFields();
+			this.j.getTcon().getBtnConfirmacao().setVisible(false);
+//			this.j.getTcon().limparFields();
 		}
 		if (e.getActionCommand().equals("ChamarProx")) {
 			if (filaAtd.isEmpty()) {
 				this.j.getTsenhas().getFieldSenha().setText("Não há nenhum paciente");
 			} else {
 				this.j.getTsenhas().getFieldSenha().setText(Integer.toString(filaAtd.head().getObjeto().getSenha()));
-				this.j.getTtriagem().getLblNome().setText("Nome do paciente: " + filaAtd.head().getObjeto().getPaciente().getNome());
+				this.j.getTtriagem().getLblNome()
+						.setText("Nome do paciente: " + filaAtd.head().getObjeto().getPaciente().getNome());
 				this.j.getTtriagem().getLblNome().setVisible(true);
-			}this.j.getTtriagem().limparTela();
+			}
+			this.j.getTtriagem().limparTela();
 		}
 		if (e.getActionCommand().equals("Direcionar")) {
 			if (!filaAtd.isEmpty()) {
@@ -182,50 +188,85 @@ public class PacienteControl implements ActionListener {
 				} else if (this.j.getTtriagem().getChckbxEstavel().isSelected()) {
 					filaPri5.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
-					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));	
+					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
-				}
+				} //else {
+//					filaPri5.enqueue(filaAtd.head().getObjeto());
+//					filaAtd.dequeue();
+//					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));
+//					this.j.getTtriagem().getLblMsg().setVisible(true);
+//				}
 			} else {
 				this.j.setContentPane(this.j.getTcad());
 				this.j.setBounds(100, 100, 450, 320);
 				this.j.revalidate();
 				this.j.repaint();
-			}this.j.getTtriagem().getLblNome().setVisible(false);
+			}
+			this.j.getTtriagem().getLblNome().setVisible(false);
 			this.j.getTtriagem().limparCampos();
-		}if (e.getActionCommand().equals("ChamarPaciente")) {
-			if((filaPri1.size()>0)||(filaPri2.size()>0)||(filaPri3.size()>0)||(filaPri4.size()>0)||(filaPri5.size()>0)) {
-				if(!filaPri1.isEmpty()) {
+		}
+		if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
+			this.j.getTtriagem().getLblInformeOsSeguintes().setVisible(true);
+			this.j.getTtriagem().getLblFrequenciaCardiaca().setVisible(true);
+			this.j.getTtriagem().getFieldFrequenciaCardiaca().setVisible(true);
+			this.j.getTtriagem().getLblFrequenciaRespiratoria().setVisible(true);
+			this.j.getTtriagem().getFieldFrequenciaRespiratoria().setVisible(true);
+			this.j.getTtriagem().getLblTemperaturaCorporal().setVisible(true);
+			this.j.getTtriagem().getFieldTemperatura().setVisible(true);
+			this.j.getTtriagem().getLblOximetriaDoPulso().setVisible(true);
+			this.j.getTtriagem().getFieldOximetria().setVisible(true);
+			this.j.getTtriagem().getLblIndiceDePico().setVisible(true);
+			this.j.getTtriagem().getFieldIndice().setVisible(true);
+		}
+		if (!(this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected())) {
+			this.j.getTtriagem().getLblInformeOsSeguintes().setVisible(false);
+			this.j.getTtriagem().getLblFrequenciaCardiaca().setVisible(false);
+			this.j.getTtriagem().getFieldFrequenciaCardiaca().setVisible(false);
+			this.j.getTtriagem().getLblFrequenciaRespiratoria().setVisible(false);
+			this.j.getTtriagem().getFieldFrequenciaRespiratoria().setVisible(false);
+			this.j.getTtriagem().getLblTemperaturaCorporal().setVisible(false);
+			this.j.getTtriagem().getFieldTemperatura().setVisible(false);
+			this.j.getTtriagem().getLblOximetriaDoPulso().setVisible(false);
+			this.j.getTtriagem().getFieldOximetria().setVisible(false);
+			this.j.getTtriagem().getLblIndiceDePico().setVisible(false);
+			this.j.getTtriagem().getFieldIndice().setVisible(false);
+		}
+
+		if (e.getActionCommand().equals("ChamarPaciente")) {
+			if ((filaPri1.size() > 0) || (filaPri2.size() > 0) || (filaPri3.size() > 0) || (filaPri4.size() > 0)
+					|| (filaPri5.size() > 0)) {
+				if (!filaPri1.isEmpty()) {
 					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri1.dequeue();
 					this.j.getTcha().getLblQnt1().setText(Integer.toString(filaPri1.size()));
-				}else if(!filaPri2.isEmpty()) {
+				} else if (!filaPri2.isEmpty()) {
 					listaAtdEncerrados.adiciona(filaPri2.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri2.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri2.dequeue();
 					this.j.getTcha().getLblQnt2().setText(Integer.toString(filaPri2.size()));
-				}else if(!filaPri3.isEmpty()) {
+				} else if (!filaPri3.isEmpty()) {
 					listaAtdEncerrados.adiciona(filaPri3.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri3.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri3.dequeue();
 					this.j.getTcha().getLblQnt3().setText(Integer.toString(filaPri3.size()));
-				}else if(!filaPri4.isEmpty()) {
+				} else if (!filaPri4.isEmpty()) {
 					listaAtdEncerrados.adiciona(filaPri4.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri4.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri4.dequeue();
 					this.j.getTcha().getLblQnt4().setText(Integer.toString(filaPri4.size()));
-				}else if(!filaPri5.isEmpty()) {
+				} else if (!filaPri5.isEmpty()) {
 					listaAtdEncerrados.adiciona(filaPri5.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri5.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri5.dequeue();
 					this.j.getTcha().getLblQnt5().setText(Integer.toString(filaPri5.size()));
 				}
-			}else {
+			} else {
 				this.j.getTcha().getLblChamada().setText("Não há pacientes");
 				this.j.getTcha().getLblChamada().setVisible(true);
 			}

@@ -185,9 +185,10 @@ public class JanelaPrincipal extends JFrame {
 		lblAviso2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		painelCentro.add(lblAviso2, "cell 0 3,alignx center");
 
-		btnEncerrar = new JButton("Encerrar");
+		btnEncerrar = new JButton("Encerrar o expediente");
 		btnEncerrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		painelCentro.add(btnEncerrar, "cell 0 5,alignx right");
+		btnEncerrar.setActionCommand("Encerrar");
 		setTitle("Hospital Santa Casa dos Informatas");
 
 		tcad = new TelaCadastro();

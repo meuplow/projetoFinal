@@ -44,22 +44,24 @@ public class ListaPaciente {
 			}
 		}
 	}
-	
+
 	public Paciente buscarPaciente(String cpf) {
-		if(this.primeiro.getObjeto().getCpf().equalsIgnoreCase(cpf)){
-			return this.primeiro.getObjeto();
-		}else {
-			NoPaciente aux = this.primeiro;
-			while(aux != null) {
-				if(aux.getObjeto().getCpf().equalsIgnoreCase(cpf)) {
-					return aux.getObjeto();
+		if (!estaVazia()) {
+			if (this.primeiro.getObjeto().getCpf().equalsIgnoreCase(cpf)) {
+				return this.primeiro.getObjeto();
+			} else {
+				NoPaciente aux = this.primeiro;
+				while (aux != null) {
+					if (aux.getObjeto().getCpf().equalsIgnoreCase(cpf)) {
+						return aux.getObjeto();
+					}
+					aux = aux.getProximo();
 				}
-				aux = aux.getProximo();
 			}
-			return null;
 		}
+		return null;
 	}
-	
+
 	public void imprimirListaNome() {
 		NoPaciente aux = this.primeiro;
 		while (aux != null) {

@@ -31,28 +31,28 @@ public class TelaTriagem extends JPanel {
 	private JCheckBox chckbxMaisProcedimentos;
 	private JCheckBox chckbxUmProcedimento;
 	private JCheckBox chckbxEstavel;
-	
+	private JLabel lblInformeOsSeguintes;
+	private JLabel lblFrequenciaCardiaca;
+	private JLabel lblFrequenciaRespiratoria;
+	private JLabel lblTemperaturaCorporal;
+	private JLabel lblOximetriaDoPulso;
+	private JLabel lblIndiceDePico;
+
 	public void limparTela() {/*
-		chckbxEntubado.setSelected(false);
-		chckbxApneia.setSelected(false);
-		chckbxPulso.setSelected(false);
-		chckbxSituacaoDeRisco.setSelected(false);
-		chckbxConfuso.setSelected(false);
-		chckbxDesorientado.setSelected(false);
-		chckbxLetargico.setSelected(false);
-		chckbxDor.setSelected(false);
-		chckbxMaisProcedimentos.setSelected(false);
-		chckbxUmProcedimento.setSelected(false);
-		chckbxEstavel.setSelected(false);
-		fieldFrequenciaCardiaca.setText("");
-		fieldFrequenciaRespiratoria.setText("");
-		fieldTemperatura.setText("");
-		fieldOximetria.setText("");
-		fieldIndice.setText("");*/
+								 * chckbxEntubado.setSelected(false); chckbxApneia.setSelected(false);
+								 * chckbxPulso.setSelected(false); chckbxSituacaoDeRisco.setSelected(false);
+								 * chckbxConfuso.setSelected(false); chckbxDesorientado.setSelected(false);
+								 * chckbxLetargico.setSelected(false); chckbxDor.setSelected(false);
+								 * chckbxMaisProcedimentos.setSelected(false);
+								 * chckbxUmProcedimento.setSelected(false); chckbxEstavel.setSelected(false);
+								 * fieldFrequenciaCardiaca.setText(""); fieldFrequenciaRespiratoria.setText("");
+								 * fieldTemperatura.setText(""); fieldOximetria.setText("");
+								 * fieldIndice.setText("");
+								 */
 		lblMsg.setVisible(false);
 		btnDirecionar.setVisible(true);
 	}
-	
+
 	public void limparCampos() {
 		chckbxEntubado.setSelected(false);
 		chckbxApneia.setSelected(false);
@@ -93,55 +93,66 @@ public class TelaTriagem extends JPanel {
 		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		add(lblPri1, "flowx,cell 0 2");
 
-		JLabel lblInformeOsSeguintes = new JLabel(
-				"Informe os seguintes dados, caso o paciente necessita realizar m\u00FAltiplos procedimentos:");
+		lblInformeOsSeguintes = new JLabel(
+				"Informe os seguintes dados:");
 		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 13));
 		add(lblInformeOsSeguintes, "cell 0 6");
+		lblInformeOsSeguintes.setVisible(false);
 
-		JLabel lblFrequenciaCardiaca = new JLabel("Frequ\u00EAncia card\u00EDaca");
+		lblFrequenciaCardiaca = new JLabel("Frequ\u00EAncia card\u00EDaca");
 		lblFrequenciaCardiaca.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(lblFrequenciaCardiaca, "flowx,cell 0 7,growx");
+		lblFrequenciaCardiaca.setVisible(false);
 
 		fieldFrequenciaCardiaca = new JTextField();
 		fieldFrequenciaCardiaca.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(fieldFrequenciaCardiaca, "cell 0 7,growx");
 		fieldFrequenciaCardiaca.setColumns(10);
+		fieldFrequenciaCardiaca.setVisible(false);
 
-		JLabel lblFrequenciaRespiratoria = new JLabel("Frequ\u00EAncia respirat\u00F3ria");
+		lblFrequenciaRespiratoria = new JLabel("Frequ\u00EAncia respirat\u00F3ria");
 		lblFrequenciaRespiratoria.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(lblFrequenciaRespiratoria, "cell 0 7,growx");
+		lblFrequenciaRespiratoria.setVisible(false);
 
 		fieldFrequenciaRespiratoria = new JTextField();
 		fieldFrequenciaRespiratoria.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(fieldFrequenciaRespiratoria, "cell 0 7,growx");
 		fieldFrequenciaRespiratoria.setColumns(10);
+		fieldFrequenciaRespiratoria.setVisible(false);
 
-		JLabel lblTemperaturaCorporal = new JLabel("Temperatura corporal");
+		lblTemperaturaCorporal = new JLabel("Temperatura corporal");
 		lblTemperaturaCorporal.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(lblTemperaturaCorporal, "cell 0 7,growx");
+		lblTemperaturaCorporal.setVisible(false);
 
 		fieldTemperatura = new JTextField();
 		fieldTemperatura.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(fieldTemperatura, "cell 0 7,growx");
 		fieldTemperatura.setColumns(10);
-
-		JLabel lblOximetriaDoPulso = new JLabel("Oximetria do pulso");
+		fieldTemperatura.setVisible(false);
+		
+		lblOximetriaDoPulso = new JLabel("Oximetria do pulso");
 		lblOximetriaDoPulso.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(lblOximetriaDoPulso, "flowx,cell 0 8,growx");
+		lblOximetriaDoPulso.setVisible(false);
 
 		fieldOximetria = new JTextField();
 		fieldOximetria.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(fieldOximetria, "cell 0 8,growx");
 		fieldOximetria.setColumns(10);
+		fieldOximetria.setVisible(false);
 
-		JLabel lblIndiceDePico = new JLabel("\u00CDndice de pico do fluxo respirat\u00F3rio");
+		lblIndiceDePico = new JLabel("\u00CDndice de pico do fluxo respirat\u00F3rio");
 		lblIndiceDePico.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(lblIndiceDePico, "cell 0 8,growx");
+		lblIndiceDePico.setVisible(false);
 
 		fieldIndice = new JTextField();
 		fieldIndice.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(fieldIndice, "cell 0 8,growx");
 		fieldIndice.setColumns(10);
+		fieldIndice.setVisible(false);
 
 		btnDirecionar = new JButton("Direcionar atendimento");
 		btnDirecionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -193,9 +204,17 @@ public class TelaTriagem extends JPanel {
 		chckbxUmProcedimento.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(chckbxUmProcedimento, "cell 0 9");
 
-		chckbxEstavel = new JCheckBox("O paciente se econtra est\u00E1vel");
+		chckbxEstavel = new JCheckBox("O paciente se encontra est\u00E1vel");
 		chckbxEstavel.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(chckbxEstavel, "cell 0 10,growx");
+	}
+
+	public JLabel getLblInformeOsSeguintes() {
+		return lblInformeOsSeguintes;
+	}
+
+	public void setLblInformeOsSeguintes(JLabel lblInformeOsSeguintes) {
+		this.lblInformeOsSeguintes = lblInformeOsSeguintes;
 	}
 
 	public JCheckBox getChckbxMaisProcedimentos() {
@@ -348,5 +367,45 @@ public class TelaTriagem extends JPanel {
 
 	public void setChckbxDor(JCheckBox chckbxDor) {
 		this.chckbxDor = chckbxDor;
+	}
+
+	public JLabel getLblFrequenciaCardiaca() {
+		return lblFrequenciaCardiaca;
+	}
+
+	public void setLblFrequenciaCardiaca(JLabel lblFrequenciaCardiaca) {
+		this.lblFrequenciaCardiaca = lblFrequenciaCardiaca;
+	}
+
+	public JLabel getLblFrequenciaRespiratoria() {
+		return lblFrequenciaRespiratoria;
+	}
+
+	public void setLblFrequenciaRespiratoria(JLabel lblFrequenciaRespiratoria) {
+		this.lblFrequenciaRespiratoria = lblFrequenciaRespiratoria;
+	}
+
+	public JLabel getLblTemperaturaCorporal() {
+		return lblTemperaturaCorporal;
+	}
+
+	public void setLblTemperaturaCorporal(JLabel lblTemperaturaCorporal) {
+		this.lblTemperaturaCorporal = lblTemperaturaCorporal;
+	}
+
+	public JLabel getLblOximetriaDoPulso() {
+		return lblOximetriaDoPulso;
+	}
+
+	public void setLblOximetriaDoPulso(JLabel lblOximetriaDoPulso) {
+		this.lblOximetriaDoPulso = lblOximetriaDoPulso;
+	}
+
+	public JLabel getLblIndiceDePico() {
+		return lblIndiceDePico;
+	}
+
+	public void setLblIndiceDePico(JLabel lblIndiceDePico) {
+		this.lblIndiceDePico = lblIndiceDePico;
 	}
 }
