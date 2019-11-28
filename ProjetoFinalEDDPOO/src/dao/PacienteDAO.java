@@ -1,11 +1,10 @@
 package dao;
 
 import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import model.ListaPaciente;
 import model.Paciente;
 
 public class PacienteDAO {
@@ -22,7 +21,6 @@ public class PacienteDAO {
 			bw.newLine();
 			bw.flush();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		} finally{
@@ -30,7 +28,6 @@ public class PacienteDAO {
 				fw.close();
 				bw.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}		
 		}

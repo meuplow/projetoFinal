@@ -34,6 +34,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getMntmConsultar().addActionListener(this);
 		this.j.getMntmSenhas().addActionListener(this);
 		this.j.getMntmTriagem().addActionListener(this);
+		this.j.getMntmAtendimento().addActionListener(this);
 		this.j.getMntmInicio().addActionListener(this);
 		this.j.getBtnEncerrar().addActionListener(this);
 		this.j.getTcad().getBtnCadastrar().addActionListener(this);
@@ -89,6 +90,12 @@ public class PacienteControl implements ActionListener {
 			this.j.revalidate();
 			this.j.repaint();
 		}
+		if(e.getActionCommand().equals("menuAtd")) {
+			this.j.setContentPane(this.j.getTcha());
+			this.j.setBounds(100, 100, 450, 320);
+			this.j.revalidate();
+			this.j.repaint();
+		}
 		if (e.getActionCommand().equals("Cadastrar")) {
 			p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(),
 					this.j.getTcad().getFieldData().getText());
@@ -126,21 +133,53 @@ public class PacienteControl implements ActionListener {
 			}
 		}
 		if (e.getActionCommand().equals("Direcionar")) {
-			if (this.j.getTtriagem().getChckbxEntubado().isSelected()
-					|| this.j.getTtriagem().getChckbxApneia().isSelected()
-					|| this.j.getTtriagem().getChckbxPulso().isSelected()) {
-				filaPri1.enqueue(filaAtd.head().getObjeto());
-				filaAtd.dequeue();
-			} else if (this.j.getTtriagem().getChckbxSituacaoDeRisco().isSelected()
-					|| this.j.getTtriagem().getChckbxConfuso().isSelected()
-					|| this.j.getTtriagem().getChckbxDesorientado().isSelected()
-					|| this.j.getTtriagem().getChckbxLetargico().isSelected()
-					|| this.j.getTtriagem().getChckbxDor().isSelected()) {
-				filaPri2.enqueue(filaAtd.head().getObjeto());
-				filaAtd.dequeue();
-			} else if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
-				float cardAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText());
-				float respAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText());
+			if (!filaAtd.isEmpty()) {
+				if (this.j.getTtriagem().getChckbxEntubado().isSelected()
+						|| this.j.getTtriagem().getChckbxApneia().isSelected()
+						|| this.j.getTtriagem().getChckbxPulso().isSelected()) {
+					filaPri1.enqueue(filaAtd.head().getObjeto());
+					filaAtd.dequeue();
+					this.j.getTcha().getLblQnt1().setText(String.valueOf(filaPri1.size()));
+
+				} else if (this.j.getTtriagem().getChckbxSituacaoDeRisco().isSelected()
+						|| this.j.getTtriagem().getChckbxConfuso().isSelected()
+						|| this.j.getTtriagem().getChckbxDesorientado().isSelected()
+						|| this.j.getTtriagem().getChckbxLetargico().isSelected()
+						|| this.j.getTtriagem().getChckbxDor().isSelected()) {
+					filaPri2.enqueue(filaAtd.head().getObjeto());
+					filaAtd.dequeue();
+					this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
+
+				} else if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
+					float cardAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText());
+					float respAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText());
+					float tempAux = Float.parseFloat(this.j.getTtriagem().getFieldTemperatura().getText());
+					float oxiAux = Float.parseFloat(this.j.getTtriagem().getFieldOximetria().getText());
+					float fluxRespAux = Float.parseFloat(this.j.getTtriagem().getFieldIndice().getText());
+					if (cardAux > 90 || respAux > 20 || tempAux < 36 || tempAux > 38 || oxiAux < 90
+							|| fluxRespAux < 200) {
+						filaPri2.enqueue(filaAtd.head().getObjeto());
+						filaAtd.dequeue();
+						this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
+					} else {
+						filaPri3.enqueue(filaAtd.head().getObjeto());
+						filaAtd.dequeue();
+						this.j.getTcha().getLblQnt3().setText(String.valueOf(filaPri3.size()));
+					}
+				} else if (this.j.getTtriagem().getChckbxUmProcedimento().isSelected()) {
+					filaPri4.enqueue(filaAtd.head().getObjeto());
+					filaAtd.dequeue();
+					this.j.getTcha().getLblQnt4().setText(String.valueOf(filaPri4.size()));
+				} else if (this.j.getTtriagem().getChckbxEstavel().isSelected()) {
+					filaPri5.enqueue(filaAtd.head().getObjeto());
+					filaAtd.dequeue();
+					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));	
+				}
+			} else {
+				this.j.setContentPane(this.j.getTcad());
+				this.j.setBounds(100, 100, 450, 320);
+				this.j.revalidate();
+				this.j.repaint();
 			}
 		}
 		if (e.getActionCommand().equals("Limpar")) {

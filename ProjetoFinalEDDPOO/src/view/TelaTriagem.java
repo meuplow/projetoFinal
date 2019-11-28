@@ -105,6 +105,7 @@ public class TelaTriagem extends JPanel {
 		btnDirecionar = new JButton("Direcionar atendimento");
 		btnDirecionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		add(btnDirecionar, "cell 0 11,alignx center");
+		btnDirecionar.setActionCommand("Direcionar");
 
 		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada");
 		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
