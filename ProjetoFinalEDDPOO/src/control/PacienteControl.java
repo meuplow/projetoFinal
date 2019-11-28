@@ -163,22 +163,26 @@ public class PacienteControl implements ActionListener {
 					this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
 				} else if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
-					float cardAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText());
-					float respAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText());
-					float tempAux = Float.parseFloat(this.j.getTtriagem().getFieldTemperatura().getText());
-					float oxiAux = Float.parseFloat(this.j.getTtriagem().getFieldOximetria().getText());
-					float fluxRespAux = Float.parseFloat(this.j.getTtriagem().getFieldIndice().getText());
-					if (cardAux > 90 || respAux > 20 || tempAux < 36 || tempAux > 38 || oxiAux < 90
-							|| fluxRespAux < 200) {
-						filaPri2.enqueue(filaAtd.head().getObjeto());
-						filaAtd.dequeue();
-						this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
-						this.j.getTtriagem().getLblMsg().setVisible(true);
-					} else {
-						filaPri3.enqueue(filaAtd.head().getObjeto());
-						filaAtd.dequeue();
-						this.j.getTcha().getLblQnt3().setText(String.valueOf(filaPri3.size()));
-						this.j.getTtriagem().getLblMsg().setVisible(true);
+					if(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText().equals("")||(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText().equals(""))||(this.j.getTtriagem().getFieldTemperatura().getText().equals(""))||(this.j.getTtriagem().getFieldOximetria().getText().equals(""))||(this.j.getTtriagem().getFieldIndice().getText().equals(""))) {
+						System.out.println("campos em branco");
+					}else {
+						float cardAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText());
+						float respAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText());
+						float tempAux = Float.parseFloat(this.j.getTtriagem().getFieldTemperatura().getText());
+						float oxiAux = Float.parseFloat(this.j.getTtriagem().getFieldOximetria().getText());
+						float fluxRespAux = Float.parseFloat(this.j.getTtriagem().getFieldIndice().getText());
+						if (cardAux > 90 || respAux > 20 || tempAux < 36 || tempAux > 38 || oxiAux < 90
+								|| fluxRespAux < 200) {
+							filaPri2.enqueue(filaAtd.head().getObjeto());
+							filaAtd.dequeue();
+							this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
+							this.j.getTtriagem().getLblMsg().setVisible(true);
+						} else {
+							filaPri3.enqueue(filaAtd.head().getObjeto());
+							filaAtd.dequeue();
+							this.j.getTcha().getLblQnt3().setText(String.valueOf(filaPri3.size()));
+							this.j.getTtriagem().getLblMsg().setVisible(true);
+						}
 					}
 				} else if (this.j.getTtriagem().getChckbxUmProcedimento().isSelected()) {
 					filaPri4.enqueue(filaAtd.head().getObjeto());
