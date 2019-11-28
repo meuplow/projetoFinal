@@ -19,7 +19,7 @@ public class TelaDeSenhas extends JPanel {
 		fieldSenha = new JTextField();
 		fieldSenha.setEditable(false);
 		fieldSenha.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		add(fieldSenha, "cell 0 0,growx");
+		add(fieldSenha, "cell 0 0,growx,alignx center");
 		fieldSenha.setColumns(10);
 
 		btnChamarProx = new JButton("Chamar pr\u00F3xima senha");

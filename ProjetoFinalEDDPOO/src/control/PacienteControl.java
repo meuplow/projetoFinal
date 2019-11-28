@@ -241,6 +241,7 @@ public class PacienteControl implements ActionListener {
 					System.out.println(filaPri1.head().getObjeto().getData());
 					System.out.println(filaPri1.head().getObjeto().retornaDateSaida());
 					filaPri1.head().getObjeto().imprimeComparacao();
+					filaPri1.head().getObjeto().imprimeDateFimConsulta();
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri1.dequeue();
