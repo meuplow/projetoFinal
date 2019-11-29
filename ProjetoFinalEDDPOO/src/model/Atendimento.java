@@ -23,13 +23,26 @@ public class Atendimento {
 	public Atendimento() {
 	}
 	
-	public Date retornaDateSaida() {
+	public Date retornaHoraAtual() {
 		Date dateSaida = new Date();
 		return dateSaida;
 	}
 	
+	//Vou arrumar 
+	/*
+	public Date retornaHoraFimConsulta() {
+		Date dateSaida = new Date();
+		long aux = Math.abs(retornaHoraAtual().getTime());
+		long segundosLong = TimeUnit.SECONDS.convert(aux, TimeUnit.MILLISECONDS);
+		int segundos = (int) segundosLong;
+		Random gerador = new Random();
+		int acresc = gerador.nextInt(10800)+600;
+		segundos+= acresc;
+		return dateSaida;
+	}
+	
 	public long retornaDateFimConsulta() {
-		long diferenca = Math.abs(retornaDateSaida().getTime());
+		long diferenca = Math.abs(retornaHoraAtual().getTime());
 		long segundos = TimeUnit.SECONDS.convert(diferenca, TimeUnit.MILLISECONDS);
 		Random gerador = new Random();
 		long aleatorio = gerador.nextInt(10800)+600;
@@ -38,7 +51,7 @@ public class Atendimento {
 	}
 	
 	public void teste() {
-		long diferenca = Math.abs(retornaDateSaida().getTime());
+		long diferenca = Math.abs(retornaHoraAtual().getTime());
 		long segundos = TimeUnit.SECONDS.convert(diferenca, TimeUnit.MILLISECONDS);
 		Random gerador = new Random();
 		long aleatorio = gerador.nextInt(10800)+600;
@@ -55,19 +68,20 @@ public class Atendimento {
 		long segundo = data - (hora*3600) - (minuto*60);
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 		System.out.println(data);
+	}*/
+	
+	public int comparaHora(Date horaNova, Date horaAntiga) {
+		long aux = Math.abs(horaNova.getTime()-horaAntiga.getTime());
+		long diff = TimeUnit.SECONDS.convert(aux, TimeUnit.MILLISECONDS);
+		int diferenca = (int) diff;
+		return diferenca;
 	}
 	
-	public long comparaDate() {
-		long diferenca = Math.abs(retornaDateSaida().getTime()-this.data.getTime());
-		long diferencaSegundos = TimeUnit.SECONDS.convert(diferenca, TimeUnit.MILLISECONDS);
-		return diferencaSegundos;
-	}
-	
-	public void imprimeComparacao() {
+	public void imprimeComparacao(Date horaNova, Date horaAntiga) {
 		DecimalFormat df = new DecimalFormat("00");
-		long hora = comparaDate()/3600;
-		long minuto = (comparaDate() - (hora*3600))/60;
-		long segundo = comparaDate() - (hora*3600) - (minuto*60);
+		int hora = comparaHora(horaNova, horaAntiga)/3600;
+		int minuto = (comparaHora(horaNova, horaAntiga) - (hora*3600))/60;
+		int segundo = comparaHora(horaNova, horaAntiga) - (hora*3600) - (minuto*60);
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
