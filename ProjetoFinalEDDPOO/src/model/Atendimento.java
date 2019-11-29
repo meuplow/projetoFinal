@@ -83,7 +83,10 @@ public class Atendimento {
 		long aux = Math.abs(horaNova.getTime()-horaAntiga.getTime());
 		long diff = TimeUnit.SECONDS.convert(aux, TimeUnit.MILLISECONDS);
 		int diferenca = (int) diff;
+		System.out.println("diferenca: " + diferenca);
 		diferenca =  diferenca+acresc;
+		System.out.println("acresc: " + acresc);
+		System.out.println("diferenca+acresc: " + diferenca);
 		return diferenca;
 	}
 	
@@ -97,9 +100,10 @@ public class Atendimento {
 	
 	public void imprimeComparacaoSaida(Date horaNova, Date horaAntiga) {
 		DecimalFormat df = new DecimalFormat("00");
-		int hora = comparaHoraSaida(horaNova, horaAntiga)/3600;
-		int minuto = (comparaHoraSaida(horaNova, horaAntiga) - (hora*3600))/60;
-		int segundo = comparaHoraSaida(horaNova, horaAntiga) - (hora*3600) - (minuto*60);
+		int chs = comparaHoraSaida(horaNova, horaAntiga);
+		int hora = chs/3600;
+		int minuto = (chs - (hora*3600))/60;
+		int segundo = chs - (hora*3600) - (minuto*60);
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
