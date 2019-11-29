@@ -77,11 +77,29 @@ public class Atendimento {
 		return diferenca;
 	}
 	
+	public int comparaHoraSaida(Date horaNova, Date horaAntiga) {
+		Random rnd = new Random();
+		int acresc = rnd.nextInt(10800)+600;
+		long aux = Math.abs(horaNova.getTime()-horaAntiga.getTime());
+		long diff = TimeUnit.SECONDS.convert(aux, TimeUnit.MILLISECONDS);
+		int diferenca = (int) diff;
+		diferenca =  diferenca+acresc;
+		return diferenca;
+	}
+	
 	public void imprimeComparacao(Date horaNova, Date horaAntiga) {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = comparaHora(horaNova, horaAntiga)/3600;
 		int minuto = (comparaHora(horaNova, horaAntiga) - (hora*3600))/60;
 		int segundo = comparaHora(horaNova, horaAntiga) - (hora*3600) - (minuto*60);
+		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
+	}
+	
+	public void imprimeComparacaoSaida(Date horaNova, Date horaAntiga) {
+		DecimalFormat df = new DecimalFormat("00");
+		int hora = comparaHoraSaida(horaNova, horaAntiga)/3600;
+		int minuto = (comparaHoraSaida(horaNova, horaAntiga) - (hora*3600))/60;
+		int segundo = comparaHoraSaida(horaNova, horaAntiga) - (hora*3600) - (minuto*60);
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
