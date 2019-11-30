@@ -1,3 +1,11 @@
 Joao da silva#83394854832#Entrada do paciente: 30-11-2019 18:10:06#Chamada para a consulta: 30-11-2019 18:10:25#Tempo de consulta: 01:36:41
 Joana dos Santos#34565496598#Entrada do paciente: 30-11-2019 18:12:46#Chamada para a consulta: 30-11-2019 18:12:54#Tempo de consulta: 02:46:27
 José Bonifácio#123#Entrada do paciente: 30-11-2019 18:16:07#Chamada para a consulta: 30-11-2019 18:16:17#Tempo de consulta: 01:08:42
+Amanda Santos#45678909453#Entrada do paciente: 30-11-2019 18:37:21#Chamada para atendimento: 30-11-2019 18:37:31#Tempo de atendimento: 01:56:39
+aa#aa#Entrada do paciente: 30-11-2019 19:13:20#Chamada para atendimento: 30-11-2019 19:13:29#Tempo de atendimento: 00:57:51
+aa#aa#Entrada do paciente: 30-11-2019 19:21:31#Chamada para atendimento: 30-11-2019 19:21:40#Tempo de atendimento: 01:00:57
+aa#aa#Entrada do paciente: 30-11-2019 19:24:15#Chamada para atendimento: 30-11-2019 19:24:23#Tempo de atendimento: 00:15:33
+aa#aa#Entrada do paciente: 30-11-2019 19:27:12#Chamada para atendimento: 30-11-2019 19:28:08#Tempo de atendimento: 02:16:12
+bb#bb#Entrada do paciente: 30-11-2019 19:27:16#Chamada para atendimento: 30-11-2019 19:28:09#Tempo de atendimento: 00:35:52
+cc#cc#Entrada do paciente: 30-11-2019 19:27:20#Chamada para atendimento: 30-11-2019 19:28:11#Tempo de atendimento: 01:24:43
+dd#dd#Entrada do paciente: 30-11-2019 19:27:23#Chamada para atendimento: 30-11-2019 19:28:16#Tempo de atendimento: 02:10:11

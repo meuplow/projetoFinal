@@ -7,12 +7,14 @@ import java.util.Random;
 
 import dao.AtendimentoDAO;
 import dao.PacienteDAO;
+import dao.RelatorioDAO;
 import model.Atendimento;
 import model.FilaAtendimentos;
 import model.FilaPrioridade;
 import model.ListaAtendimentosEncerrados;
 import model.ListaPaciente;
 import model.Paciente;
+import model.Relatorios;
 import view.JanelaPrincipal;
 
 public class PacienteControl implements ActionListener {
@@ -22,13 +24,20 @@ public class PacienteControl implements ActionListener {
 	private FilaAtendimentos filaAtd;
 	private Atendimento atd;
 	private PacienteDAO pdao;
+	private AtendimentoDAO atddao;
+	private RelatorioDAO rdao;
 	private FilaPrioridade filaPri1;
 	private FilaPrioridade filaPri2;
 	private FilaPrioridade filaPri3;
 	private FilaPrioridade filaPri4;
 	private FilaPrioridade filaPri5;
 	private ListaAtendimentosEncerrados listaAtdEncerrados;
-	private AtendimentoDAO atddao;
+	private Relatorios relatorio;
+	private Relatorios r1;
+	private Relatorios r2;
+	private Relatorios r3;
+	private Relatorios r4;
+	private Relatorios r5;
 
 	public PacienteControl(JanelaPrincipal j, Paciente p) {
 		super();
@@ -52,6 +61,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getTtriagem().getChckbxMaisProcedimentos().addActionListener(this);
 		pdao = new PacienteDAO();
 		atddao = new AtendimentoDAO();
+		rdao = new RelatorioDAO();
 		lista = new ListaPaciente();
 		filaAtd = new FilaAtendimentos();
 		filaPri1 = new FilaPrioridade();
@@ -60,6 +70,12 @@ public class PacienteControl implements ActionListener {
 		filaPri4 = new FilaPrioridade();
 		filaPri5 = new FilaPrioridade();
 		listaAtdEncerrados = new ListaAtendimentosEncerrados();
+		relatorio = new Relatorios();
+		r1 = new Relatorios();
+		r2 = new Relatorios();
+		r3 = new Relatorios();
+		r4 = new Relatorios();
+		r5 = new Relatorios();
 	}
 
 	public ListaPaciente getLista() {
@@ -250,36 +266,69 @@ public class PacienteControl implements ActionListener {
 					filaPri1.head().getObjeto().setDataHoraChamada(filaPri1.head().getObjeto().retornaHoraAtual());	
 					filaPri1.head().getObjeto().setTempoAtendimento(filaPri1.head().getObjeto().retornaDuracaoAtendimento());
 					atddao.historicoAtendimento(filaPri1.head().getObjeto());
+					relatorio.atualizaMedias(filaPri1.head().getObjeto().comparaHora(), filaPri1.head().getObjeto().getTempoAtendimento());
+					filaPri1.head().getObjeto().imprimeComparacao();
+					filaPri1.head().getObjeto().imprimeDuracaoAtendimento();
+					r1.atualizaMedias(filaPri1.head().getObjeto().comparaHora(), filaPri1.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());			
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri1.dequeue();
 					this.j.getTcha().getLblQnt1().setText(Integer.toString(filaPri1.size()));
 				} else if (!filaPri2.isEmpty()) {
+					filaPri2.head().getObjeto().setDataHoraChamada(filaPri2.head().getObjeto().retornaHoraAtual());	
+					filaPri2.head().getObjeto().setTempoAtendimento(filaPri2.head().getObjeto().retornaDuracaoAtendimento());
+					atddao.historicoAtendimento(filaPri2.head().getObjeto());
+					relatorio.atualizaMedias(filaPri2.head().getObjeto().comparaHora(), filaPri2.head().getObjeto().getTempoAtendimento());
+					filaPri2.head().getObjeto().imprimeComparacao();
+					filaPri2.head().getObjeto().imprimeDuracaoAtendimento();
+					r2.atualizaMedias(filaPri2.head().getObjeto().comparaHora(), filaPri2.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri2.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri2.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri2.dequeue();
 					this.j.getTcha().getLblQnt2().setText(Integer.toString(filaPri2.size()));
 				} else if (!filaPri3.isEmpty()) {
+					filaPri3.head().getObjeto().setDataHoraChamada(filaPri3.head().getObjeto().retornaHoraAtual());	
+					filaPri3.head().getObjeto().setTempoAtendimento(filaPri3.head().getObjeto().retornaDuracaoAtendimento());
+					atddao.historicoAtendimento(filaPri3.head().getObjeto());
+					relatorio.atualizaMedias(filaPri3.head().getObjeto().comparaHora(), filaPri3.head().getObjeto().getTempoAtendimento());
+					filaPri3.head().getObjeto().imprimeComparacao();
+					filaPri3.head().getObjeto().imprimeDuracaoAtendimento();
+					r3.atualizaMedias(filaPri3.head().getObjeto().comparaHora(), filaPri3.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri3.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri3.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri3.dequeue();
 					this.j.getTcha().getLblQnt3().setText(Integer.toString(filaPri3.size()));
 				} else if (!filaPri4.isEmpty()) {
+					filaPri4.head().getObjeto().setDataHoraChamada(filaPri4.head().getObjeto().retornaHoraAtual());	
+					filaPri4.head().getObjeto().setTempoAtendimento(filaPri4.head().getObjeto().retornaDuracaoAtendimento());
+					atddao.historicoAtendimento(filaPri4.head().getObjeto());
+					relatorio.atualizaMedias(filaPri4.head().getObjeto().comparaHora(), filaPri4.head().getObjeto().getTempoAtendimento());
+					filaPri4.head().getObjeto().imprimeComparacao();
+					filaPri4.head().getObjeto().imprimeDuracaoAtendimento();
+					r4.atualizaMedias(filaPri4.head().getObjeto().comparaHora(), filaPri4.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri4.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri4.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri4.dequeue();
 					this.j.getTcha().getLblQnt4().setText(Integer.toString(filaPri4.size()));
 				} else if (!filaPri5.isEmpty()) {
+					filaPri5.head().getObjeto().setDataHoraChamada(filaPri5.head().getObjeto().retornaHoraAtual());	
+					filaPri5.head().getObjeto().setTempoAtendimento(filaPri5.head().getObjeto().retornaDuracaoAtendimento());
+					atddao.historicoAtendimento(filaPri5.head().getObjeto());
+					relatorio.atualizaMedias(filaPri5.head().getObjeto().comparaHora(), filaPri5.head().getObjeto().getTempoAtendimento());
+					filaPri5.head().getObjeto().imprimeComparacao();
+					filaPri5.head().getObjeto().imprimeDuracaoAtendimento();
+					r5.atualizaMedias(filaPri5.head().getObjeto().comparaHora(), filaPri5.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri5.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri5.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri5.dequeue();
 					this.j.getTcha().getLblQnt5().setText(Integer.toString(filaPri5.size()));
 				}
+				rdao.relatorioAdm(relatorio, r1, r2, r3, r4, r5);
 			} else {
 				this.j.getTcha().getLblChamada().setText("Não há pacientes");
 				this.j.getTcha().getLblChamada().setVisible(true);
@@ -293,5 +342,4 @@ public class PacienteControl implements ActionListener {
 			System.exit(0);
 		}
 	}
-
 }
