@@ -137,9 +137,6 @@ public class PacienteControl implements ActionListener {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
 				this.j.getTcad().limparFields();
-//				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
-//				lista.imprimirListaNome();
-
 			} else {
 				this.j.getTcon().limparFields();
 				this.j.setContentPane(this.j.getTcad());
@@ -266,9 +263,7 @@ public class PacienteControl implements ActionListener {
 					filaPri1.head().getObjeto().setDataHoraChamada(filaPri1.head().getObjeto().retornaHoraAtual());	
 					filaPri1.head().getObjeto().setTempoAtendimento(filaPri1.head().getObjeto().retornaDuracaoAtendimento());
 					atddao.historicoAtendimento(filaPri1.head().getObjeto());
-					relatorio.atualizaMedias(filaPri1.head().getObjeto().comparaHora(), filaPri1.head().getObjeto().getTempoAtendimento());
-					filaPri1.head().getObjeto().imprimeComparacao();
-					filaPri1.head().getObjeto().imprimeDuracaoAtendimento();
+					relatorio.atualizaMedias(filaPri1.head().getObjeto().comparaHora(), filaPri1.head().getObjeto().getTempoAtendimento());	
 					r1.atualizaMedias(filaPri1.head().getObjeto().comparaHora(), filaPri1.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());			
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
@@ -279,9 +274,7 @@ public class PacienteControl implements ActionListener {
 					filaPri2.head().getObjeto().setDataHoraChamada(filaPri2.head().getObjeto().retornaHoraAtual());	
 					filaPri2.head().getObjeto().setTempoAtendimento(filaPri2.head().getObjeto().retornaDuracaoAtendimento());
 					atddao.historicoAtendimento(filaPri2.head().getObjeto());
-					relatorio.atualizaMedias(filaPri2.head().getObjeto().comparaHora(), filaPri2.head().getObjeto().getTempoAtendimento());
-					filaPri2.head().getObjeto().imprimeComparacao();
-					filaPri2.head().getObjeto().imprimeDuracaoAtendimento();
+					relatorio.atualizaMedias(filaPri2.head().getObjeto().comparaHora(), filaPri2.head().getObjeto().getTempoAtendimento());		
 					r2.atualizaMedias(filaPri2.head().getObjeto().comparaHora(), filaPri2.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri2.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri2.head().getObjeto().getSenha()));
@@ -293,8 +286,6 @@ public class PacienteControl implements ActionListener {
 					filaPri3.head().getObjeto().setTempoAtendimento(filaPri3.head().getObjeto().retornaDuracaoAtendimento());
 					atddao.historicoAtendimento(filaPri3.head().getObjeto());
 					relatorio.atualizaMedias(filaPri3.head().getObjeto().comparaHora(), filaPri3.head().getObjeto().getTempoAtendimento());
-					filaPri3.head().getObjeto().imprimeComparacao();
-					filaPri3.head().getObjeto().imprimeDuracaoAtendimento();
 					r3.atualizaMedias(filaPri3.head().getObjeto().comparaHora(), filaPri3.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri3.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri3.head().getObjeto().getSenha()));
@@ -306,8 +297,6 @@ public class PacienteControl implements ActionListener {
 					filaPri4.head().getObjeto().setTempoAtendimento(filaPri4.head().getObjeto().retornaDuracaoAtendimento());
 					atddao.historicoAtendimento(filaPri4.head().getObjeto());
 					relatorio.atualizaMedias(filaPri4.head().getObjeto().comparaHora(), filaPri4.head().getObjeto().getTempoAtendimento());
-					filaPri4.head().getObjeto().imprimeComparacao();
-					filaPri4.head().getObjeto().imprimeDuracaoAtendimento();
 					r4.atualizaMedias(filaPri4.head().getObjeto().comparaHora(), filaPri4.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri4.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri4.head().getObjeto().getSenha()));
@@ -319,8 +308,6 @@ public class PacienteControl implements ActionListener {
 					filaPri5.head().getObjeto().setTempoAtendimento(filaPri5.head().getObjeto().retornaDuracaoAtendimento());
 					atddao.historicoAtendimento(filaPri5.head().getObjeto());
 					relatorio.atualizaMedias(filaPri5.head().getObjeto().comparaHora(), filaPri5.head().getObjeto().getTempoAtendimento());
-					filaPri5.head().getObjeto().imprimeComparacao();
-					filaPri5.head().getObjeto().imprimeDuracaoAtendimento();
 					r5.atualizaMedias(filaPri5.head().getObjeto().comparaHora(), filaPri5.head().getObjeto().getTempoAtendimento());
 					listaAtdEncerrados.adiciona(filaPri5.head().getObjeto());
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri5.head().getObjeto().getSenha()));
