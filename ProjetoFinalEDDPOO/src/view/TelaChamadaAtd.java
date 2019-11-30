@@ -32,43 +32,43 @@ public class TelaChamadaAtd extends JPanel {
 		painelCentro.setLayout(new MigLayout("", "[grow]", "[]10[]10[]10[]10[]30[]30[]"));
 		
 		JLabel lblFila1 = new JLabel("Pacientes na Fila de Prioridade 1: ");
-		lblFila1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblFila1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblFila1, "flowx,cell 0 0");
 		
 		JLabel lblFila2 = new JLabel("Pacientes na Fila de Prioridade 2: ");
-		lblFila2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblFila2.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblFila2, "flowx,cell 0 1");
 		
 		JLabel lblFila3 = new JLabel("Pacientes na Fila de Prioridade 3: ");
-		lblFila3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblFila3.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblFila3, "flowx,cell 0 2");
 		
 		JLabel lblFila4 = new JLabel("Pacientes na Fila de Prioridade 4: ");
-		lblFila4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblFila4.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblFila4, "flowx,cell 0 3");
 		
 		JLabel lblFila5 = new JLabel("Pacientes na Fila de Prioridade 5: ");
-		lblFila5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblFila5.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblFila5, "flowx,cell 0 4");
 		
 		lblQnt1 = new JLabel("0");
-		lblQnt1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblQnt1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblQnt1, "cell 0 0");
 		
 		lblQnt2 = new JLabel("0");
-		lblQnt2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblQnt2.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblQnt2, "cell 0 1");
 		
 		lblQnt3 = new JLabel("0");
-		lblQnt3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblQnt3.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblQnt3, "cell 0 2");
 		
 		lblQnt4 = new JLabel("0");
-		lblQnt4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblQnt4.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblQnt4, "cell 0 3");
 		
 		lblQnt5 = new JLabel("0");
-		lblQnt5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblQnt5.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(lblQnt5, "cell 0 4");
 		
 		lblChamada = new JLabel("senha");
@@ -78,7 +78,7 @@ public class TelaChamadaAtd extends JPanel {
 		
 		btnChamarPaciente = new JButton("Chamar paciente");
 		btnChamarPaciente.setActionCommand("ChamarPaciente");
-		btnChamarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnChamarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		painelCentro.add(btnChamarPaciente, "cell 0 6,alignx center");
 		btnChamarPaciente.setVisible(true);
 		
