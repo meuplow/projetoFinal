@@ -35,7 +35,7 @@ public class Atendimento {
 		return diferenca;
 	}
 	
-	public int comparaHoraSaida() {
+	public int retornaDuracaoConsulta() {
 		Random rnd = new Random();
 		int acresc = rnd.nextInt(10800)+600;
 		int diferenca = comparaHora();
@@ -51,13 +51,23 @@ public class Atendimento {
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
-	public void imprimeComparacaoSaida() {
+	public void imprimeDuracaoConsulta() {
 		DecimalFormat df = new DecimalFormat("00");
 		int chs = this.tempoConsulta;
 		int hora = chs/3600;
 		int minuto = (chs - (hora*3600))/60;
 		int segundo = chs - (hora*3600) - (minuto*60);
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
+	}
+	
+	public String retornaDuracaoConsultaFormatada() {
+		DecimalFormat df = new DecimalFormat("00");
+		int chs = this.tempoConsulta;
+		int hora = chs/3600;
+		int minuto = (chs - (hora*3600))/60;
+		int segundo = chs - (hora*3600) - (minuto*60);
+		String aux = df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo);
+		return aux;
 	}
 	
 	public int getSenha() {
@@ -100,13 +110,25 @@ public class Atendimento {
 		this.tempoConsulta = TempoCOnsulta;
 	}
 
-	public void imprimeDataFormatada() {
+	public void imprimeDataFormatada(Date data) {
 		SimpleDateFormat dataFormatada = new SimpleDateFormat("dd-MM-YYYY");
-		System.out.println(dataFormatada.format(this.dataHoraEntrada));
+		System.out.println(dataFormatada.format(data));
 	}
 	
-	public void imprimeHoraFormatada() {
+	public void imprimeHoraFormatada(Date hora) {
 		SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm:ss");	
-		System.out.println(horaFormatada.format(this.dataHoraChamada));
+		System.out.println(horaFormatada.format(hora));
+	}
+	
+	public String retornaDataFormatada(Date data) {
+		SimpleDateFormat dataFormatada = new SimpleDateFormat("dd-MM-YYYY");
+		String aux = dataFormatada.format(data);
+		return aux;
+	}
+	
+	public String retornaHoraFormatada(Date hora) {
+		SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm:ss");	
+		String aux = horaFormatada.format(hora);
+		return aux;
 	}
 }

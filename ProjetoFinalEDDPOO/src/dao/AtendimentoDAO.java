@@ -14,16 +14,15 @@ public class AtendimentoDAO {
 	public boolean historicoAtendimento(Atendimento a) {
 		FileWriter fw = null;
 		BufferedWriter bw = null;
-
 		try {
-			fw = new FileWriter("Médias de Atendimentos.txt", true);
+			fw = new FileWriter("HistoricoDeAtendimentos.txt", true);
 			bw = new BufferedWriter(fw);
-			bw.write(a.getPaciente().getNome() + "#" + a.getSenha() + "# Hora de entrada na Fila de Atendimento: "
-					+ a.getDataHoraEntrada() + "# Hora de chamada para a consulta: " + a.getDataHoraChamada()
-					+ "# Tempo de consulta: " + a.getTempoConsulta());
+			bw.write(a.getPaciente().getNome() + "#" + a.getPaciente().getCpf() + "#" + "Entrada do paciente: "
+					+ a.retornaDataFormatada(a.getDataHoraEntrada()) + " " + a.retornaHoraFormatada(a.getDataHoraEntrada()) 
+					+ "#" + "Chamada para a consulta: " + a.retornaDataFormatada(a.getDataHoraChamada()) + " " 
+					+ a.retornaHoraFormatada(a.getDataHoraChamada()) + "#" + "Tempo de consulta: " + a.retornaDuracaoConsultaFormatada());
 			bw.newLine();
 			bw.flush();
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;

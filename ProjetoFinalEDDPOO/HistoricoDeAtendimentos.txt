@@ -1,0 +1,3 @@
+Joao da silva#83394854832#Entrada do paciente: 30-11-2019 18:10:06#Chamada para a consulta: 30-11-2019 18:10:25#Tempo de consulta: 01:36:41
+Joana dos Santos#34565496598#Entrada do paciente: 30-11-2019 18:12:46#Chamada para a consulta: 30-11-2019 18:12:54#Tempo de consulta: 02:46:27
+José Bonifácio#123#Entrada do paciente: 30-11-2019 18:16:07#Chamada para a consulta: 30-11-2019 18:16:17#Tempo de consulta: 01:08:42

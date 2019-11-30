@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Random;
 
+import dao.AtendimentoDAO;
 import dao.PacienteDAO;
 import model.Atendimento;
 import model.FilaAtendimentos;
@@ -27,6 +28,7 @@ public class PacienteControl implements ActionListener {
 	private FilaPrioridade filaPri4;
 	private FilaPrioridade filaPri5;
 	private ListaAtendimentosEncerrados listaAtdEncerrados;
+	private AtendimentoDAO atddao;
 
 	public PacienteControl(JanelaPrincipal j, Paciente p) {
 		super();
@@ -49,6 +51,7 @@ public class PacienteControl implements ActionListener {
 		this.j.getTcha().getBtnChamarPaciente().addActionListener(this);
 		this.j.getTtriagem().getChckbxMaisProcedimentos().addActionListener(this);
 		pdao = new PacienteDAO();
+		atddao = new AtendimentoDAO();
 		lista = new ListaPaciente();
 		filaAtd = new FilaAtendimentos();
 		filaPri1 = new FilaPrioridade();
@@ -244,13 +247,10 @@ public class PacienteControl implements ActionListener {
 			if ((filaPri1.size() > 0) || (filaPri2.size() > 0) || (filaPri3.size() > 0) || (filaPri4.size() > 0)
 					|| (filaPri5.size() > 0)) {
 				if (!filaPri1.isEmpty()) {
-					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());
-					// filaPri1.head().getObjeto().imprimeComparacao(filaPri1.head().getObjeto().retornaHoraAtual(),
-					// filaPri1.head().getObjeto().getHora());
-					// filaPri1.head().getObjeto().imprimeComparacaoSaida(filaPri1.head().getObjeto().retornaHoraAtual(),
-					// filaPri1.head().getObjeto().getHora());
-					filaPri1.head().getObjeto().setDataHoraChamada(filaPri1.head().getObjeto().retornaHoraAtual());
-					
+					filaPri1.head().getObjeto().setDataHoraChamada(filaPri1.head().getObjeto().retornaHoraAtual());	
+					filaPri1.head().getObjeto().setTempoConsulta(filaPri1.head().getObjeto().retornaDuracaoConsulta());
+					atddao.historicoAtendimento(filaPri1.head().getObjeto());
+					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());			
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri1.dequeue();
