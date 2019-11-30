@@ -98,10 +98,12 @@ public class PacienteControl implements ActionListener {
 			this.j.repaint();
 		}
 		if (e.getActionCommand().equals("Cadastrar")) {
-			if(this.j.getTcad().getFieldNome().getText().equals("")||this.j.getTcad().getFieldCpf().getText().equals("")||this.j.getTcad().getFieldData().getText().equals("")) {
+			if (this.j.getTcad().getFieldNome().getText().equals("")
+					|| this.j.getTcad().getFieldCpf().getText().equals("")
+					|| this.j.getTcad().getFieldData().getText().equals("")) {
 				this.j.getTcad().getLblMsg().setText("Campos em branco");
 				this.j.getTcad().getLblMsg().setVisible(true);
-			}else {
+			} else {
 				p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(),
 						this.j.getTcad().getFieldData().getText());
 				pdao.cadPaciente(p);
@@ -116,8 +118,8 @@ public class PacienteControl implements ActionListener {
 				this.j.getTcon().getLblResultadoBusca().setVisible(true);
 				this.j.getTcon().getBtnConfirmacao().setVisible(true);
 				this.j.getTcad().limparFields();
-				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
-				lista.imprimirListaNome();
+//				System.out.println(this.lista.buscarPaciente(this.j.getTcon().getFieldCpf().getText()).getCpf());
+//				lista.imprimirListaNome();
 
 			} else {
 				this.j.getTcon().limparFields();
@@ -165,11 +167,16 @@ public class PacienteControl implements ActionListener {
 					this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
 				} else if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
-					if(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText().equals("")||(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText().equals(""))||(this.j.getTtriagem().getFieldTemperatura().getText().equals(""))||(this.j.getTtriagem().getFieldOximetria().getText().equals(""))||(this.j.getTtriagem().getFieldIndice().getText().equals(""))) {
+					if (this.j.getTtriagem().getFieldFrequenciaCardiaca().getText().equals("")
+							|| (this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText().equals(""))
+							|| (this.j.getTtriagem().getFieldTemperatura().getText().equals(""))
+							|| (this.j.getTtriagem().getFieldOximetria().getText().equals(""))
+							|| (this.j.getTtriagem().getFieldIndice().getText().equals(""))) {
 						System.out.println("campos em branco");
-					}else {
+					} else {
 						float cardAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText());
-						float respAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText());
+						float respAux = Float
+								.parseFloat(this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText());
 						float tempAux = Float.parseFloat(this.j.getTtriagem().getFieldTemperatura().getText());
 						float oxiAux = Float.parseFloat(this.j.getTtriagem().getFieldOximetria().getText());
 						float fluxRespAux = Float.parseFloat(this.j.getTtriagem().getFieldIndice().getText());
@@ -238,8 +245,13 @@ public class PacienteControl implements ActionListener {
 					|| (filaPri5.size() > 0)) {
 				if (!filaPri1.isEmpty()) {
 					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());
-					//filaPri1.head().getObjeto().imprimeComparacao(filaPri1.head().getObjeto().retornaHoraAtual(), filaPri1.head().getObjeto().getHora());
-					//filaPri1.head().getObjeto().imprimeComparacaoSaida(filaPri1.head().getObjeto().retornaHoraAtual(), filaPri1.head().getObjeto().getHora());
+					// filaPri1.head().getObjeto().imprimeComparacao(filaPri1.head().getObjeto().retornaHoraAtual(),
+					// filaPri1.head().getObjeto().getHora());
+					// filaPri1.head().getObjeto().imprimeComparacaoSaida(filaPri1.head().getObjeto().retornaHoraAtual(),
+					// filaPri1.head().getObjeto().getHora());
+					filaPri1.head().getObjeto().setDataHoraChamada(filaPri1.head().getObjeto().retornaHoraAtual());
+					filaPri1.head().getObjeto().setTempoConsulta();
+					
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
 					filaPri1.dequeue();
