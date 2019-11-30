@@ -96,10 +96,8 @@ public class Atendimento {
 		return tempoConsulta;
 	}
 
-	public void setTempoConsulta() {
-		Random rnd = new Random();
-		int acresc = rnd.nextInt(10800)+600;
-		this.tempoConsulta = acresc;
+	public void setTempoConsulta( int TempoCOnsulta) {
+		this.tempoConsulta = TempoCOnsulta;
 	}
 
 	public void imprimeDataFormatada() {

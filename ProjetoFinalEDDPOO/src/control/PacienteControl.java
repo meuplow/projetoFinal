@@ -250,7 +250,6 @@ public class PacienteControl implements ActionListener {
 					// filaPri1.head().getObjeto().imprimeComparacaoSaida(filaPri1.head().getObjeto().retornaHoraAtual(),
 					// filaPri1.head().getObjeto().getHora());
 					filaPri1.head().getObjeto().setDataHoraChamada(filaPri1.head().getObjeto().retornaHoraAtual());
-					filaPri1.head().getObjeto().setTempoConsulta();
 					
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));
 					this.j.getTcha().getLblChamada().setVisible(true);
