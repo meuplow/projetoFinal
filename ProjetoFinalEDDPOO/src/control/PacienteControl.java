@@ -248,7 +248,7 @@ public class PacienteControl implements ActionListener {
 					|| (filaPri5.size() > 0)) {
 				if (!filaPri1.isEmpty()) {
 					filaPri1.head().getObjeto().setDataHoraChamada(filaPri1.head().getObjeto().retornaHoraAtual());	
-					filaPri1.head().getObjeto().setTempoConsulta(filaPri1.head().getObjeto().retornaDuracaoConsulta());
+					filaPri1.head().getObjeto().setTempoAtendimento(filaPri1.head().getObjeto().retornaDuracaoAtendimento());
 					atddao.historicoAtendimento(filaPri1.head().getObjeto());
 					listaAtdEncerrados.adiciona(filaPri1.head().getObjeto());			
 					this.j.getTcha().getLblChamada().setText(Integer.toString(filaPri1.head().getObjeto().getSenha()));

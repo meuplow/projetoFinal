@@ -11,7 +11,7 @@ public class Atendimento {
 	private Paciente paciente;
 	private Date dataHoraEntrada;
 	private Date dataHoraChamada;
-	private int tempoConsulta;
+	private int tempoAtendimento;
 	
 	public Atendimento(Paciente cpf, int senha) {
 		Date dataAtual = new Date();
@@ -35,7 +35,7 @@ public class Atendimento {
 		return diferenca;
 	}
 	
-	public int retornaDuracaoConsulta() {
+	public int retornaDuracaoAtendimento() {
 		Random rnd = new Random();
 		int acresc = rnd.nextInt(10800)+600;
 		int diferenca = comparaHora();
@@ -51,18 +51,18 @@ public class Atendimento {
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
-	public void imprimeDuracaoConsulta() {
+	public void imprimeDuracaoAtendimento() {
 		DecimalFormat df = new DecimalFormat("00");
-		int chs = this.tempoConsulta;
+		int chs = this.tempoAtendimento;
 		int hora = chs/3600;
 		int minuto = (chs - (hora*3600))/60;
 		int segundo = chs - (hora*3600) - (minuto*60);
 		System.out.println(df.format(hora)+":"+df.format(minuto)+":"+df.format(segundo));
 	}
 	
-	public String retornaDuracaoConsultaFormatada() {
+	public String retornaDuracaoAtendimentoFormatado() {
 		DecimalFormat df = new DecimalFormat("00");
-		int chs = this.tempoConsulta;
+		int chs = this.tempoAtendimento;
 		int hora = chs/3600;
 		int minuto = (chs - (hora*3600))/60;
 		int segundo = chs - (hora*3600) - (minuto*60);
@@ -102,12 +102,12 @@ public class Atendimento {
 		this.dataHoraChamada = dataHoraChamada;
 	}
 
-	public int getTempoConsulta() {
-		return tempoConsulta;
+	public int getTempoAtendimento() {
+		return tempoAtendimento;
 	}
 
-	public void setTempoConsulta( int TempoCOnsulta) {
-		this.tempoConsulta = TempoCOnsulta;
+	public void setTempoAtendimento(int tempoAtendimento) {
+		this.tempoAtendimento = tempoAtendimento;
 	}
 
 	public void imprimeDataFormatada(Date data) {

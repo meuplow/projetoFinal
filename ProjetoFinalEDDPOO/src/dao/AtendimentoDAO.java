@@ -19,8 +19,8 @@ public class AtendimentoDAO {
 			bw = new BufferedWriter(fw);
 			bw.write(a.getPaciente().getNome() + "#" + a.getPaciente().getCpf() + "#" + "Entrada do paciente: "
 					+ a.retornaDataFormatada(a.getDataHoraEntrada()) + " " + a.retornaHoraFormatada(a.getDataHoraEntrada()) 
-					+ "#" + "Chamada para a consulta: " + a.retornaDataFormatada(a.getDataHoraChamada()) + " " 
-					+ a.retornaHoraFormatada(a.getDataHoraChamada()) + "#" + "Tempo de consulta: " + a.retornaDuracaoConsultaFormatada());
+					+ "#" + "Chamada para atendimento: " + a.retornaDataFormatada(a.getDataHoraChamada()) + " " 
+					+ a.retornaHoraFormatada(a.getDataHoraChamada()) + "#" + "Tempo de atendimento: " + a.retornaDuracaoAtendimentoFormatado());
 			bw.newLine();
 			bw.flush();
 		} catch (IOException e) {
