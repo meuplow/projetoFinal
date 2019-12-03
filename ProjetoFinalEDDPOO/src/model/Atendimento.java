@@ -24,14 +24,14 @@ public class Atendimento {
 	public Atendimento() {
 	}
 
-	// Método que retorna a hora atual do sistema
+	// Metodo que retorna a hora atual do sistema
 	public Date retornaHoraAtual() {
 		Date dateSaida = new Date();
 		return dateSaida;
 	}
 
-	// Método que subtrai as hora de entrada do paciente e a hora que ele é chamado para o atendimento,
-	// assim converte em segundos e retorna esse valor
+	// Metodo que retorna a diferença em segundos entre a hora de entrada e a hora de chamada 
+	// para atendimento do paciente
 	public int comparaHora() {
 		long aux = Math.abs(this.dataHoraChamada.getTime() - this.dataHoraEntrada.getTime());
 		long diff = TimeUnit.SECONDS.convert(aux, TimeUnit.MILLISECONDS);
@@ -39,7 +39,7 @@ public class Atendimento {
 		return diferenca;
 	}
 	
-	// Método que adiciona um valor aleatório de até 10800, equivalente a 3 horas, mais 600
+	// Metodo que adiciona um valor aleatorio de ate 10800, equivalente a 3 horas, mais 600
 	// Esse valor representa, teoricamente, o tempo em que o paciente estava sendo atendido
 	public int retornaDuracaoAtendimento() {
 		Random rnd = new Random();
@@ -49,7 +49,7 @@ public class Atendimento {
 		return diferenca;
 	}
 
-	// Método que apresenta a hora com o formato adequado
+	// Metodo que apresenta a hora com o formato adequado
 	public void imprimeComparacao() {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = comparaHora() / 3600;
@@ -58,7 +58,7 @@ public class Atendimento {
 		System.out.println(df.format(hora) + ":" + df.format(minuto) + ":" + df.format(segundo));
 	}
 
-	// Método que apresenta o tempo de duração do atendimento com o formato adequado
+	// Metodo que apresenta o tempo de duracao do atendimento com o formato adequado
 	public void imprimeDuracaoAtendimento() {
 		DecimalFormat df = new DecimalFormat("00");
 		int chs = this.tempoAtendimento;
@@ -68,7 +68,7 @@ public class Atendimento {
 		System.out.println(df.format(hora) + ":" + df.format(minuto) + ":" + df.format(segundo));
 	}
 
-	// Método que formata a hora de duração do atendimento e a retorna
+	// Metodo que formata a hora de duracaoo do atendimento e a retorna
 	public String retornaDuracaoAtendimentoFormatado() {
 		DecimalFormat df = new DecimalFormat("00");
 		int chs = this.tempoAtendimento;
@@ -119,25 +119,25 @@ public class Atendimento {
 		this.tempoAtendimento = tempoAtendimento;
 	}
 
-	// Método que imprime a data com o formato adequado
+	// Metodo que imprime a data com o formato adequado
 	public void imprimeDataFormatada(Date data) {
 		SimpleDateFormat dataFormatada = new SimpleDateFormat("dd-MM-YYYY");
 		System.out.println(dataFormatada.format(data));
 	}
-	// Método que imprime a hora com o formato adequado
+	// Metodo que imprime a hora com o formato adequado
 	public void imprimeHoraFormatada(Date hora) {
 		SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm:ss");
 		System.out.println(horaFormatada.format(hora));
 	}
 
-	// Método que retorna a data com o formato adequado
+	// Metodo que retorna a data com o formato adequado
 	public String retornaDataFormatada(Date data) {
 		SimpleDateFormat dataFormatada = new SimpleDateFormat("dd-MM-YYYY");
 		String aux = dataFormatada.format(data);
 		return aux;
 	}
 
-	// Método que retorna a hora com o formato adequado
+	// Metodo que retorna a hora com o formato adequado
 	public String retornaHoraFormatada(Date hora) {
 		SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm:ss");
 		String aux = horaFormatada.format(hora);

@@ -8,7 +8,7 @@ public class FilaAtendimentos {
 		this.topo = null;
 	}
 
-	// Método que verifica se a fila está vazia
+	// Metodo que verifica se a fila esta vazia
 	public boolean isEmpty() {
 		if (this.topo == null) {
 			return true;
@@ -16,7 +16,7 @@ public class FilaAtendimentos {
 		return false;
 	}
 
-	// Método que retorna o tamanho da fila
+	// Metodo que retorna o tamanho da fila
 	public int size() {
 		if (!isEmpty()) {
 			int cnt = 1;
@@ -28,7 +28,7 @@ public class FilaAtendimentos {
 		return 0;
 	}
 
-	// Método que adiciona um novo objeto Atendimento no final da fila 
+	// Metodo que adiciona um novo objeto Atendimento no final da fila 
 	public void enqueue(Atendimento objeto) {
 		NoAtendimentos novo = new NoAtendimentos(objeto);
 		if (isEmpty()) {
@@ -42,7 +42,7 @@ public class FilaAtendimentos {
 		}
 	}
 
-	// Método que retira o primeiro objeto Atendimento da fila
+	// Metodo que retira o primeiro objeto Atendimento da fila
 	public NoAtendimentos dequeue() {
 		if (!isEmpty()) {
 			if (size() > 1) {
@@ -57,7 +57,7 @@ public class FilaAtendimentos {
 		return null;
 	}
 
-	// Método que retorna o primeiro elemento da fila, "topo"
+	// Metodo que retorna o primeiro elemento da fila, "topo"
 	public NoAtendimentos head() {
 		if (!isEmpty()) {
 			return this.topo;
@@ -65,12 +65,12 @@ public class FilaAtendimentos {
 		return null;
 	}
 
-	// Método que seta o "topo" como nulo
+	// Metodo que seta o "topo" como nulo
 	public void clear() {
 		this.topo = null;
 	}
 	
-	// Método que apresenta os objetos da fila
+	// Metodo que apresenta os objetos da fila
 	public void imprimirFilaAtendimento() {
 		NoAtendimentos aux = this.topo;
 		while (aux != null) {

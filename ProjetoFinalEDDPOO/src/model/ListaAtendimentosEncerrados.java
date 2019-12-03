@@ -8,7 +8,7 @@ public class ListaAtendimentosEncerrados {
 		this.primeiro = null;
 	}
 
-	// Método que verifica se a lista está vazia
+	// Metodo que verifica se a lista está vazia
 	public boolean estaVazia() {
 		if (this.primeiro == null) {
 			return true;
@@ -16,7 +16,7 @@ public class ListaAtendimentosEncerrados {
 		return false;
 	}
 
-	// Método que adiciona um novo objeto Atendimento no final da Lista
+	// Metodo que adiciona um novo objeto Atendimento no final da Lista
 	public void adiciona(Atendimento objeto) {
 		NoAtendimentos novo = new NoAtendimentos(objeto);
 		if (estaVazia()) {
@@ -30,7 +30,7 @@ public class ListaAtendimentosEncerrados {
 		}
 	}
 
-	// Método que apresenta os objetos da lista
+	// Metodo que apresenta os objetos da lista
 	public void imprimirListaAtendimentosEncerrados() {
 		NoAtendimentos aux = this.primeiro;
 		while (aux != null) {

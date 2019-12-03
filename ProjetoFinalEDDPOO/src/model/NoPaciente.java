@@ -17,7 +17,7 @@ public class NoPaciente {
 		this.proximo = proximo;
 	}
 
-	// Métodos getters e setters
+	// Metodos getters e setters
 	public Paciente getObjeto() {
 		return objeto;
 	}

@@ -6,7 +6,7 @@ public class Paciente {
 	private String cpf;
 	private String data;
 
-	// Construtor da Classe que recebe os devidos parâmetros
+	// Construtor da Classe que recebe os devidos parametros
 	public Paciente(String nome, String cpf, String data) {
 		super();
 		this.nome = nome;
@@ -14,11 +14,11 @@ public class Paciente {
 		this.data = data;
 	}
 
-	// Construtor sem parâmetro
+	// Construtor sem parametro
 	public Paciente() {
 	}
 
-	// Métodos getters e setters
+	// Metodos getters e setters
 	public String getNome() {
 		return nome;
 	}

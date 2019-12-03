@@ -11,13 +11,13 @@ public class NoAtendimentos {
 		this.proximo = proximo;
 	}
 
-	// Um segundo Construtor que recebe apenas um obejto Atendimento
+	// Segundo Construtor que recebe apenas um obejto Atendimento
 	public NoAtendimentos(Atendimento objeto) {
 		this.objeto = objeto;
 		this.proximo = null;
 	}
 
-	// Métodos getters e setters
+	// Metodos getters e setters
 	public Atendimento getObjeto() {
 		return objeto;
 	}
