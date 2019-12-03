@@ -40,22 +40,22 @@ public class TelaTriagem extends JPanel {
 	private JLabel lblIndiceDePico;
 
 	public void limparTela() {
-//		chckbxEntubado.setSelected(false);
-//		chckbxApneia.setSelected(false);
-//		chckbxPulso.setSelected(false);
-//		chckbxSituacaoDeRisco.setSelected(false);
-//		chckbxConfuso.setSelected(false);
-//		chckbxDesorientado.setSelected(false);
-//		chckbxLetargico.setSelected(false);
-//		chckbxDor.setSelected(false);
-//		chckbxMaisProcedimentos.setSelected(false);
-//		chckbxUmProcedimento.setSelected(false);
-//		chckbxEstavel.setSelected(false);
-//		fieldFrequenciaCardiaca.setText("");
-//		fieldFrequenciaRespiratoria.setText("");
-//		fieldTemperatura.setText("");
-//		fieldOximetria.setText("");
-//		fieldIndice.setText("");
+		chckbxEntubado.setSelected(false);
+		chckbxApneia.setSelected(false);
+		chckbxPulso.setSelected(false);
+		chckbxSituacaoDeRisco.setSelected(false);
+		chckbxConfuso.setSelected(false);
+		chckbxDesorientado.setSelected(false);
+		chckbxLetargico.setSelected(false);
+		chckbxDor.setSelected(false);
+		chckbxMaisProcedimentos.setSelected(false);
+		chckbxUmProcedimento.setSelected(false);
+		chckbxEstavel.setSelected(false);
+		fieldFrequenciaCardiaca.setText("");
+		fieldFrequenciaRespiratoria.setText("");
+		fieldTemperatura.setText("");
+		fieldOximetria.setText("");
+		fieldIndice.setText("");
 		lblMsg.setVisible(false);
 		btnDirecionar.setVisible(true);
 	}

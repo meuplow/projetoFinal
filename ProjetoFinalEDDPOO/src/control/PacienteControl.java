@@ -77,7 +77,7 @@ public class PacienteControl implements ActionListener {
 		r3 = new Relatorios();
 		r4 = new Relatorios();
 		r5 = new Relatorios();
-		auxTriagem = false;
+		auxTriagem = true;
 	}
 
 	public ListaPaciente getLista() {
@@ -177,6 +177,7 @@ public class PacienteControl implements ActionListener {
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt1().setText(String.valueOf(filaPri1.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
+					auxTriagem = false;
 				} else if (this.j.getTtriagem().getChckbxSituacaoDeRisco().isSelected()
 						|| this.j.getTtriagem().getChckbxConfuso().isSelected()
 						|| this.j.getTtriagem().getChckbxDesorientado().isSelected()
@@ -186,6 +187,7 @@ public class PacienteControl implements ActionListener {
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
+					auxTriagem = false;
 				} else if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
 					if (this.j.getTtriagem().getFieldFrequenciaCardiaca().getText().equals("")
 							|| (this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText().equals(""))
@@ -211,18 +213,20 @@ public class PacienteControl implements ActionListener {
 							filaAtd.dequeue();
 							this.j.getTcha().getLblQnt3().setText(String.valueOf(filaPri3.size()));
 							this.j.getTtriagem().getLblMsg().setVisible(true);
-						}
+						}auxTriagem = false;
 					}
 				} else if (this.j.getTtriagem().getChckbxUmProcedimento().isSelected()) {
 					filaPri4.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt4().setText(String.valueOf(filaPri4.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
+					auxTriagem = false;
 				} else if (this.j.getTtriagem().getChckbxEstavel().isSelected()) {
 					filaPri5.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
+					auxTriagem = false;
 				}
 				if (!auxTriagem) {
 					this.j.getTtriagem().getLblNome().setVisible(false);
