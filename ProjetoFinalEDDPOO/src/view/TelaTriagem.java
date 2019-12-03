@@ -8,6 +8,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import java.awt.Color;
 
 public class TelaTriagem extends JPanel {
 	private JTextField fieldFrequenciaCardiaca;
@@ -80,33 +81,41 @@ public class TelaTriagem extends JPanel {
 	}
 
 	public TelaTriagem() {
-		setBounds(100, 100, 600, 500);
-		setLayout(new MigLayout("", "[grow]", "[]10[]10[][][]20[][][][]15[]15[]20[][]"));
+		setBackground(new Color(255, 204, 153));
+		setBounds(100, 100, 650, 500);
+		setLayout(new MigLayout("", "[grow]", "[][]10[][][]10[][][][]10[]10[]20[][]"));
 
 		painelNorte = new JPanel();
+		painelNorte.setBackground(new Color(51, 102, 153));
+		painelNorte.setForeground(new Color(51, 102, 153));
 		add(painelNorte, "cell 0 0,grow");
 
 		lblTriagem = new JLabel("Triagem");
-		lblTriagem.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblTriagem.setForeground(Color.WHITE);
+		lblTriagem.setFont(new Font("Tahoma", Font.BOLD, 25));
 		painelNorte.add(lblTriagem);
 
 		lblNome = new JLabel("Nome");
+		lblNome.setForeground(Color.WHITE);
 		lblNome.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblNome, "cell 0 1");
 		lblNome.setVisible(false);
 
 		JLabel lblPri1 = new JLabel("O paciente se encontra:");
+		lblPri1.setForeground(Color.WHITE);
 		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblPri1, "flowx,cell 0 2");
 
 		lblInformeOsSeguintes = new JLabel(
 				"Informe os seguintes dados:");
+		lblInformeOsSeguintes.setForeground(Color.WHITE);
 		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblInformeOsSeguintes, "cell 0 6");
 		lblInformeOsSeguintes.setVisible(false);
 
 		lblFrequenciaCardiaca = new JLabel("Frequ\u00EAncia card\u00EDaca");
-		lblFrequenciaCardiaca.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblFrequenciaCardiaca.setForeground(Color.WHITE);
+		lblFrequenciaCardiaca.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(lblFrequenciaCardiaca, "flowx,cell 0 7,growx");
 		lblFrequenciaCardiaca.setVisible(false);
 
@@ -117,7 +126,8 @@ public class TelaTriagem extends JPanel {
 		fieldFrequenciaCardiaca.setVisible(false);
 
 		lblFrequenciaRespiratoria = new JLabel("Frequ\u00EAncia respirat\u00F3ria");
-		lblFrequenciaRespiratoria.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblFrequenciaRespiratoria.setForeground(Color.WHITE);
+		lblFrequenciaRespiratoria.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(lblFrequenciaRespiratoria, "cell 0 7,growx");
 		lblFrequenciaRespiratoria.setVisible(false);
 
@@ -128,7 +138,8 @@ public class TelaTriagem extends JPanel {
 		fieldFrequenciaRespiratoria.setVisible(false);
 
 		lblTemperaturaCorporal = new JLabel("Temperatura corporal");
-		lblTemperaturaCorporal.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblTemperaturaCorporal.setForeground(Color.WHITE);
+		lblTemperaturaCorporal.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(lblTemperaturaCorporal, "cell 0 7,growx");
 		lblTemperaturaCorporal.setVisible(false);
 
@@ -139,7 +150,8 @@ public class TelaTriagem extends JPanel {
 		fieldTemperatura.setVisible(false);
 		
 		lblOximetriaDoPulso = new JLabel("Oximetria do pulso");
-		lblOximetriaDoPulso.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblOximetriaDoPulso.setForeground(Color.WHITE);
+		lblOximetriaDoPulso.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(lblOximetriaDoPulso, "flowx,cell 0 8,growx");
 		lblOximetriaDoPulso.setVisible(false);
 
@@ -150,7 +162,8 @@ public class TelaTriagem extends JPanel {
 		fieldOximetria.setVisible(false);
 
 		lblIndiceDePico = new JLabel("\u00CDndice de pico do fluxo respirat\u00F3rio");
-		lblIndiceDePico.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblIndiceDePico.setForeground(Color.WHITE);
+		lblIndiceDePico.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(lblIndiceDePico, "cell 0 8,growx");
 		lblIndiceDePico.setVisible(false);
 
@@ -166,52 +179,75 @@ public class TelaTriagem extends JPanel {
 		btnDirecionar.setActionCommand("Direcionar");
 
 		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada");
-		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblMsg.setForeground(Color.WHITE);
+		lblMsg.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblMsg, "cell 0 12,alignx center");
 		lblMsg.setVisible(false);
 
 		chckbxEntubado = new JCheckBox("entubado");
-		chckbxEntubado.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxEntubado.setForeground(Color.WHITE);
+		chckbxEntubado.setBackground(new Color(255, 204, 153));
+		chckbxEntubado.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxEntubado, "flowx,cell 0 3,growx");
 
 		chckbxApneia = new JCheckBox("com apneia");
-		chckbxApneia.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxApneia.setForeground(Color.WHITE);
+		chckbxApneia.setBackground(new Color(255, 204, 153));
+		chckbxApneia.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxApneia, "cell 0 3,growx");
 
 		chckbxPulso = new JCheckBox("sem pulso ou sem rea\u00E7\u00E3o");
-		chckbxPulso.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxPulso.setForeground(Color.WHITE);
+		chckbxPulso.setBackground(new Color(255, 204, 153));
+		chckbxPulso.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxPulso, "cell 0 3,growx");
 
 		chckbxSituacaoDeRisco = new JCheckBox("situa\u00E7\u00E3o de risco");
-		chckbxSituacaoDeRisco.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxSituacaoDeRisco.setForeground(Color.WHITE);
+		chckbxSituacaoDeRisco.setBackground(new Color(255, 204, 153));
+		chckbxSituacaoDeRisco.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxSituacaoDeRisco, "flowx,cell 0 4,growx");
 
 		chckbxConfuso = new JCheckBox("confuso");
-		chckbxConfuso.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxConfuso.setForeground(Color.WHITE);
+		chckbxConfuso.setBackground(new Color(255, 204, 153));
+		chckbxConfuso.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxConfuso, "cell 0 4,growx");
 
 		chckbxDesorientado = new JCheckBox("desorientado");
-		chckbxDesorientado.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxDesorientado.setForeground(Color.WHITE);
+		chckbxDesorientado.setBackground(new Color(255, 204, 153));
+		chckbxDesorientado.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxDesorientado, "cell 0 4,growx");
 
 		chckbxLetargico = new JCheckBox("let\u00E1rgico");
-		chckbxLetargico.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxLetargico.setForeground(Color.WHITE);
+		chckbxLetargico.setBackground(new Color(255, 204, 153));
+		chckbxLetargico.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxLetargico, "cell 0 4,growx");
 
 		chckbxDor = new JCheckBox("com dor ou sofrimento agudo");
-		chckbxDor.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxDor.setForeground(Color.WHITE);
+		chckbxDor.setBackground(new Color(255, 204, 153));
+		chckbxDor.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxDor, "cell 0 4,growx");
 
 		chckbxMaisProcedimentos = new JCheckBox("O paciente precisa realizar m\u00FAltiplos procedimentos");
-		chckbxMaisProcedimentos.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxMaisProcedimentos.setForeground(Color.WHITE);
+		chckbxMaisProcedimentos.setBackground(new Color(255, 204, 153));
+		chckbxMaisProcedimentos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxMaisProcedimentos, "cell 0 5,growx");
 
 		chckbxUmProcedimento = new JCheckBox("O paciente precisa realizar APENAS um outro procedimento");
-		chckbxUmProcedimento.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxUmProcedimento.setForeground(Color.WHITE);
+		chckbxUmProcedimento.setBackground(new Color(255, 204, 153));
+		chckbxUmProcedimento.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxUmProcedimento, "cell 0 9");
 
 		chckbxEstavel = new JCheckBox("O paciente se encontra est\u00E1vel");
-		chckbxEstavel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		chckbxEstavel.setForeground(Color.WHITE);
+		chckbxEstavel.setBackground(new Color(255, 204, 153));
+		chckbxEstavel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		add(chckbxEstavel, "cell 0 10,growx");
 	}
 

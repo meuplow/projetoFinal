@@ -230,7 +230,6 @@ public class PacienteControl implements ActionListener {
 				}
 			} else {
 				this.j.setContentPane(this.j.getTcad());
-				this.j.setBounds(100, 100, 600, 500);
 				this.j.revalidate();
 				this.j.repaint();
 			}

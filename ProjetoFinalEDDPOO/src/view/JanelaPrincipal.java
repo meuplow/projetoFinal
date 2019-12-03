@@ -137,7 +137,7 @@ public class JanelaPrincipal extends JFrame {
 
 	public JanelaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(600, 250, 600, 500);
+		setBounds(600, 250, 650, 500);
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(Color.WHITE);
@@ -201,16 +201,16 @@ public class JanelaPrincipal extends JFrame {
 
 		lblAviso = new JLabel("Utilize o menu \"Opera\u00E7\u00F5es\", no canto superior esquerdo,");
 		lblAviso.setForeground(Color.WHITE);
-		lblAviso.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblAviso.setFont(new Font("Tahoma", Font.BOLD, 17));
 		painelCentro.add(lblAviso, "cell 0 2,alignx center");
 
 		lblAviso2 = new JLabel(" para realizar as tarefas do dia");
 		lblAviso2.setForeground(Color.WHITE);
-		lblAviso2.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblAviso2.setFont(new Font("Tahoma", Font.BOLD, 17));
 		painelCentro.add(lblAviso2, "cell 0 3,alignx center");
 
 		btnEncerrar = new JButton("Encerrar o expediente");
-		btnEncerrar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnEncerrar.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		painelCentro.add(btnEncerrar, "cell 0 5,alignx right");
 		btnEncerrar.setActionCommand("Encerrar");
 		setTitle("Hospital Santa Casa dos Informatas");

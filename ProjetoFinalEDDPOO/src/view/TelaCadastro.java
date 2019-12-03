@@ -7,6 +7,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import javax.swing.border.BevelBorder;
 
 	public class TelaCadastro extends JPanel {
 
@@ -102,7 +103,8 @@ import java.awt.Color;
 			setLayout(new MigLayout("", "[grow]", "10[]40[]20[]20[]70[][]30[]30[]"));
 			
 			painelNorte = new JPanel();
-			painelNorte.setBackground(new Color(255, 204, 153));
+			painelNorte.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+			painelNorte.setBackground(new Color(0, 102, 153));
 			add(painelNorte, "cell 0 0,growx");
 			
 			lblCadPacientes = new JLabel("Cadastro de Pacientes");
@@ -148,7 +150,7 @@ import java.awt.Color;
 			btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 17));
 			add(btnLimpar, "cell 0 5,alignx center,growy");
 			
-			lblMsg = new JLabel("Paciente cadastrado com sucesso");
+			lblMsg = new JLabel("Paciente cadastrado com sucesso!");
 			lblMsg.setForeground(Color.WHITE);
 			lblMsg.setFont(new Font("Tahoma", Font.BOLD, 17));
 			add(lblMsg, "cell 0 6,alignx center,aligny center");

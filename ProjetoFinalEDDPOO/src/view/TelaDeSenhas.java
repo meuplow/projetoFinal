@@ -7,23 +7,28 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class TelaDeSenhas extends JPanel {
 	private JTextField fieldSenha;
 	private JButton btnChamarProx;
 
 	public TelaDeSenhas() {
+		setBackground(new Color(255, 204, 153));
 		setBounds(100, 100, 600, 500);
-		setLayout(new MigLayout("", "[grow]", "100[]50[]"));
+		setLayout(new MigLayout("", "[grow]", "150[]100[]"));
 
 		fieldSenha = new JTextField();
+		fieldSenha.setHorizontalAlignment(SwingConstants.CENTER);
+		fieldSenha.setBackground(new Color(255, 204, 153));
 		fieldSenha.setEditable(false);
 		fieldSenha.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		add(fieldSenha, "cell 0 0,growx,alignx center");
 		fieldSenha.setColumns(10);
 
 		btnChamarProx = new JButton("Chamar pr\u00F3xima senha");
-		btnChamarProx.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnChamarProx.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		add(btnChamarProx, "cell 0 1,alignx center");
 		btnChamarProx.setActionCommand("ChamarProx");
 	}

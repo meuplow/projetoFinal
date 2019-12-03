@@ -6,6 +6,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.border.BevelBorder;
 
 public class TelaChamadaAtd extends JPanel {
 	private JLabel lblQnt1;
@@ -20,66 +22,80 @@ public class TelaChamadaAtd extends JPanel {
 		setBounds(100, 100, 600, 500);
 		setLayout(new BorderLayout(0, 0));
 		
+		JPanel painelCentro = new JPanel();
+		painelCentro.setBackground(new Color(255, 204, 153));
+		add(painelCentro, BorderLayout.CENTER);
+		painelCentro.setLayout(new MigLayout("", "[grow]", "10[]40[]20[]20[]20[]20[]30[]30[]"));
+		
 		JPanel painelNorte = new JPanel();
-		add(painelNorte, BorderLayout.NORTH);
+		painelNorte.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		painelNorte.setBackground(new Color(51, 102, 153));
+		painelCentro.add(painelNorte, "cell 0 0,growx");
 		
 		JLabel lblAtendimento = new JLabel("Atendimento");
-		lblAtendimento.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblAtendimento.setForeground(Color.WHITE);
 		painelNorte.add(lblAtendimento);
-		
-		JPanel painelCentro = new JPanel();
-		add(painelCentro, BorderLayout.CENTER);
-		painelCentro.setLayout(new MigLayout("", "[grow]", "[]10[]10[]10[]10[]30[]30[]"));
+		lblAtendimento.setFont(new Font("Tahoma", Font.BOLD, 25));
 		
 		JLabel lblFila1 = new JLabel("Pacientes na Fila de Prioridade 1: ");
-		lblFila1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblFila1, "flowx,cell 0 0");
+		lblFila1.setForeground(Color.WHITE);
+		lblFila1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblFila1, "flowx,cell 0 1");
 		
 		JLabel lblFila2 = new JLabel("Pacientes na Fila de Prioridade 2: ");
-		lblFila2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblFila2, "flowx,cell 0 1");
+		lblFila2.setForeground(Color.WHITE);
+		lblFila2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblFila2, "flowx,cell 0 2");
 		
 		JLabel lblFila3 = new JLabel("Pacientes na Fila de Prioridade 3: ");
-		lblFila3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblFila3, "flowx,cell 0 2");
+		lblFila3.setForeground(Color.WHITE);
+		lblFila3.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblFila3, "flowx,cell 0 3");
 		
 		JLabel lblFila4 = new JLabel("Pacientes na Fila de Prioridade 4: ");
-		lblFila4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblFila4, "flowx,cell 0 3");
+		lblFila4.setForeground(Color.WHITE);
+		lblFila4.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblFila4, "flowx,cell 0 4");
 		
 		JLabel lblFila5 = new JLabel("Pacientes na Fila de Prioridade 5: ");
-		lblFila5.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblFila5, "flowx,cell 0 4");
+		lblFila5.setForeground(Color.WHITE);
+		lblFila5.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblFila5, "flowx,cell 0 5");
 		
 		lblQnt1 = new JLabel("0");
-		lblQnt1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblQnt1, "cell 0 0");
+		lblQnt1.setForeground(Color.WHITE);
+		lblQnt1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblQnt1, "cell 0 1");
 		
 		lblQnt2 = new JLabel("0");
-		lblQnt2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblQnt2, "cell 0 1");
+		lblQnt2.setForeground(Color.WHITE);
+		lblQnt2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblQnt2, "cell 0 2");
 		
 		lblQnt3 = new JLabel("0");
-		lblQnt3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblQnt3, "cell 0 2");
+		lblQnt3.setForeground(Color.WHITE);
+		lblQnt3.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblQnt3, "cell 0 3");
 		
 		lblQnt4 = new JLabel("0");
-		lblQnt4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblQnt4, "cell 0 3");
+		lblQnt4.setForeground(Color.WHITE);
+		lblQnt4.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblQnt4, "cell 0 4");
 		
 		lblQnt5 = new JLabel("0");
-		lblQnt5.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		painelCentro.add(lblQnt5, "cell 0 4");
+		lblQnt5.setForeground(Color.WHITE);
+		lblQnt5.setFont(new Font("Tahoma", Font.BOLD, 17));
+		painelCentro.add(lblQnt5, "cell 0 5");
 		
 		lblChamada = new JLabel("senha");
 		lblChamada.setVisible(false);
-		lblChamada.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		painelCentro.add(lblChamada, "cell 0 5,alignx center");
+		lblChamada.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		painelCentro.add(lblChamada, "cell 0 6,alignx center");
 		
 		btnChamarPaciente = new JButton("Chamar paciente");
 		btnChamarPaciente.setActionCommand("ChamarPaciente");
-		btnChamarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		painelCentro.add(btnChamarPaciente, "cell 0 6,alignx center");
+		btnChamarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		painelCentro.add(btnChamarPaciente, "cell 0 7,alignx center");
 		btnChamarPaciente.setVisible(true);
 		
 	}
