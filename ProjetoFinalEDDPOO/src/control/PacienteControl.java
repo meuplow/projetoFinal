@@ -77,7 +77,7 @@ public class PacienteControl implements ActionListener {
 		r3 = new Relatorios();
 		r4 = new Relatorios();
 		r5 = new Relatorios();
-		auxTriagem = true;
+		auxTriagem = false;
 	}
 
 	public ListaPaciente getLista() {
@@ -124,7 +124,10 @@ public class PacienteControl implements ActionListener {
 					|| this.j.getTcad().getFieldData().getText().equals("")) {
 				this.j.getTcad().getLblMsg().setText("Campos em branco");
 				this.j.getTcad().getLblMsg().setVisible(true);
-			} else {
+			}else if(this.lista.buscarPaciente(this.j.getTcad().getFieldCpf().getText())!=null) {
+				this.j.getTcad().getLblMsg().setText("CPF já cadastrado");
+				this.j.getTcad().getLblMsg().setVisible(true);
+			}else {
 				p = new Paciente(this.j.getTcad().getFieldNome().getText(), this.j.getTcad().getFieldCpf().getText(),
 						this.j.getTcad().getFieldData().getText());
 				pdao.cadPaciente(p);
@@ -177,7 +180,7 @@ public class PacienteControl implements ActionListener {
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt1().setText(String.valueOf(filaPri1.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
-					auxTriagem = false;
+					//auxTriagem = false;
 				} else if (this.j.getTtriagem().getChckbxSituacaoDeRisco().isSelected()
 						|| this.j.getTtriagem().getChckbxConfuso().isSelected()
 						|| this.j.getTtriagem().getChckbxDesorientado().isSelected()
@@ -187,14 +190,14 @@ public class PacienteControl implements ActionListener {
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt2().setText(String.valueOf(filaPri2.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
-					auxTriagem = false;
+					//auxTriagem = false;
 				} else if (this.j.getTtriagem().getChckbxMaisProcedimentos().isSelected()) {
 					if (this.j.getTtriagem().getFieldFrequenciaCardiaca().getText().equals("")
 							|| (this.j.getTtriagem().getFieldFrequenciaRespiratoria().getText().equals(""))
 							|| (this.j.getTtriagem().getFieldTemperatura().getText().equals(""))
 							|| (this.j.getTtriagem().getFieldOximetria().getText().equals(""))
 							|| (this.j.getTtriagem().getFieldIndice().getText().equals(""))) {
-						auxTriagem = true;
+						//auxTriagem = true;
 					} else {
 						float cardAux = Float.parseFloat(this.j.getTtriagem().getFieldFrequenciaCardiaca().getText());
 						float respAux = Float
@@ -213,24 +216,27 @@ public class PacienteControl implements ActionListener {
 							filaAtd.dequeue();
 							this.j.getTcha().getLblQnt3().setText(String.valueOf(filaPri3.size()));
 							this.j.getTtriagem().getLblMsg().setVisible(true);
-						}auxTriagem = false;
+						}//auxTriagem = false;
 					}
 				} else if (this.j.getTtriagem().getChckbxUmProcedimento().isSelected()) {
 					filaPri4.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt4().setText(String.valueOf(filaPri4.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
-					auxTriagem = false;
+					//auxTriagem = false;
 				} else if (this.j.getTtriagem().getChckbxEstavel().isSelected()) {
 					filaPri5.enqueue(filaAtd.head().getObjeto());
 					filaAtd.dequeue();
 					this.j.getTcha().getLblQnt5().setText(String.valueOf(filaPri5.size()));
 					this.j.getTtriagem().getLblMsg().setVisible(true);
-					auxTriagem = false;
+					//auxTriagem = false;
+				}else {
+					auxTriagem = true;
 				}
 				if (!auxTriagem) {
 					this.j.getTtriagem().getLblNome().setVisible(false);
 					this.j.getTtriagem().limparCampos();
+					auxTriagem = false;
 				}
 			} else {
 				this.j.setContentPane(this.j.getTcad());
