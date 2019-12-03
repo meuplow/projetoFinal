@@ -13,3 +13,5 @@ aa#aaa#Entrada do paciente: 02-12-2019 20:13:24#Chamada para atendimento: 02-12-
 aa#aa#Entrada do paciente: 02-12-2019 20:14:35#Chamada para atendimento: 02-12-2019 20:15:54#Tempo de atendimento: 02:11:07
 aa#aa#Entrada do paciente: 02-12-2019 20:15:30#Chamada para atendimento: 02-12-2019 20:15:54#Tempo de atendimento: 00:48:46
 aa#aa#Entrada do paciente: 02-12-2019 23:29:47#Chamada para atendimento: 02-12-2019 23:30:06#Tempo de atendimento: 01:48:20
+Gabriel#111#Entrada do paciente: 03-12-2019 00:48:21#Chamada para atendimento: 03-12-2019 00:48:52#Tempo de atendimento: 00:47:06
+aa#aa#Entrada do paciente: 03-12-2019 00:49:42#Chamada para atendimento: 03-12-2019 00:50:04#Tempo de atendimento: 01:01:34
