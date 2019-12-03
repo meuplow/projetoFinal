@@ -24,3 +24,5 @@ Gabriel Menin#844.930.509-90#Entrada do paciente: 03-12-2019 13:28:29#Chamada pa
 aa#aa#Entrada do paciente: 03-12-2019 14:27:38#Chamada para atendimento: 03-12-2019 14:28:00#Tempo de atendimento: 00:46:59
 aa#aa#Entrada do paciente: 03-12-2019 14:35:07#Chamada para atendimento: 03-12-2019 14:35:16#Tempo de atendimento: 03:02:34
 bb#bb#Entrada do paciente: 03-12-2019 14:36:30#Chamada para atendimento: 03-12-2019 14:36:56#Tempo de atendimento: 00:18:01
+aa#aa#Entrada do paciente: 03-12-2019 15:54:18#Chamada para atendimento: 03-12-2019 15:54:26#Tempo de atendimento: 01:19:04
+aa#aa#Entrada do paciente: 03-12-2019 17:07:29#Chamada para atendimento: 03-12-2019 17:07:52#Tempo de atendimento: 00:49:48

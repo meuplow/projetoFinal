@@ -92,7 +92,7 @@ public class TelaChamadaAtd extends JPanel {
 
 		lblChamada = new JLabel("senha");
 		lblChamada.setVisible(false);
-		lblChamada.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lblChamada.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		painelCentro.add(lblChamada, "cell 0 6,alignx center");
 
 		btnChamarPaciente = new JButton("Chamar paciente");

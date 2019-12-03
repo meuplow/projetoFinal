@@ -17,7 +17,7 @@ public class NoAtendimentos {
 		this.proximo = null;
 	}
 
-	// Metodos getters e setters
+	// Getters e Setters da classe
 	public Atendimento getObjeto() {
 		return objeto;
 	}

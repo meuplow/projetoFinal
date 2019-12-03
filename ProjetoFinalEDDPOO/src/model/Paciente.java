@@ -18,7 +18,7 @@ public class Paciente {
 	public Paciente() {
 	}
 
-	// Metodos getters e setters
+	// Getters e Setters da classe
 	public String getNome() {
 		return nome;
 	}

@@ -22,7 +22,7 @@ public class Relatorios {
 		return true;
 	}
 
-	// Metodo que retorna o tempo medio de espera para ser atendido de forma adequada
+	// Metodo que retorna o tempo medio de espera para ser atendido no formato hh:mm:ss
 	public String retornaMediaEspera() {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = this.mediaEspera / 3600;
@@ -32,7 +32,7 @@ public class Relatorios {
 		return aux;
 	}
 
-	// Metodo que retorna o tempo medio das consulta de forma adequada
+	// Metodo que retorna o tempo medio de atendimento no formato hh:mm:ss
 	public String retornaMediaAtendimento() {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = this.mediaAtendimento / 3600;

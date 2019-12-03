@@ -39,8 +39,7 @@ public class Atendimento {
 		return diferenca;
 	}
 	
-	// Metodo que adiciona um valor aleatorio de ate 10800, equivalente a 3 horas, mais 600
-	// Esse valor representa, teoricamente, o tempo em que o paciente estava sendo atendido
+	// Metodo que gera e retorna uma duracao de tempo de atendimento aleatoria
 	public int retornaDuracaoAtendimento() {
 		Random rnd = new Random();
 		int acresc = rnd.nextInt(10800) + 600;
@@ -49,7 +48,8 @@ public class Atendimento {
 		return diferenca;
 	}
 
-	// Metodo que apresenta a hora com o formato adequado
+	// Metodo que imprime a diferenca entre a hora de chegada e hora de chamada de atendimento
+	// no formato hh:mm:ss
 	public void imprimeComparacao() {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = comparaHora() / 3600;
@@ -58,7 +58,7 @@ public class Atendimento {
 		System.out.println(df.format(hora) + ":" + df.format(minuto) + ":" + df.format(segundo));
 	}
 
-	// Metodo que apresenta o tempo de duracao do atendimento com o formato adequado
+	// Metodo que imprime o tempo de duracao do atendimento no formato hh:mm:ss
 	public void imprimeDuracaoAtendimento() {
 		DecimalFormat df = new DecimalFormat("00");
 		int chs = this.tempoAtendimento;
@@ -68,7 +68,7 @@ public class Atendimento {
 		System.out.println(df.format(hora) + ":" + df.format(minuto) + ":" + df.format(segundo));
 	}
 
-	// Metodo que formata a hora de duracaoo do atendimento e a retorna
+	// Metodo que retorna a duracao do atendimento no formato de hh:mm:ss
 	public String retornaDuracaoAtendimentoFormatado() {
 		DecimalFormat df = new DecimalFormat("00");
 		int chs = this.tempoAtendimento;
@@ -79,6 +79,7 @@ public class Atendimento {
 		return aux;
 	}
 
+	// Getters e Setters dos atributos da classe
 	public int getSenha() {
 		return senha;
 	}
