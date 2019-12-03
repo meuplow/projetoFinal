@@ -119,9 +119,9 @@ public class PacienteControl implements ActionListener {
 			this.j.repaint();
 		}
 		if (e.getActionCommand().equals("Cadastrar")) {
-			if (this.j.getTcad().getFieldNome().getText().equals("")
-					|| this.j.getTcad().getFieldCpf().getText().equals("")
-					|| this.j.getTcad().getFieldData().getText().equals("")) {
+			if (this.j.getTcad().getFieldNome().getText().isEmpty()
+					|| this.j.getTcad().getFieldCpf().getText().isEmpty()
+					|| this.j.getTcad().getFieldData().getText().isEmpty()) {
 				this.j.getTcad().getLblMsg().setText("Campos em branco");
 				this.j.getTcad().getLblMsg().setVisible(true);
 			} else if (this.lista.buscarPaciente(this.j.getTcad().getFieldCpf().getText()) != null) {
