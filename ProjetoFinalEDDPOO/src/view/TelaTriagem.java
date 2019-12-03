@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import java.awt.Color;
+import javax.swing.border.BevelBorder;
 
 public class TelaTriagem extends JPanel {
 
@@ -88,9 +89,10 @@ public class TelaTriagem extends JPanel {
 	public TelaTriagem() {
 		setBackground(new Color(255, 204, 153));
 		setBounds(100, 100, 650, 500);
-		setLayout(new MigLayout("", "[grow]", "[][]10[][][]10[][][][]10[]10[]20[][]"));
+		setLayout(new MigLayout("", "[grow]", "[][]10[][][]10[][][][]10[]10[]15[][]"));
 
 		painelNorte = new JPanel();
+		painelNorte.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		painelNorte.setBackground(new Color(51, 102, 153));
 		painelNorte.setForeground(new Color(51, 102, 153));
 		add(painelNorte, "cell 0 0,grow");

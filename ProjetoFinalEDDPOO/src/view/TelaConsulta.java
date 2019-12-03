@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
 import java.awt.Color;
+import javax.swing.border.BevelBorder;
 
 public class TelaConsulta extends JPanel {
 
@@ -34,6 +35,7 @@ public class TelaConsulta extends JPanel {
 		painelCentro.setLayout(new MigLayout("", "[grow]", "10[]40[]80[]25[]40[]25[]"));
 
 		JPanel painelNorte = new JPanel();
+		painelNorte.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		painelNorte.setBackground(new Color(51, 102, 153));
 		painelCentro.add(painelNorte, "cell 0 0,growx");
 		painelNorte.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
