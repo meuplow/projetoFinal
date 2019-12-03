@@ -19,14 +19,14 @@ public class TelaDeSenhas extends JPanel {
 	public TelaDeSenhas() {
 		setBackground(new Color(255, 204, 153));
 		setBounds(100, 100, 600, 500);
-		setLayout(new MigLayout("", "[grow]", "150[]100[]"));
+		setLayout(new MigLayout("", "[grow]", "100[200]80[]"));
 
 		fieldSenha = new JTextField();
 		fieldSenha.setHorizontalAlignment(SwingConstants.CENTER);
-		fieldSenha.setBackground(new Color(255, 204, 153));
+		fieldSenha.setBackground(Color.WHITE);
 		fieldSenha.setEditable(false);
-		fieldSenha.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		add(fieldSenha, "cell 0 0,growx,alignx center");
+		fieldSenha.setFont(new Font("Tahoma", Font.PLAIN, 50));
+		add(fieldSenha, "cell 0 0,alignx center,grow");
 		fieldSenha.setColumns(10);
 
 		btnChamarProx = new JButton("Chamar pr\u00F3xima senha");
