@@ -17,6 +17,7 @@ import java.awt.Color;
 
 public class JanelaPrincipal extends JFrame {
 
+	// Declaracao global dos componentes da tela
 	private JPanel contentPane;
 	private JMenuItem mntmCadastrar;
 	private JMenuItem mntmConsultar;
@@ -35,6 +36,7 @@ public class JanelaPrincipal extends JFrame {
 	private JButton btnEncerrar;
 	private JMenuItem mntmAtendimento;
 
+	// Getters e Setters dos componentes da tela
 	public JPanel getJanelaPrincipal() {
 		return contentPane;
 	}
@@ -215,6 +217,7 @@ public class JanelaPrincipal extends JFrame {
 		btnEncerrar.setActionCommand("Encerrar");
 		setTitle("Hospital Santa Casa dos Informatas");
 
+		// Instancia dos JPannel da aplicacao
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();
 		tsenhas = new TelaDeSenhas();
