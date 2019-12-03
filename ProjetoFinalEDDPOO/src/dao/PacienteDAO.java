@@ -10,7 +10,8 @@ import model.Paciente;
 public class PacienteDAO {
 	public PacienteDAO() {
 	}
-
+	
+	// Metodo recebe um objeto paciente e grava em arquivo suas informacoes
 	public boolean cadPaciente(Paciente p) {
 		File arq = new File("ListaDePacientes.txt");
 		FileWriter fw = null;
@@ -18,7 +19,7 @@ public class PacienteDAO {
 		try {
 			fw = new FileWriter(arq, true);
 			bw = new BufferedWriter(fw);
-			bw.write(p.getNome() + "#" + p.getCpf() + "#" + p.getData());
+			bw.write(p.getNome() + "#" + p.getCpf() + "#" + p.getData()); // Retorno e escrita das informacoes do paciente
 			bw.newLine();
 			bw.flush();
 		} catch (IOException e) {
