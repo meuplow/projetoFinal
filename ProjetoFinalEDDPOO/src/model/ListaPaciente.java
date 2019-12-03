@@ -3,10 +3,12 @@ package model;
 public class ListaPaciente {
 	NoPaciente primeiro;
 
+	// Construtor da Classe atribuindo null ao "primeiro" da lista
 	public ListaPaciente() {
 		this.primeiro = null;
 	}
 
+	// Método que verifica se a lista está vazia
 	public boolean estaVazia() {
 		if (this.primeiro == null) {
 			return true;
@@ -14,6 +16,12 @@ public class ListaPaciente {
 		return false;
 	}
 
+	// Método que adiciona um objeto Paciente em ordem alfabética
+	/* Foi utilizado a função CompareTo, a qual compara o primeiro caracter
+	*  de um elemento com o primeiro caracter do segundo elemento. Caso o 
+	*  caracter do primeiro elemento seja menor, logo venha antes no alfabeto,
+	*  a função retorna -1. Caso sejam iguais, retorna 0, e maior retorna 1
+	*/
 	public void adiciona(Paciente objeto) {
 		NoPaciente novo = new NoPaciente(objeto);
 		if (estaVazia()) {
@@ -21,7 +29,7 @@ public class ListaPaciente {
 		} else {
 			int comparacao = this.primeiro.getObjeto().getNome().compareTo(novo.getObjeto().getNome());
 			if (comparacao >= 0) { /*
-									 * A condicao esta ">= 0", pois o retorno do metodo é em relacao ao primeiro
+									 * A condicao esta ">= 0", pois o retorno do metodo é em relação ao primeiro
 									 * elemento!!
 									 */
 				novo.setProximo(this.primeiro);
@@ -45,6 +53,7 @@ public class ListaPaciente {
 		}
 	}
 
+	// Método que busca um Paciente através de seu CPF
 	public Paciente buscarPaciente(String cpf) {
 		if (!estaVazia()) {
 			if (this.primeiro.getObjeto().getCpf().equalsIgnoreCase(cpf)) {
@@ -62,6 +71,7 @@ public class ListaPaciente {
 		return null;
 	}
 
+	// Método que imprime os objetos da lista em ordem alfabética
 	public void imprimirListaNome() {
 		NoPaciente aux = this.primeiro;
 		while (aux != null) {
@@ -69,7 +79,7 @@ public class ListaPaciente {
 			aux = aux.getProximo();
 		}
 	}
-
+	// Método que imprime o primeiro elemento da lista
 	public void imprimirPrimeiro() {
 		System.out.println(this.primeiro.getObjeto().getNome());
 	}

@@ -7,12 +7,14 @@ public class Relatorios {
 	private int mediaEspera;
 	private int mediaAtendimento;
 
+	// Construtor da classe 
 	public Relatorios() {
 		this.mediaAtendimento = 0;
 		this.mediaEspera = 0;
 		this.cnt = 0;
 	}
 
+	// Método utilizado para atualizar as médias de tempos
 	public boolean atualizaMedias(int tempoEspera, int tempoAtendimento) {
 		this.cnt++;
 		this.mediaEspera = (this.mediaEspera + tempoEspera) / this.cnt;
@@ -20,6 +22,7 @@ public class Relatorios {
 		return true;
 	}
 
+	// Método que retorna o tempo médio de espera para ser atendido de forma adequada
 	public String retornaMediaEspera() {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = this.mediaEspera / 3600;
@@ -29,6 +32,7 @@ public class Relatorios {
 		return aux;
 	}
 
+	// Método que retorna o tempo médio das consulta de forma adequada
 	public String retornaMediaAtendimento() {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = this.mediaAtendimento / 3600;
