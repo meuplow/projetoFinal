@@ -21,7 +21,7 @@ public class TelaDeSenhas extends JPanel {
 
 		fieldSenha = new JTextField();
 		fieldSenha.setHorizontalAlignment(SwingConstants.CENTER);
-		fieldSenha.setBackground(new Color(255, 204, 153));
+		fieldSenha.setBackground(Color.WHITE);
 		fieldSenha.setEditable(false);
 		fieldSenha.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		add(fieldSenha, "cell 0 0,growx,alignx center");
