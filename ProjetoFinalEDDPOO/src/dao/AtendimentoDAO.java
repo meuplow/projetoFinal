@@ -18,15 +18,17 @@ public class AtendimentoDAO {
 			fw = new FileWriter("HistoricoDeAtendimentos.txt", true);
 			bw = new BufferedWriter(fw);
 			bw.write(a.getPaciente().getNome() + "#" + a.getPaciente().getCpf() + "#" + "Entrada do paciente: "
-					+ a.retornaDataFormatada(a.getDataHoraEntrada()) + " " + a.retornaHoraFormatada(a.getDataHoraEntrada()) 
-					+ "#" + "Chamada para atendimento: " + a.retornaDataFormatada(a.getDataHoraChamada()) + " " 
-					+ a.retornaHoraFormatada(a.getDataHoraChamada()) + "#" + "Tempo de atendimento: " + a.retornaDuracaoAtendimentoFormatado());
+					+ a.retornaDataFormatada(a.getDataHoraEntrada()) + " "
+					+ a.retornaHoraFormatada(a.getDataHoraEntrada()) + "#" + "Chamada para atendimento: "
+					+ a.retornaDataFormatada(a.getDataHoraChamada()) + " "
+					+ a.retornaHoraFormatada(a.getDataHoraChamada()) + "#" + "Tempo de atendimento: "
+					+ a.retornaDuracaoAtendimentoFormatado());
 			bw.newLine();
 			bw.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
-		}finally {
+		} finally {
 			try {
 				fw.close();
 				bw.close();

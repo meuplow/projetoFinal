@@ -28,7 +28,7 @@ public class Relatorios {
 		String aux = df.format(hora) + ":" + df.format(minuto) + ":" + df.format(segundo);
 		return aux;
 	}
-	
+
 	public String retornaMediaAtendimento() {
 		DecimalFormat df = new DecimalFormat("00");
 		int hora = this.mediaAtendimento / 3600;

@@ -29,16 +29,16 @@ public class TelaConsulta extends JPanel {
 		painelCentro.setBackground(new Color(255, 204, 153));
 		add(painelCentro, BorderLayout.CENTER);
 		painelCentro.setLayout(new MigLayout("", "[grow]", "10[]40[]80[]25[]40[]25[]"));
-		
-				JPanel painelNorte = new JPanel();
-				painelNorte.setBackground(new Color(51, 102, 153));
-				painelCentro.add(painelNorte, "cell 0 0,growx");
-						painelNorte.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-				
-						JLabel lblTituloBusca = new JLabel("Busca de Paciente");
-						lblTituloBusca.setForeground(Color.WHITE);
-						lblTituloBusca.setFont(new Font("Tahoma", Font.BOLD, 25));
-						painelNorte.add(lblTituloBusca);
+
+		JPanel painelNorte = new JPanel();
+		painelNorte.setBackground(new Color(51, 102, 153));
+		painelCentro.add(painelNorte, "cell 0 0,growx");
+		painelNorte.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+
+		JLabel lblTituloBusca = new JLabel("Busca de Paciente");
+		lblTituloBusca.setForeground(Color.WHITE);
+		lblTituloBusca.setFont(new Font("Tahoma", Font.BOLD, 25));
+		painelNorte.add(lblTituloBusca);
 
 		JLabel lblCpf = new JLabel("CPF");
 		lblCpf.setForeground(Color.WHITE);
@@ -70,7 +70,6 @@ public class TelaConsulta extends JPanel {
 		painelCentro.add(btnConfirmacao, "cell 0 4,alignx center");
 		btnConfirmacao.setVisible(false);
 		btnConfirmacao.setActionCommand("Confirmar");
-		
 
 		lblMsg = new JLabel("Paciente encaminhado para fila de atendimento");
 		lblMsg.setHorizontalAlignment(SwingConstants.CENTER);
@@ -78,7 +77,7 @@ public class TelaConsulta extends JPanel {
 		lblMsg.setFont(new Font("Tahoma", Font.BOLD, 17));
 		painelCentro.add(lblMsg, "cell 0 5,alignx center");
 		lblMsg.setVisible(false);
-		
+
 		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -91,13 +90,13 @@ public class TelaConsulta extends JPanel {
 		lblMsg.setVisible(false);
 		btnConfirmacao.setVisible(false);
 	}
-	
+
 	public void limparFields() {
 		fieldCpf.setText("");
 		lblResultadoBusca.setVisible(false);
 		btnConfirmacao.setVisible(false);
 	}
-	
+
 	public JTextField getFieldCpf() {
 		return fieldCpf;
 	}

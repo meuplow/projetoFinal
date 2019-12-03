@@ -4,16 +4,17 @@ public class Paciente {
 	private String nome;
 	private String cpf;
 	private String data;
-	
+
 	public Paciente(String nome, String cpf, String data) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.data = data;
 	}
-	
-	public Paciente() {}
-	
+
+	public Paciente() {
+	}
+
 	public String getNome() {
 		return nome;
 	}

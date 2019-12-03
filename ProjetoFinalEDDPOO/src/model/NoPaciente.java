@@ -3,13 +3,13 @@ package model;
 public class NoPaciente {
 	Paciente objeto;
 	NoPaciente proximo;
-	
-	public NoPaciente(Paciente objeto){
+
+	public NoPaciente(Paciente objeto) {
 		this.objeto = objeto;
 		this.proximo = null;
 	}
-	
-	public NoPaciente(Paciente objeto, NoPaciente proximo){
+
+	public NoPaciente(Paciente objeto, NoPaciente proximo) {
 		this.objeto = objeto;
 		this.proximo = proximo;
 	}
@@ -29,6 +29,5 @@ public class NoPaciente {
 	public void setProximo(NoPaciente proximo) {
 		this.proximo = proximo;
 	}
-	
-	
+
 }

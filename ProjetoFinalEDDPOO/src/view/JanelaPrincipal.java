@@ -38,7 +38,7 @@ public class JanelaPrincipal extends JFrame {
 	public JPanel getJanelaPrincipal() {
 		return contentPane;
 	}
-	
+
 	public JMenuItem getMntmCadastrar() {
 		return mntmCadastrar;
 	}
@@ -214,7 +214,6 @@ public class JanelaPrincipal extends JFrame {
 		painelCentro.add(btnEncerrar, "cell 0 5,alignx right");
 		btnEncerrar.setActionCommand("Encerrar");
 		setTitle("Hospital Santa Casa dos Informatas");
-		
 
 		tcad = new TelaCadastro();
 		tcon = new TelaConsulta();

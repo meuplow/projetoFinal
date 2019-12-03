@@ -20,3 +20,4 @@ aa#aa#Entrada do paciente: 03-12-2019 02:01:18#Chamada para atendimento: 03-12-2
 aa#aa#Entrada do paciente: 03-12-2019 12:58:47#Chamada para atendimento: 03-12-2019 12:59:17#Tempo de atendimento: 01:34:46
 aa#aa#Entrada do paciente: 03-12-2019 13:03:07#Chamada para atendimento: 03-12-2019 13:04:15#Tempo de atendimento: 01:59:11
 aa#aa#Entrada do paciente: 03-12-2019 13:03:53#Chamada para atendimento: 03-12-2019 13:04:17#Tempo de atendimento: 00:42:14
+Gabriel Menin#844.930.509-90#Entrada do paciente: 03-12-2019 13:28:29#Chamada para atendimento: 03-12-2019 13:29:24#Tempo de atendimento: 00:44:53

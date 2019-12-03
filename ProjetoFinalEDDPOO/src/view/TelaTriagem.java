@@ -106,8 +106,7 @@ public class TelaTriagem extends JPanel {
 		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblPri1, "flowx,cell 0 2");
 
-		lblInformeOsSeguintes = new JLabel(
-				"Informe os seguintes dados:");
+		lblInformeOsSeguintes = new JLabel("Informe os seguintes dados:");
 		lblInformeOsSeguintes.setForeground(Color.WHITE);
 		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblInformeOsSeguintes, "cell 0 6");
@@ -148,7 +147,7 @@ public class TelaTriagem extends JPanel {
 		add(fieldTemperatura, "cell 0 7,growx");
 		fieldTemperatura.setColumns(10);
 		fieldTemperatura.setVisible(false);
-		
+
 		lblOximetriaDoPulso = new JLabel("Oximetria do pulso");
 		lblOximetriaDoPulso.setForeground(Color.WHITE);
 		lblOximetriaDoPulso.setFont(new Font("Tahoma", Font.PLAIN, 14));
