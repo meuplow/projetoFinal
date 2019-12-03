@@ -13,7 +13,7 @@ public class TelaDeSenhas extends JPanel {
 	private JButton btnChamarProx;
 
 	public TelaDeSenhas() {
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 600, 500);
 		setLayout(new MigLayout("", "[grow]", "100[]50[]"));
 
 		fieldSenha = new JTextField();
@@ -23,7 +23,7 @@ public class TelaDeSenhas extends JPanel {
 		fieldSenha.setColumns(10);
 
 		btnChamarProx = new JButton("Chamar pr\u00F3xima senha");
-		btnChamarProx.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnChamarProx.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(btnChamarProx, "cell 0 1,alignx center");
 		btnChamarProx.setActionCommand("ChamarProx");
 	}

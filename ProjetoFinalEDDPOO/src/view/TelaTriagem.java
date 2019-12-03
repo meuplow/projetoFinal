@@ -38,17 +38,23 @@ public class TelaTriagem extends JPanel {
 	private JLabel lblOximetriaDoPulso;
 	private JLabel lblIndiceDePico;
 
-	public void limparTela() {/*
-								 * chckbxEntubado.setSelected(false); chckbxApneia.setSelected(false);
-								 * chckbxPulso.setSelected(false); chckbxSituacaoDeRisco.setSelected(false);
-								 * chckbxConfuso.setSelected(false); chckbxDesorientado.setSelected(false);
-								 * chckbxLetargico.setSelected(false); chckbxDor.setSelected(false);
-								 * chckbxMaisProcedimentos.setSelected(false);
-								 * chckbxUmProcedimento.setSelected(false); chckbxEstavel.setSelected(false);
-								 * fieldFrequenciaCardiaca.setText(""); fieldFrequenciaRespiratoria.setText("");
-								 * fieldTemperatura.setText(""); fieldOximetria.setText("");
-								 * fieldIndice.setText("");
-								 */
+	public void limparTela() {
+//		chckbxEntubado.setSelected(false);
+//		chckbxApneia.setSelected(false);
+//		chckbxPulso.setSelected(false);
+//		chckbxSituacaoDeRisco.setSelected(false);
+//		chckbxConfuso.setSelected(false);
+//		chckbxDesorientado.setSelected(false);
+//		chckbxLetargico.setSelected(false);
+//		chckbxDor.setSelected(false);
+//		chckbxMaisProcedimentos.setSelected(false);
+//		chckbxUmProcedimento.setSelected(false);
+//		chckbxEstavel.setSelected(false);
+//		fieldFrequenciaCardiaca.setText("");
+//		fieldFrequenciaRespiratoria.setText("");
+//		fieldTemperatura.setText("");
+//		fieldOximetria.setText("");
+//		fieldIndice.setText("");
 		lblMsg.setVisible(false);
 		btnDirecionar.setVisible(true);
 	}
@@ -85,17 +91,17 @@ public class TelaTriagem extends JPanel {
 		painelNorte.add(lblTriagem);
 
 		lblNome = new JLabel("Nome");
-		lblNome.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNome.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblNome, "cell 0 1");
 		lblNome.setVisible(false);
 
 		JLabel lblPri1 = new JLabel("O paciente se encontra:");
-		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblPri1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblPri1, "flowx,cell 0 2");
 
 		lblInformeOsSeguintes = new JLabel(
 				"Informe os seguintes dados:");
-		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblInformeOsSeguintes.setFont(new Font("Tahoma", Font.BOLD, 15));
 		add(lblInformeOsSeguintes, "cell 0 6");
 		lblInformeOsSeguintes.setVisible(false);
 
@@ -155,12 +161,12 @@ public class TelaTriagem extends JPanel {
 		fieldIndice.setVisible(false);
 
 		btnDirecionar = new JButton("Direcionar atendimento");
-		btnDirecionar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnDirecionar.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		add(btnDirecionar, "cell 0 11,alignx center");
 		btnDirecionar.setActionCommand("Direcionar");
 
 		lblMsg = new JLabel("Paciente direcionado para sua Fila de Prioridade adequada");
-		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblMsg.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		add(lblMsg, "cell 0 12,alignx center");
 		lblMsg.setVisible(false);
 

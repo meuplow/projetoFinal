@@ -2,3 +2,13 @@ João da Silva#123.456.789-99#Entrada do paciente: 30-11-2019 19:38:53#Chamada pa
 Eduardo Ferreira#123.432.455.34#Entrada do paciente: 30-11-2019 19:39:55#Chamada para atendimento: 30-11-2019 19:42:39#Tempo de atendimento: 00:15:57
 Mariana Xavier#345.643.543-78#Entrada do paciente: 30-11-2019 19:40:40#Chamada para atendimento: 30-11-2019 19:42:41#Tempo de atendimento: 00:23:32
 Mayara Medeiros#135.355.325-90#Entrada do paciente: 30-11-2019 19:41:25#Chamada para atendimento: 30-11-2019 19:42:42#Tempo de atendimento: 01:39:37
+Maico Triaca#12345678929#Entrada do paciente: 02-12-2019 18:40:15#Chamada para atendimento: 02-12-2019 18:45:19#Tempo de atendimento: 02:22:42
+a#a#Entrada do paciente: 02-12-2019 18:59:51#Chamada para atendimento: 02-12-2019 19:00:21#Tempo de atendimento: 02:22:24
+aa#aa#Entrada do paciente: 02-12-2019 19:04:07#Chamada para atendimento: 02-12-2019 19:04:34#Tempo de atendimento: 01:50:55
+aa#aa#Entrada do paciente: 02-12-2019 19:23:31#Chamada para atendimento: 02-12-2019 19:23:47#Tempo de atendimento: 01:51:42
+aa#aa#Entrada do paciente: 02-12-2019 19:24:24#Chamada para atendimento: 02-12-2019 19:24:43#Tempo de atendimento: 00:47:35
+aa#aa#Entrada do paciente: 02-12-2019 19:28:07#Chamada para atendimento: 02-12-2019 19:28:28#Tempo de atendimento: 01:24:57
+aaa#AAA#Entrada do paciente: 02-12-2019 19:30:29#Chamada para atendimento: 02-12-2019 19:31:13#Tempo de atendimento: 02:45:21
+aa#aaa#Entrada do paciente: 02-12-2019 20:13:24#Chamada para atendimento: 02-12-2019 20:15:53#Tempo de atendimento: 00:44:14
+aa#aa#Entrada do paciente: 02-12-2019 20:14:35#Chamada para atendimento: 02-12-2019 20:15:54#Tempo de atendimento: 02:11:07
+aa#aa#Entrada do paciente: 02-12-2019 20:15:30#Chamada para atendimento: 02-12-2019 20:15:54#Tempo de atendimento: 00:48:46

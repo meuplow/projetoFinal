@@ -20,7 +20,7 @@ public class TelaConsulta extends JPanel {
 	private JLabel lblMsg;
 
 	public TelaConsulta() {
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 600, 500);
 		setLayout(new BorderLayout(0, 0));
 
 		JPanel painelNorte = new JPanel();
