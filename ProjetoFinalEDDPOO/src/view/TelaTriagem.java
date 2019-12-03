@@ -11,6 +11,8 @@ import javax.swing.JCheckBox;
 import java.awt.Color;
 
 public class TelaTriagem extends JPanel {
+
+	// Declaracao global dos componentes da tela
 	private JTextField fieldFrequenciaCardiaca;
 	private JTextField fieldFrequenciaRespiratoria;
 	private JTextField fieldTemperatura;
@@ -39,6 +41,7 @@ public class TelaTriagem extends JPanel {
 	private JLabel lblOximetriaDoPulso;
 	private JLabel lblIndiceDePico;
 
+	// Metodo para limpar a tela e tornar botao visivel
 	public void limparTela() {
 		chckbxEntubado.setSelected(false);
 		chckbxApneia.setSelected(false);
@@ -60,6 +63,7 @@ public class TelaTriagem extends JPanel {
 		btnDirecionar.setVisible(true);
 	}
 
+	// Metodo para limpar a tela e tornar botao invisivel
 	public void limparCampos() {
 		chckbxEntubado.setSelected(false);
 		chckbxApneia.setSelected(false);
@@ -80,6 +84,7 @@ public class TelaTriagem extends JPanel {
 		btnDirecionar.setVisible(false);
 	}
 
+	// Construtor do JPanel
 	public TelaTriagem() {
 		setBackground(new Color(255, 204, 153));
 		setBounds(100, 100, 650, 500);
@@ -250,6 +255,7 @@ public class TelaTriagem extends JPanel {
 		add(chckbxEstavel, "cell 0 10,growx");
 	}
 
+	// Getters e Setters dos componentes da tela
 	public JLabel getLblInformeOsSeguintes() {
 		return lblInformeOsSeguintes;
 	}

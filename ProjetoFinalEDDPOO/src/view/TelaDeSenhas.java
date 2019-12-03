@@ -11,9 +11,11 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 
 public class TelaDeSenhas extends JPanel {
+	// Declaracao global dos componentes da tela
 	private JTextField fieldSenha;
 	private JButton btnChamarProx;
 
+	// Construtor do JPanel
 	public TelaDeSenhas() {
 		setBackground(new Color(255, 204, 153));
 		setBounds(100, 100, 600, 500);
@@ -32,7 +34,8 @@ public class TelaDeSenhas extends JPanel {
 		add(btnChamarProx, "cell 0 1,alignx center");
 		btnChamarProx.setActionCommand("ChamarProx");
 	}
-
+	
+	// Getters e Setters dos componentes da tela
 	public JTextField getFieldSenha() {
 		return fieldSenha;
 	}
