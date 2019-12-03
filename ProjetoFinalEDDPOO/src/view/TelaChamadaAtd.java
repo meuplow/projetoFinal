@@ -10,6 +10,8 @@ import java.awt.Color;
 import javax.swing.border.BevelBorder;
 
 public class TelaChamadaAtd extends JPanel {
+	
+	// Declaracao global dos componentes da tela
 	private JLabel lblQnt1;
 	private JLabel lblQnt2;
 	private JLabel lblQnt3;
@@ -18,6 +20,7 @@ public class TelaChamadaAtd extends JPanel {
 	private JLabel lblChamada;
 	private JButton btnChamarPaciente;
 
+	// Construtor do JPanel
 	public TelaChamadaAtd() {
 		setBounds(100, 100, 600, 500);
 		setLayout(new BorderLayout(0, 0));
@@ -100,6 +103,7 @@ public class TelaChamadaAtd extends JPanel {
 
 	}
 
+	// Getters e Setters dos componentes da tela
 	public JLabel getLblQnt1() {
 		return lblQnt1;
 	}

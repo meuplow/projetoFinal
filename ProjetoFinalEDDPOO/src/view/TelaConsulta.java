@@ -14,6 +14,8 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 
 public class TelaConsulta extends JPanel {
+
+	// Declaracao global dos componentes da tela
 	private JTextField fieldCpf;
 	private JButton btnBuscar;
 	private JButton btnLimpar;
@@ -21,6 +23,7 @@ public class TelaConsulta extends JPanel {
 	private JButton btnConfirmacao;
 	private JLabel lblMsg;
 
+	// Construtor do JPanel
 	public TelaConsulta() {
 		setBounds(100, 100, 600, 500);
 		setLayout(new BorderLayout(0, 0));
@@ -84,6 +87,7 @@ public class TelaConsulta extends JPanel {
 
 	}
 
+	// Metodo para limpar toda a tela
 	public void limparTela() {
 		fieldCpf.setText("");
 		lblResultadoBusca.setVisible(false);
@@ -91,12 +95,15 @@ public class TelaConsulta extends JPanel {
 		btnConfirmacao.setVisible(false);
 	}
 
+	// Metodo para limpar a tela mas nao mudar visibilidade da label que exibe
+	// mensagem
 	public void limparFields() {
 		fieldCpf.setText("");
 		lblResultadoBusca.setVisible(false);
 		btnConfirmacao.setVisible(false);
 	}
 
+	// Getters e Setters dos componentes da tela
 	public JTextField getFieldCpf() {
 		return fieldCpf;
 	}

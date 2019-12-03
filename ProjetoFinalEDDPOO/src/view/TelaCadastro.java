@@ -11,6 +11,7 @@ import javax.swing.border.BevelBorder;
 
 public class TelaCadastro extends JPanel {
 
+	// Declaracao global dos componentes da tela
 	private JLabel lblCadPacientes;
 	private JLabel lblNome;
 	private JTextField fieldNome;
@@ -23,6 +24,7 @@ public class TelaCadastro extends JPanel {
 	private JLabel lblMsg;
 	private JPanel painelNorte;
 
+	// Getters e Setters dos componentes da tela
 	public JTextField getFieldCpf() {
 		return fieldCpf;
 	}
@@ -71,6 +73,7 @@ public class TelaCadastro extends JPanel {
 		this.lblMsg = lblMsg;
 	}
 
+	// Metodo para limpar toda a tela 
 	public void limparTela() {
 		fieldNome.setText("");
 		fieldCpf.setText("");
@@ -78,12 +81,14 @@ public class TelaCadastro extends JPanel {
 		lblMsg.setVisible(false);
 	}
 
+	// Metodo para limpar somente os JTextFields na tela
 	public void limparFields() {
 		fieldNome.setText("");
 		fieldCpf.setText("");
 		fieldData.setText("");
 	}
 
+	// Construtor do JPanel
 	public TelaCadastro() {
 		setBackground(new Color(255, 204, 153));
 		setBounds(100, 100, 600, 500);

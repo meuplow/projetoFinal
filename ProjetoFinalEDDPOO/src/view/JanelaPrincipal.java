@@ -137,6 +137,7 @@ public class JanelaPrincipal extends JFrame {
 		this.mntmInicio = mntmInicio;
 	}
 
+	// Construtor do JFrame
 	public JanelaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(600, 250, 650, 500);
