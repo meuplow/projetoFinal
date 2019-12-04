@@ -90,10 +90,6 @@ public class PacienteControl implements ActionListener {
 		auxTriagem = false;
 	}
 
-	/*
-	 * public ListaPaciente getLista() { return lista; }
-	 */
-
 	// Atribuindo eventos de acao
 	public void actionPerformed(ActionEvent e) {
 		// Troca JPanel para a tela inicial
