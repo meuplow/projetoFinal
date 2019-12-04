@@ -48,26 +48,6 @@ public class Atendimento {
 		return diferenca;
 	}
 
-	// Metodo que imprime a diferenca entre a hora de chegada e hora de chamada de atendimento
-	// no formato hh:mm:ss
-	public void imprimeComparacao() {
-		DecimalFormat df = new DecimalFormat("00");
-		int hora = comparaHora() / 3600;
-		int minuto = (comparaHora() - (hora * 3600)) / 60;
-		int segundo = comparaHora() - (hora * 3600) - (minuto * 60);
-		System.out.println(df.format(hora) + ":" + df.format(minuto) + ":" + df.format(segundo));
-	}
-
-	// Metodo que imprime o tempo de duracao do atendimento no formato hh:mm:ss
-	public void imprimeDuracaoAtendimento() {
-		DecimalFormat df = new DecimalFormat("00");
-		int chs = this.tempoAtendimento;
-		int hora = chs / 3600;
-		int minuto = (chs - (hora * 3600)) / 60;
-		int segundo = chs - (hora * 3600) - (minuto * 60);
-		System.out.println(df.format(hora) + ":" + df.format(minuto) + ":" + df.format(segundo));
-	}
-
 	// Metodo que retorna a duracao do atendimento no formato de hh:mm:ss
 	public String retornaDuracaoAtendimentoFormatado() {
 		DecimalFormat df = new DecimalFormat("00");
