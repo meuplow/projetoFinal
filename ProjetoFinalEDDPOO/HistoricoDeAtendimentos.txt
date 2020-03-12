@@ -1,3 +1,5 @@
 Jão da Silva#123.456.874-30#Entrada do paciente: 04-12-2019 00:04:36#Chamada para atendimento: 04-12-2019 00:06:31#Tempo de atendimento: 00:39:45
 Joana da Silva#123.467.909-44#Entrada do paciente: 04-12-2019 00:05:04#Chamada para atendimento: 04-12-2019 00:06:32#Tempo de atendimento: 01:10:30
 José de Souza#190.999.888-89#Entrada do paciente: 04-12-2019 00:05:36#Chamada para atendimento: 04-12-2019 00:06:33#Tempo de atendimento: 00:19:04
+Gabriel Menin#855.928.540-72#Entrada do paciente: 18-12-2019 00:35:00#Chamada para atendimento: 18-12-2019 00:38:12#Tempo de atendimento: 01:56:52
+aa#aa#Entrada do paciente: 20-12-2019 13:28:56#Chamada para atendimento: 20-12-2019 13:30:08#Tempo de atendimento: 00:27:28
