@@ -11,6 +11,8 @@ public class RelatorioDAO {
 
 	}
 
+	// Teste
+	
 	// Metodo recebe seis objetos relatorios (1 geral e 5 de cada fila de
 	// prioridade) e grava os dados em arquivo
 	public boolean relatorioAdm(Relatorios relatorio, Relatorios r1, Relatorios r2, Relatorios r3, Relatorios r4,
